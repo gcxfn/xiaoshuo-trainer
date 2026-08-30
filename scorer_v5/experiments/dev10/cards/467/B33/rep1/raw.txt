@@ -1,0 +1,298 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "finale_quote": null,
+    "events": [
+      {
+        "active_action_quote": "我没动。\n筷子夹起一块青菜，放进自己碗里。\n马玉琴的脸沉了沉。\n\"姜瓷，没听见晓丹说话？\"",
+        "nearby_anchor": "饭桌前陆晓丹让盛饭，姜瓷拒绝",
+        "a_code": "A1",
+        "a_quote": "马玉琴的脸沉了沉。\n\"姜瓷，没听见晓丹说话？\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我看着她。\n\"你没手？\"",
+        "nearby_anchor": "姜瓷正面回怼陆晓丹",
+        "a_code": "A1",
+        "a_quote": "饭桌一下静了。\n排风扇还在响。\n锅里的汤冒着热气。\n马玉琴的脸先变了。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我拿起旁边的水杯，喝了一口。\n\"婚宴是我爸妈出的。\n酒席是我订的。\n你哥家的彩礼，一分钱没到我手里。\n你那天戴出去显摆的金镯子，也是我妈给我的陪嫁。\"",
+        "nearby_anchor": "反驳陆晓丹关于彩礼的指责",
+        "a_code": "A1",
+        "a_quote": "陆晓丹脸涨红。\n马玉琴的眼神一闪。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我转向他。\n\"昨天敬茶的时候，您收了我妈包的两万红包。\n收钱的时候，您没说我没教养。\"",
+        "nearby_anchor": "反击陆永昌",
+        "a_code": "A1",
+        "a_quote": "陆永昌的嘴角抽了一下。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我伸手端起汤碗。",
+        "nearby_anchor": "被扇耳光后端起汤碗",
+        "a_code": "A1",
+        "a_quote": "陆成泽看见我的动作，眉头松了一点。\n他以为我要低头。",
+        "qualifies": false
+      },
+      {
+        "active_action_quote": "然后，我把整碗汤扣了下去。\n热汤从他头顶浇下。",
+        "nearby_anchor": "反手将热汤扣在陆成泽头上",
+        "a_code": "A1",
+        "a_quote": "陆成泽惨叫一声，猛地站起来。\n椅子被撞翻。\n陆晓丹尖叫。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我把菜刀拍在案板上。",
+        "nearby_anchor": "众人扑来时拿刀震慑",
+        "a_code": "A1",
+        "a_quote": "这话出口，陆成泽的脸白了一下。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我从围裙口袋里拿出手机。\n屏幕亮着。\n录音界面还在走。",
+        "nearby_anchor": "展示手机录音",
+        "a_code": "A1",
+        "a_quote": "马玉琴的脸色一下变了。\n陆晓丹也睁大眼。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我直接从包里拿出一个牛皮纸袋，拍在桌上。\n\"首付款凭证。\n贷款合同。\n产权证复印件。\n还有婚前财产公证。\"",
+        "nearby_anchor": "亮出房产证据",
+        "a_code": "A1",
+        "a_quote": "陆成泽的脸从红变白。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我直接按下110。",
+        "nearby_anchor": "拨打报警电话",
+        "a_code": "A1",
+        "a_quote": "马玉琴一下慌了。\n\"你真要报警？\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我拿起手机，拨给物业。\n\"十六楼，1602，帮我开一下电梯门禁。\"",
+        "nearby_anchor": "放邵敏和律师进屋",
+        "a_code": "A4",
+        "a_quote": "门外很快传来脚步声。\n邵敏的声音隔着门响起来。\n\"姜瓷，开门。\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "梁律师拿出第二份文件。\n\"第二份，限期搬离通知。\"",
+        "nearby_anchor": "律师送达搬离通知",
+        "a_code": "A1",
+        "a_quote": "马玉琴猛地站起来。\n\"搬离？\n谁搬离？\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "邵敏把打印纸往桌面上一放。\n\"随口说得挺准。\n凌晨两点十七分，三十万元从姜瓷名下储蓄卡转入陆成泽尾号7816的账户……\"",
+        "nearby_anchor": "揭露凌晨转账",
+        "a_code": "A1",
+        "a_quote": "陆成泽的脸彻底变了。\n那不是被汤烫出来的红。\n是被人当场揭开遮羞布后的灰白。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "邵敏把另一张纸抽出来。\n\"酒店走廊监控。\n昨晚一点四十三分，姜瓷被伴娘扶回房间，意识不清。\n一点五十八分，你进房拿走她的包……\"",
+        "nearby_anchor": "出示酒店监控记录",
+        "a_code": "A1",
+        "a_quote": "陆成泽怔住。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "邵敏立刻接话。\n\"你的手机银行单笔限额五十万。\n昨晚转出三十万的时候，没有限额。\"",
+        "nearby_anchor": "堵住陆成泽\"银行限额\"借口",
+        "a_code": "A1",
+        "a_quote": "陆成泽被堵住。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "梁律师已经拿出手机。\n\"我报警。\"",
+        "nearby_anchor": "舅爷上门闹事时报警",
+        "a_code": "A1",
+        "a_quote": "马玉琴回头尖叫。\n\"你敢！\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我拿起房产证复印件，隔着门提高声音。\n\"这里是我的房子。\n你再踹一下，就是故意毁坏财物和私闯住宅。\"",
+        "nearby_anchor": "隔着门警告马国强",
+        "a_code": "A1",
+        "a_quote": "外面安静了两秒。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我站在原地没追。\n邵敏也没追。\n\"扔。\"",
+        "nearby_anchor": "陆晓丹抢手机威胁销毁录音",
+        "a_code": "A1",
+        "a_quote": "陆晓丹的脸刷地白了。\n她捏着手机，手指都在抖。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我把房产证复印件递过去。\n\"这套房子是我的。\n他们今天新婚第二天逼我伺候小姑子，我拒绝后，陆成泽打了我一巴掌。\"",
+        "nearby_anchor": "向警察陈述事实",
+        "a_code": "A3",
+        "a_quote": "其中一个警察看向屋内。\n目光扫过我脸上的红印，扫过陆成泽身上的汤，再扫过案板上的菜刀。\n他声音立刻沉了。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "邵敏把录音打开。\n饭桌上的声音一段一段放出来。",
+        "nearby_anchor": "向警方播放录音证据",
+        "a_code": "A1",
+        "a_quote": "屋里没人再说话。\n警察听完，脸色更冷。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "她走进来，站到我身边。\n\"夫妻之间的事，不代表可以动手。\n更不代表你们一家人能在别人的房子里围着她欺负。\"",
+        "nearby_anchor": "邵敏进门震慑",
+        "a_code": "A1",
+        "a_quote": "饭桌前安静了一瞬。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "梁律师翻出第一份。\n\"第一份，婚前财产确认函。\n1602房产为姜女士婚前个人财产，任何人不得以婚姻关系为由占有、处分、转租、长期居住。\"",
+        "nearby_anchor": "梁律师送达文件",
+        "a_code": "A1",
+        "a_quote": "马玉琴脸都绿了。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "邵敏冷声对电话里说。\n\"陈小姐是吧？\n这里是南庭华府1602。\n你刚才的话，已经被现场人员听见。\"",
+        "nearby_anchor": "接听陈冉电话并当众揭穿",
+        "a_code": "A1",
+        "a_quote": "电话那头瞬间没声了。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "梁律师把转账记录递给警察。\n\"这三十万是姜女士婚前个人财产。\n转出时姜女士处于醉酒后昏睡状态。\"",
+        "nearby_anchor": "向警方递交转账证据",
+        "a_code": "A3",
+        "a_quote": "邵敏又补了一句。\n\"此外，陆晓丹名下二十万去向需要查明。\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我开了免提。\n\"我本人从未授权。\n也不知情。\n请你们立刻暂停。\"",
+        "nearby_anchor": "当场拒绝银行经营贷",
+        "a_code": "A4",
+        "a_quote": "对方的语气变得谨慎。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "梁律师已经拨通银行风控电话。\n邵敏则看向我。\n\"先去总行。\"",
+        "nearby_anchor": "去银行冻结贷款",
+        "a_code": "A4",
+        "a_quote": "银行主管也当场冻结了那笔贷款流程。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我把结婚证从包里拿出来。\n红色本子很新。\n上面的合照里，他笑得像个好丈夫。\n我把它合上。\n\"那就耗。\n看谁先把谁拖进泥里。\"",
+        "nearby_anchor": "当面回应陆成泽威胁",
+        "a_code": "A1",
+        "a_quote": "陆成泽盯着我，忽然笑了一下。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我把医院验伤报告拍在他面前。\n\"今天早上，陆成泽打了我。\n下午，他还冒用我的旧手机办经营贷。\n现在你告诉我，他昨天替我买了八百万意外险，受益人还是他。\n你觉得这叫夫妻商量好了？\"",
+        "nearby_anchor": "质问保险公司韩经理",
+        "a_code": "A1",
+        "a_quote": "韩经理的腿明显软了一下。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "邵敏要求调取后台记录。\n韩经理起初不肯。\n直到民警赶到，他才让技术人员打开系统。",
+        "nearby_anchor": "要求调取保险后台",
+        "a_code": "A1",
+        "a_quote": "韩经理脸色瞬间灰了。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我对民警说。\n\"这些聊天记录，请全部固定。\"",
+        "nearby_anchor": "要求固定聊天记录证据",
+        "a_code": "A3",
+        "a_quote": "民警点头。\n\"我们会依法处理。\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我甩开她。\n\"你的家，不该建在我的命上。\"",
+        "nearby_anchor": "甩开陈冉求情",
+        "a_code": "A1",
+        "a_quote": "她跌坐在地上，终于哭得不成样子。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我拿出手机，点开那段楼梯间视频。",
+        "nearby_anchor": "医院当众播放视频",
+        "a_code": "A1",
+        "a_quote": "原本还在议论的人群瞬间安静。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我说。\n\"我开了免提。\n我本人从未授权。\n也不知情。\"",
+        "nearby_anchor": "在病房对银行再次明确拒绝",
+        "a_code": "A1",
+        "a_quote": "陆成泽脸色铁青。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "邵敏的朋友很快查到一条线索。\n最早转发热帖的几个账号，背后接了同一个推广单。",
+        "nearby_anchor": "查出网上推广链条",
+        "a_code": "A4",
+        "a_quote": "付款账户却露了尾号。\n尾号3329。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我打开病房窗户，看向楼下。\n住院楼后侧通道旁，停着一辆白色面包车。",
+        "nearby_anchor": "发现可疑面包车",
+        "a_code": "A4",
+        "a_quote": "车灯没开。\n车身一半藏在树影下。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我拿起手机，直接拨通值班民警电话。\n\"有人到医院威胁我家属。\"",
+        "nearby_anchor": "报警求助",
+        "a_code": "A3",
+        "a_quote": "民警立刻说。\n\"不要追。\n锁门。\n我们马上联系医院保卫科。\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我问他。\n\"转账凭证能查源头吗？\"",
+        "nearby_anchor": "查转账凭证真伪",
+        "a_code": "A4",
+        "a_quote": "梁律师说。\n\"能。\n但需要银行流水原件。\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我转身走到病房外，拨通陆成泽的电话。\n我握着手机，声音很稳。\n\"陆成泽，你现在每一句话都在录音。\"",
+        "nearby_anchor": "主动打电话给陆成泽录音取证",
+        "a_code": "A1",
+        "a_quote": "电话那边彻底安静。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "梁律师发布了律师声明。",
+        "nearby_anchor": "发布律师声明反击谣言",
+        "a_code": "A3",
+        "a_quote": "那些骂我的账号开始删评。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "梁律师把离婚诉讼材料交到我面前。",
+        "nearby_anchor": "提交离婚诉讼",
+        "a_code": "A4",
+        "a_quote": "我签下名字。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "法官问我是否接受调解。\n我站起来。\n\"不接受。\"",
+        "nearby_anchor": "法庭拒绝调解",
+        "a_code": "A1",
+        "a_quote": "陆成泽脸色惨白，再也说不出话。",
+        "qualifies": true
+      }
+    ]
+  },
+  "reason": "全文为开放式结局，无明确主线最终归属/结果的冲突目标场景，finale_quote 为 null。但开放式结局不排除终局外场景。共识别出多起主角主动动作并当场产生 A 类胜负证据的小爽点事件，包括饭桌反驳、热汤反击、亮刀震慑、亮出录音/房产证据、报警、律师介入、揭穿转账/保险/假账、甩开陈冉、医院播放视频反杀谣言、报警反威胁、主动打电话取证、发布声明、拒调解等，均符合\"胜负可见+主角主动+终局外+当场闭环\"的语义定义。"
+}
+```

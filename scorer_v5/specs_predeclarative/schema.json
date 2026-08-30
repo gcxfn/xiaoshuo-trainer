@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://novel-project.local/scorer_v5/specs/schema.json",
+  "title": "scorer_v5 指标规格文件 schema（spec-v5.1-draft-1）",
+  "description": "19 个指标 YAML 的统一结构。v5.1：明确三层（semantic_outputs / derived_features / ordinal_mapping），统一允许评分集合 0/1/3/5/7/9/10。固定指标顺序见 README '固定顺序' 节。",
+  "type": "object",
+  "required": [
+    "metric_id", "version", "construct", "semantic_definition",
+    "semantic_outputs", "derived_features", "score_scale",
+    "ordinal_mapping", "evidence_rule", "abstain_rule"
+  ],
+  "properties": {
+    "metric_id": { "type": "string", "pattern": "^(B01|B02|B03|C01|B08|B09|B16|B23|B30|B34|B36|C22|N3|N6|B31|B33|C14|B18|N7)$" },
+    "version": { "type": "string", "minLength": 1 },
+    "construct": { "type": "string", "minLength": 1 },
+    "semantic_definition": { "type": "string", "minLength": 1 },
+
+    "semantic_outputs": {
+      "type": "object",
+      "description": "LLM 唯一输出层：只提供语义判断与逐字证据/邻近锚点。严禁出现 L/K/F/offset/score 等确定性计算字段。",
+      "minProperties": 1
+    },
+
+    "derived_features": {
+      "type": "array",
+      "description": "Python 唯一计算层：根据 semantic_outputs + sidecar 计算（含 resolved_offset / N / L / K / F / 比例 / 阈值判定 / 档位计数）。LLM 不产生这些。",
+      "items": {
+        "type": "object",
+        "minProperties": 1,
+        "maxProperties": 1
+      },
+      "minItems": 1
+    },
+
+    "score_scale": {
+      "type": "object",
+      "required": ["allowed"],
+      "properties": {
+        "allowed": {
+          "type": "array",
+          "items": { "enum": [0, 1, 3, 5, 7, 9, 10] },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "统一允许评分集合 0/1/3/5/7/9/10。每指标可只用子集；连续原始值另外保存。"
+        }
+      }
+    },
+
+    "ordinal_mapping": {
+      "type": "array",
+      "description": "每指标冻结的 0/1/3/5/7/9/10 映射（由 derived_features 的计数/布尔组合驱动）。连续原始值（如 F）始终另外保存，不因映射丢失。",
+      "items": {
+        "type": "object",
+        "minProperties": 1,
+        "maxProperties": 1
+      },
+      "minItems": 1
+    },
+
+    "evidence_rule": {
+      "type": "string",
+      "minLength": 1,
+      "description": "LLM 输出的逐字引文/锚点如何被 Python 定位与校验（含引文必须能在 canonical text 中找到等规则）"
+    },
+
+    "abstain_rule": {
+      "type": "string",
+      "minLength": 1,
+      "description": "无法可靠判断时的 ABSTAIN 处理（不自动转 0，单独统计 abstention_rate）"
+    },
+
+    "deduplication_rule": {
+      "type": "string",
+      "minLength": 1,
+      "description": "候选/事件去重与合并规则（可选，复杂计数指标用）"
+    },
+
+    "extreme_word_list": {
+      "type": "string",
+      "description": "仅 N3 使用：固定极限词表"
+    },
+
+    "event_schema": {
+      "type": "array",
+      "description": "仅 N6/B33 使用：LLM 事件清单字段（不含 offset——offset 由 Python 定位生成）",
+      "items": {
+        "type": "object",
+        "minProperties": 1,
+        "maxProperties": 1
+      }
+    },
+    "mapping_note": {
+      "type": "string",
+      "description": "ordinal_mapping 的版本变更说明（可选）"
+    }
+  },
+  "additionalProperties": false
+}

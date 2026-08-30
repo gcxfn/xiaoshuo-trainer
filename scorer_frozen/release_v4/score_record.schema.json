@@ -1,0 +1,739 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:novel-training:anchor-v4.0.0:blind-score-record",
+  "description": "v4.0.0 formal blind score record. Top-level keys are exactly id, rep, scores; scores contains the 19 indicators in fixed order. Scores are only 0, 5, or 10 and evidence/reason must be non-empty.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "rep",
+    "scores"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "rep": {
+      "type": "integer",
+      "enum": [
+        1,
+        2,
+        3
+      ]
+    },
+    "scores": {
+      "type": "array",
+      "minItems": 19,
+      "maxItems": 19,
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/B01"
+        },
+        {
+          "$ref": "#/$defs/B02"
+        },
+        {
+          "$ref": "#/$defs/B03"
+        },
+        {
+          "$ref": "#/$defs/C01"
+        },
+        {
+          "$ref": "#/$defs/B08"
+        },
+        {
+          "$ref": "#/$defs/B09"
+        },
+        {
+          "$ref": "#/$defs/B16"
+        },
+        {
+          "$ref": "#/$defs/B23"
+        },
+        {
+          "$ref": "#/$defs/B30"
+        },
+        {
+          "$ref": "#/$defs/B34"
+        },
+        {
+          "$ref": "#/$defs/B36"
+        },
+        {
+          "$ref": "#/$defs/C22"
+        },
+        {
+          "$ref": "#/$defs/N3"
+        },
+        {
+          "$ref": "#/$defs/N6"
+        },
+        {
+          "$ref": "#/$defs/B31"
+        },
+        {
+          "$ref": "#/$defs/B33"
+        },
+        {
+          "$ref": "#/$defs/C14"
+        },
+        {
+          "$ref": "#/$defs/B18"
+        },
+        {
+          "$ref": "#/$defs/N7"
+        }
+      ],
+      "items": false
+    }
+  },
+  "$defs": {
+    "B01": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "B01 异常事件出现位置"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "B02": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "B02 冲突出现速度"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "B03": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "B03 信息差设置"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "C01": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "C01 开篇钩子强度"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "B08": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "B08 主角目标明确度"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "B09": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "B09 核心冲突强度"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "B16": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "B16 结尾闭环度"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "B23": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "B23 主角能动性"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "B30": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "B30 压抑铺垫充分度"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "B34": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "B34 大爽点存在"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "B36": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "B36 共鸣触发器"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "C22": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "C22 整体质量"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "N3": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "N3 强情弱写"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "N6": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "N6 对话潜台词密度"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "B31": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "B31 爆发释放强度"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "B33": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "B33 小爽点密度"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "C14": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "C14 代入感综合"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "B18": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "B18 中段塌陷"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "N7": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "indicator",
+        "score",
+        "evidence",
+        "reason"
+      ],
+      "properties": {
+        "indicator": {
+          "type": "string",
+          "const": "N7 角色间认知操控"
+        },
+        "score": {
+          "type": "integer",
+          "enum": [
+            0,
+            5,
+            10
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ".*\\S.*"
+        }
+      }
+    }
+  }
+}

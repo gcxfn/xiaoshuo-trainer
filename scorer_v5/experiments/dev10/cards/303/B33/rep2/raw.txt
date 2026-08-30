@@ -1,0 +1,102 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "finale_quote": "\"夏月殊。\" \"夏总，这里是法务部，破产重整方案的文件已经准备好了，需要您签字。\" \"送上来吧。\"",
+    "events": [
+      {
+        "active_action_quote": "我一把甩掉订婚戒指。\"这门亲事，我不认。这个家，我再也不会回。\"",
+        "nearby_anchor": "chapter_1 开头",
+        "a_code": "A4",
+        "a_quote": "我一把甩掉订婚戒指。",
+        "qualifies": false
+      },
+      {
+        "active_action_quote": "我站在ATM机前，把密码改了一遍。然后走进旁边的手机店，买了一张新的电话卡。",
+        "nearby_anchor": "chapter_2",
+        "a_code": "A4",
+        "a_quote": "我站在ATM机前，把密码改了一遍。然后走进旁边的手机店，买了一张新的电话卡。",
+        "qualifies": false
+      },
+      {
+        "active_action_quote": "030608。保险柜弹开了。",
+        "nearby_anchor": "chapter_4",
+        "a_code": "A4",
+        "a_quote": "030608。保险柜弹开了。",
+        "qualifies": false
+      },
+      {
+        "active_action_quote": "签证三天后出签。",
+        "nearby_anchor": "chapter_4",
+        "a_code": "A4",
+        "a_quote": "签证三天后出签。",
+        "qualifies": false
+      },
+      {
+        "active_action_quote": "拎着行李走出大门的那一刻",
+        "nearby_anchor": "chapter_4",
+        "a_code": "A4",
+        "a_quote": "拎着行李走出大门的那一刻",
+        "qualifies": false
+      },
+      {
+        "active_action_quote": "\"教授，我可以试试。\"",
+        "nearby_anchor": "chapter_5 末",
+        "a_code": "A4",
+        "a_quote": "\"做菜不是管理者的工作。你被录取了。\"",
+        "qualifies": false
+      },
+      {
+        "active_action_quote": "\"报价偏高百分之十五，但他们的产能利用率只有六成，有议价空间。如果合同周期拉长到两年，他们会降。\"",
+        "nearby_anchor": "chapter_6",
+        "a_code": "A1",
+        "a_quote": "Marc咧嘴笑了。\"好，这个case交给你跟。\"",
+        "qualifies": false
+      },
+      {
+        "active_action_quote": "\"你叫什么？\" \"夏月殊。\"",
+        "nearby_anchor": "chapter_6 团建烧烤",
+        "a_code": "A2",
+        "a_quote": "他显然也不认识我，只是礼貌地伸出手。\"周今越，叫我Ethan也行。\"",
+        "qualifies": false
+      },
+      {
+        "active_action_quote": "我点了头。\"好。\"",
+        "nearby_anchor": "chapter_8 灯光节表白",
+        "a_code": "A1",
+        "a_quote": "他的手指收紧了一点。掌心是热的。",
+        "qualifies": false
+      },
+      {
+        "active_action_quote": "\"那个人是我。\"",
+        "nearby_anchor": "chapter_8 厨房",
+        "a_code": "A1",
+        "a_quote": "周今越的表情凝固了大概有五秒。然后他慢慢地、不确定地重复了一遍。\"你？\"",
+        "qualifies": false
+      },
+      {
+        "active_action_quote": "\"I'm in.\"",
+        "nearby_anchor": "chapter_9",
+        "a_code": "A4",
+        "a_quote": "\"I'm in.\"",
+        "qualifies": false
+      },
+      {
+        "active_action_quote": "\"妈，我是来接手公司的。\"",
+        "nearby_anchor": "chapter_10",
+        "a_code": "A1",
+        "a_quote": "谢听晚的眼泪掉下来了。\"你回来了就好……你回来了就好……\"",
+        "qualifies": false
+      },
+      {
+        "active_action_quote": "\"姐，你的围裙沾了面粉。\"然后转身走进了那间CEO办公室。",
+        "nearby_anchor": "chapter_10",
+        "a_code": "A1",
+        "a_quote": "她看着我，嘴唇张了张，说了一句——\"妹妹，你回来了。\"",
+        "qualifies": false
+      }
+    ]
+  },
+  "reason": "终局为 chapter_10 夏月殊坐进CEO办公室签破产重整方案文件，归属清晰（夏月殊拿回公司）。终局外虽有甩戒指、改密码、偷护照、逃离、入职、谈判接case、同意回国等主角主动动作，但均无当场闭环的胜负证据：甩戒指后母亲直接用股权文件碾压；改密码/买卡是准备动作无A证据；偷护照属潜行成功但与对手无对抗交互；逃离成功但家人尚未反应；实习接case是职场表现无对抗闭合；周今越不认识她无法构成基于假象的得意/放松；表白与身份揭露均为情感线，不构成对夏家对手方的胜负；同意回国是决策无A证据；回到夏家面对母亲流泪与姐姐沉默，主角未完成当场让对手方受挫的闭环动作（仅淡淡一句'围裙沾了面粉'随即转身进办公室，不构成胜负证据所需的对手受挫/计划落空等A类明确信号）。全文无可识别为'当场闭环胜负可见'的小爽点事件，全部 events 均标记 qualifies=false。"
+}
+```

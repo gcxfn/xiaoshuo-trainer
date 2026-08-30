@@ -1,0 +1,58 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "选定继承人那天，我满怀自信拿出次次满分的考核成绩，\n祖母却宣布继承人是只会做饭的姐姐。",
+        "nearby_anchor": "chapter_1 开头；祖母宣布姐姐为继承人，我被安排联姻",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": "我愣住了。",
+        "qualifies": false
+      },
+      {
+        "event_quote": "直到祖母尝了姐姐做的菜，当场宣布她继承家业。",
+        "nearby_anchor": "祖母当场宣布姐姐为继承人，与开头的'选定继承人那天'呼应",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": "我愣住了。",
+        "qualifies": false
+      },
+      {
+        "event_quote": "\"月殊，把戒指捡起来。\"",
+        "nearby_anchor": "谢听晚逼我捡回周家订婚戒指；同场景我甩掉戒指反抗后被母亲压制",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "\"我不嫁。\"",
+        "qualifies": true
+      },
+      {
+        "event_quote": "她说这话的时候根本没避着我，因为在她眼里，我已经彻底认命了，不会有任何越轨的想法。",
+        "nearby_anchor": "谢听晚当着我的面泄露保险柜密码是月唯生日零六零八",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "凌晨两点四十，我光脚走进夏谨一的书房。030608。保险柜弹开了。",
+        "qualifies": true
+      },
+      {
+        "event_quote": "夏氏食品，破产了。",
+        "nearby_anchor": "chapter_10 律师函送达，夏氏进入破产清算，触发直系血亲优先收购权",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "我让法务部启动了优先收购权的程序。",
+        "qualifies": true
+      },
+      {
+        "event_quote": "\"那个人是我。\"",
+        "nearby_anchor": "chapter_8 我向周今越坦白我就是他被安排联姻的对象",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "他伸手把我拉进怀里。\"管他什么联姻不联姻的。我喜欢的是现在的你，不是那份协议上的名字。\"",
+        "qualifies": true
+      }
+    ]
+  },
+  "reason": "按规范列出全部候选异常事件并打标。祖母宣布姐姐为继承人虽打破主角预期，但主角在异常后无直接连接的行动/决定（仅'愣住了'），不符合'即时改变'要求；同句并发的谢听晚逼婚则满足外部事件+同场景直接行动两项，但该候选首句位置 q 远超 10%，程序侧不会判定为合格。最终判定由 Python 按 q≤10% 阈值与因果窗口过滤后输出。"
+}
+```

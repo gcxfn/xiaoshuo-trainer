@@ -1,0 +1,106 @@
+metric_id: C22
+construct: 整体质量
+version: spec-v5.1-draft-9
+semantic_definition: 'C22 是可复核组件的组合，不测文笔、商业表现或整体印象。先做否决：V1=结尾连续超过 200 个 非空白码点、主要为演讲式总结/人生感悟且无新的场景行动，或出现求赞/元话语；V2=核心冲突被
+  巧合、无铺垫的突然悔悟、降智或外力直接解除。每个否决须记录连续块边界和引文；开放结局只记 终局项未满足，不自动判 V2。 无否决时填四张独立证据表：①支线闭合：开篇建立的至少两条线索/支线各有结尾状态，开篇和结尾
+  证据并列；②动机一致：主角及核心对手关键决策可回指正文已建立动机、资源或信息，不出现无证据 转向；③三幕完整：开篇钩子、按场景可观察的中段推进、终局结果三者均有位置，使用本候选同一
+  主线清单，不引用商业标签；④终局强度：终局场按本候选 B31 的四项证据表计数至少 3 项且含 交锋回合和不可逆决定。若 B31 在独立评分中无合格终局场，④不成立；C22
+  不重新凭印象选场。
+
+  '
+semantic_outputs:
+  quality_items:
+  - veto1_quote: V1 演讲式总结/人生感悟块或求赞/元话语句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（LLM 标候选）
+  - veto2_quote: V2 巧合/悔悟/降智/外力解除句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - subplot_close_quotes: ①开篇支线/线索清单：{ opening_quote, closing_quote }（至少两条）
+  - motivation_quote: ②动机一致引文（主角及核心对手关键决策回指已建立动机/资源/信息）
+  - three_act_quotes: ③三幕：{ hook_quote, middle_quote, finale_quote }
+  - b31_items: ④B31 四项：{ realtime_quote, irrevocable_quote, sensory_quote, foreshadow_quote
+      }
+  - item_hits: ①②③④分别成立（bool）
+  selection_note:
+  - ④复用 B31 的终局场证据（若 B31 无合格终局场则④不成立）
+derived_features:
+- veto1_block_gt_200: Python 校验 veto1_quote 块内非空白码点 >200 且无新场景行动（演讲式总结分支）
+- veto1_meta_quote: Python 校验 veto1_quote 为求赞/元话语（求赞/元话语分支，不受 200 码点限制）
+- veto2_quote_ok: Python 校验 veto2 引文定位
+- veto_found: Python 校验任一 V1 分支（>200 演讲块且无新场景行动，或求赞/元话语）或 V2 成立（V 否决优先）
+- item1_ok: ①支线闭合（Python 校验 ≥2 条开篇支线各有结尾状态，引文均可定位）
+- item2_ok: ②动机一致（Python 校验引文可定位）
+- item3_ok: ③三幕完整（Python 校验三段引文均可定位且按序）
+- subplot_count: ①支线闭合计数（Python 定位各开篇/结尾引文对，≥2 对成立 ①；7/9/10 档细分：4 项时 subplot_count≤2 为 7、=3 为 9、≥4 为 10）
+score_scale:
+  allowed:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+  - 10
+ordinal_mapping:
+- score: 0
+  when:
+    field: veto_found
+    op: is_true
+- score: 1
+  when:
+    field: item_count
+    op: lte
+    value: 1
+- score: 3
+  when:
+    field: item_count
+    op: eq
+    value: 2
+- score: 5
+  when:
+    field: item_count
+    op: eq
+    value: 3
+- score: 7
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 4
+    - field: subplot_count
+      op: lte
+      value: 2
+- score: 9
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 4
+    - field: subplot_count
+      op: eq
+      value: 3
+- score: 10
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 4
+    - field: subplot_count
+      op: gte
+      value: 4
+mapping_note: '（draft-4 Step 12.5 二次修订：用户裁定全七档。冻结 0 分支不动：V 否决=0；冻结 1 分支
+  保留 0–1 项=1；3=2 项、5=3 项；4 项按 subplot_count（①支线闭合对数，Python 定位计算）细分：
+  subplot_count≤2=7、=3=9、≥4=10。7/9 细分依据：subplot_count 连续计数，4 项时 {2,3,4+}
+  恰好划分 7/9/10，单调递进。）
+
+  spec-v5.1-draft-3 restores the v4.0.0 frozen 0/5/10 branch semantics
+  after independent threshold review: V1 恢复为两分支（>200 演讲块且无新场景行动，或求赞/元话语， 后者不受 200
+  码点限制）；①支线闭合恢复为至少两条开篇线索/支线各有结尾状态；④终局强度 恢复为 B31 四项 ≥3 且含交锋回合与不可逆决定；V 否决或 ≤2 项=0、3
+  项=5、4 项=10。 此为 v5.1 冻结映射，后续修改必须升版本并登记。
+
+
+  （draft-4 Step 12.5 Step 4：ordinal_mapping 为声明式条件，阈值/断点全部在 YAML 中，ordinal.py 为通用解释器，不再硬编码阈值。）'
+evidence_rule: '通用 *_quote 输出规则：quote 必须是 canonical text 连续逐字子串；优先最短且足以证明判定的片段；禁止跨位置拼接；禁止用 …… 或 ... 省略；禁止改写、概括、纠正标点或更换中文/英文引号；必须单行、禁止换行；需要两处证据时分放不同 quote 字段或数组项。若该引文可能在正文中出现多次（短句/常用词/无标点片段），必须同时提供 nearby_anchor（邻近唯一上下文片段的 span 编号），帮助 Python 唯一定位；未提供导致歧义拒绝时该证据作废。 所有引文必须能在 canonical text 中逐字定位；V1 块码点计数完全由 Python 执行（>200 分支）， 求赞/元话语分支不受
+  200 码点限制。③三幕引文必须按 钩子<中段<终局 顺序排列（Python 用 offset 校验）。
+
+  '
+abstain_rule: '无法确认质量项边界、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN； ABSTAIN 不自动转 0，单独统计 abstention_rate。
+
+  '

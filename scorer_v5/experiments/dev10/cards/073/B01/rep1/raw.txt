@@ -1,0 +1,66 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "拜堂到第二拜时，太子萧承玦忽然握住我的手。",
+        "nearby_anchor": "他说：\"阿姒，云蘅有了我的孩子。\" 满堂宾客寂静无声。",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "\"既然有孕，就接进来吧。\"",
+        "qualifies": true
+      },
+      {
+        "event_quote": "外头忽然传来内侍的声音。\"殿下，沈府派人送了话来，说云蘅姑娘从傍晚起便跪在祠堂，说自己无颜见太子妃，谁劝也不肯起。\"",
+        "nearby_anchor": "洞房场景，内侍通报云蘅跪祠堂之事",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "\"夜深了，殿下若担心，便派太医去看看。\"",
+        "qualifies": true
+      },
+      {
+        "event_quote": "有丫鬟跑进来，跪在门口，脸色发白。\"老爷，夫人，太子殿下把表姑娘抱出来了。表姑娘身上……见红了。\"",
+        "nearby_anchor": "回门日，沈府前厅",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "\"请管事把祠堂外候着的人都带到前厅。昨夜谁劝过，谁送过水，谁见过表姑娘，都一起过来。\"",
+        "qualifies": true
+      },
+      {
+        "event_quote": "监正声音拔高。\"帝星，落在云良娣腹中。\"",
+        "nearby_anchor": "皇后寿宴，钦天监监正当众宣布",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "我笑了笑。\"良娣说得是。\"",
+        "qualifies": true
+      },
+      {
+        "event_quote": "我反手扣住她手腕，在她倒下前，结结实实甩了她一巴掌。",
+        "nearby_anchor": "正殿内，云蘅挑衅后主角动手",
+        "is_external_event": false,
+        "same_scene_action": true,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "太医闻过炉灰，又用银针挑了一点放入水中，水面很快浮起一层浅浅油光。他的脸色当即变了。\"回嬷嬷，这是合欢息。\"",
+        "nearby_anchor": "春晖殿内室，桂嬷嬷查香",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "云蘅咬牙，眼中恨意翻涌。\"是，它帮我了。\"",
+        "nearby_anchor": "内狱中云蘅供述系统",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      }
+    ]
+  },
+  "reason": "按正文顺序列出全部候选异常事件。首个候选为大婚第二拜时萧承玦握住主角手并当众揭露云蘅有孕——属于身份暴露/命运级消息送达的外部事件，打破主角原有婚礼预期；主角在同一场景内作出直接连接的行动决定\"既然有孕，就接进来吧\"，符合即时改变要求。首段P=1，符合P≤3条件。后续候选（云蘅跪祠堂通报、回门见红、星象帝星宣告、禁香被查、系统揭秘）均按出现顺序排列，供程序按位置比例q≤10.00%阈值取最早者。"
+}
+```

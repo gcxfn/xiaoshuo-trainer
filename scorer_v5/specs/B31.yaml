@@ -1,0 +1,141 @@
+metric_id: B31
+construct: 爆发释放强度
+version: spec-v5.1-draft-9
+semantic_definition: 'B31 测全书是否存在合格的摊牌清算，不测音量或哭喊。按全局场景清单筛选：主角方与对手方为 可识别实体并直接对峙；同一空间、实时电话/视频或正文明确即时往返的文字聊天；至少两个
+  "行动/陈述→针对回应"交换。预录音播放、事后通报、回忆转述、纯内心和单方自述不计。回合表 记录回合号、发起实体、目标实体、引文和回应。 逐场判：①至少两名可识别实体实时完成两回合；②主角方当场执行无法撤回的关系、法律、归属、
+  程序或核心资源决定；仅说"我要"而未执行、摔自己物品泄愤不计；③外部具体声响/光影/温度/气味/ 触感/物件状态变化；情绪隐喻和"全场震惊"不计；④场景前有同源矛盾/压迫/损失铺垫。取最高项数，
+  所有并列最高场留档；无场或最佳≤1项=0 分，恰 2 项且缺 ①②=1 分，恰 2 项且含 ①②=3 分，≥3 项缺 ① 或缺 ②=5 分，
+  3 项且含 ①②=7 分，4 项且含 ①②=9 分，4 项且含 ①② 且回合数 ≥6=10 分。
+
+  '
+semantic_outputs:
+  candidates:
+  - scene_quote: 摊牌场关键句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - round1_quote: ①第一回合甲行动/陈述对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - round2_quote: ①乙对甲第一回合的针对性回应对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - round3_quote: ①甲对乙回应的再回应对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（若存在）
+  - round4_quote: ①乙对甲再回应的再回应对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（若存在）
+  - round_count: 逐字可定位的回合数（至少两个完整交换为 ≥4；仅 A→B 为 2，不计入①）
+  - irrevocable_quote: ②不可撤回决定执行对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（无该项证据则或 null）
+  - sensory_quote: ③外部感官/物件变化对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（无该项证据则或 null）
+  - foreshadow_quote: ④同源铺垫对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（无该项证据则或 null）
+  - item_hits: ①②③④分别成立（bool）
+  selection_note:
+  - LLM 列候选场并填项；Python 取"项数最多"者（并列场全部留档）
+derived_features:
+- candidate_offsets: Python 定位各候选场 offset
+- best_scene: Python 取项数最多场（并列全部留档）
+- item1_ok: ①成立——Python 校验 round1/round2/round3/round4 引文可定位且按序、round_count ≥4（至少两个完整"行动/陈述→针对回应"交换；仅
+    A→B 不计入①）
+- item2_ok: ②成立——Python 校验 irrevocable_quote 可定位（LLM 报 null=无该项证据，不计）
+- item3_ok: ③成立——Python 校验 sensory_quote 可定位（LLM 报 null=无该项证据，不计）
+- item4_ok: ④成立——Python 校验 foreshadow_quote 可定位（LLM 报 null=无该项证据，不计）
+- item_count: 最佳场 ①②③④成立计数
+- round_count: 最佳场逐字可定位回合数（Python 校验引文可定位且按序后计数；≥6 判定 10 分强度档）
+- combo_10: item_count ≥3 且 item1_ok 且 item2_ok
+- combo_5: 恰 2 项，或 ≥3 项但缺 item1 或 item2
+score_scale:
+  allowed:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+  - 10
+ordinal_mapping:
+- score: 0
+  when:
+    field: item_count
+    op: lte
+    value: 1
+- score: 1
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 2
+    - field: item1
+      op: is_false
+- score: 1
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 2
+    - field: item2
+      op: is_false
+- score: 3
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 2
+    - field: item1
+      op: is_true
+    - field: item2
+      op: is_true
+- score: 5
+  when:
+    and:
+    - field: item_count
+      op: gte
+      value: 3
+    - field: item1
+      op: is_false
+- score: 5
+  when:
+    and:
+    - field: item_count
+      op: gte
+      value: 3
+    - field: item2
+      op: is_false
+- score: 7
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 3
+    - field: item1
+      op: is_true
+    - field: item2
+      op: is_true
+- score: 10
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 4
+    - field: item1
+      op: is_true
+    - field: item2
+      op: is_true
+    - field: round_count
+      op: gte
+      value: 6
+- score: 9
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 4
+    - field: item1
+      op: is_true
+    - field: item2
+      op: is_true
+mapping_note: 'v5.1-draft-4（Step 12.5 二次修订，用户裁定全七档）：冻结 0/10 分支语义保留——无场或 ≤1 项=0，
+  4 项且含 ①② 且回合数 ≥6=10（原 10 为 ≥3 项且含 ①②，本次按项数单调细分）；冻结 5 分支按项数单调细分：
+  恰 2 项缺 ①=1、恰 2 项含 ①②=3、≥3 项缺 ① 或 ②=5、3 项含 ①②=7、4 项含 ①②=9、4 项含 ①② 且 round_count
+  ≥6=10。7/9 细分依据：7=3 项含 ①②（较 5 更强但仍缺 ③/④ 之一）、9=4 项含 ①②（③④ 全成立）、10=4 项含 ①②
+  且 round_count≥6（至少三个完整"行动/陈述→针对回应"交换，强度更高）。断点 6（回合数）登记为授权细分。
+
+
+  （draft-4 Step 12.5 Step 4：ordinal_mapping 为声明式条件，阈值/断点全部在 YAML 中，ordinal.py 为通用解释器，不再硬编码阈值。）'
+evidence_rule: '通用 *_quote 输出规则：quote 必须是 canonical text 连续逐字子串；优先最短且足以证明判定的片段；禁止跨位置拼接；禁止用 …… 或 ... 省略；禁止改写、概括、纠正标点或更换中文/英文引号；必须单行、禁止换行；需要两处证据时分放不同 quote 字段或数组项。若该引文可能在正文中出现多次（短句/常用词/无标点片段），必须同时提供 nearby_anchor（邻近唯一上下文片段的 span 编号），帮助 Python 唯一定位；未提供导致歧义拒绝时该证据作废。 所有引文必须能在 canonical text 中逐字定位；round1<round2<round3<round4 按正文顺序。 候选场选择由
+  Python 按项数最多执行，并列场全部留档。
+
+  '
+abstain_rule: '无法确认摊牌场/项边界、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN； ABSTAIN 不自动转 0，单独统计 abstention_rate。
+
+  '

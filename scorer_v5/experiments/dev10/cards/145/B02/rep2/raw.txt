@@ -1,0 +1,22 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "conflicts": [
+      {
+        "entity_a": "沈墨寒",
+        "entity_b": "岳母",
+        "issue": "沈墨寒主张林念初腹中孩子与自己无关并要离婚；岳母拒绝接受，指责沈墨寒逼迫怀孕的女儿",
+        "round1_quote": "「我回来了。明天去民政局，把离婚手续办了。」",
+        "round2_quote": "「墨寒！你说什么疯话！」",
+        "round3_quote": "「是我让她背着我怀上别人孩子的？」",
+        "round4_quote": "「你……你这个没心肝的东西！你要逼死她！」",
+        "round_count": 4,
+        "nearby_anchor": "第1章 沈墨寒归家，与林念初及其母亲的对峙",
+        "same_lineage": true,
+        "qualifies": true
+      }
+    ]
+  }
+}
+```

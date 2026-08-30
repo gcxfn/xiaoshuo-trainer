@@ -1,0 +1,64 @@
+metric_id: C14
+construct: 代入感综合
+version: spec-v5.1-draft-3
+semantic_definition: >
+  连续叙述块按全局规则切分并记录角色、位置、非空白码点数；A/B/C 及 X/Y 的每个判定均须保留
+  逐字证据或可复核位置。焦点角色按直接感知/想法块所在场景数最多者确定；并列比较直接块码点
+  总数；仍并列取首次出现者并留档。
+  A 身体化细节：焦点角色的动作或身体感受；B 感知通道：环境/他人信息明确经由焦点角色感官进入；
+  C 心理呈现克制：连续 ≥51 非空白码点、主要抽象解释价值/因果/主题，且不含推动场景的可观察
+  行动、对话交换或新感官输入，全文 ≤2 块。C 列全部候选及计/不计理由。
+  X/Y 任一命中即 0：X1 至少两个角色有直接内心块且非焦点块占全文严格 >30.00%；X2 不依附角色的
+  全知旁白块占比严格 >30.00%。Y1 任意连续 500 非空白码点内至少 3 个乱码块；乱码块含 U+FFFD 或
+  Unicode 类别 Cc/Cs/Co 的非空白码点。Y2 普通叙述碎片化单位占全文严格 >70%，单位为每个仅一个
+  完整句/独立分句且相邻空行隔断，排除对话、列表、代码、诗歌等；Y3 明确整段缺失/顺序冲突且
+  至少一块语义无法由相邻文本重建。全角数字、零星错别字和对话一行不自动命中。
+
+semantic_outputs:
+  # LLM 只提供语义判断与逐字证据；严禁输出 offset/比例/score。
+  blocks:
+    - block_quote: "叙述块逐字引文"
+    - character: "块归属角色（null=无焦点角色）"
+    - block_type: "类型：直接感知/想法/笼统叙述/全知旁白/抽象总结/对话/其他"
+    - a_body: "A 身体化细节引文（若有）"
+    - b_sensory: "B 感知通道引文（若有）"
+    - c_inner: "C 心理呈现克制引文（若有，连续 ≥51 非空白码点、抽象解释价值/因果/主题、无新行动/对话/感官输入）"
+    - y_flag: "Y 否决标记（Y1乱码/Y2碎片/Y3整段缺失/顺序冲突）"
+    - x1_nonfocal: "X1 判定：本块是否非焦点角色的直接内心块"
+    - x2_omniscient: "X2 判定：本块是否不依附角色的全知旁白块"
+  selection_note:
+    - LLM 标块归属与类型；Python 排序选焦点角色（场景数→码点→首次）
+
+derived_features:
+  # 全部 Python 产生。
+  - block_offsets: Python 定位各块 offset（按引文）
+  - block_codepoints: 每块非空白码点数
+  - focal_character: Python 按"场景数→码点→首次"排序选焦点角色
+  - a_ok: A 成立（LLM 标 a_body，Python 校验引文可定位）
+  - b_ok: B 成立（同）
+  - c_ok: C 成立（LLM 标 c_inner，Python 校验块 ≥51 非空白码点且全文 ≤2 块）
+  - x1_ratio: Python 算 X1 非焦点直接内心块码点 / 总码点（判定 严格 >30.00%）
+  - x2_ratio: Python 算 X2 全知旁白块码点 / 总码点（判定 严格 >30.00%）
+  - y_veto: Y 否决（LLM 标 y_flag，Python 校验引文与规则）
+
+score_scale:
+  allowed: [0, 1, 3, 5, 7, 9, 10]
+
+ordinal_mapping:
+  - veto_or_x_over_30: 0
+  - zero_to_two: 5
+  - three: 10
+
+mapping_note: >
+  spec-v5.1-draft-3 restores the v4.0.0 frozen 0/5/10 branch semantics after
+  independent threshold review: C 恢复为"心理呈现克制"（≥51 码点抽象解释块全文 ≤2），
+  X1/X2 恢复为非焦点直接内心块与全知旁白块占比（严格 >30.00%），Y3 恢复为整段缺失/顺序冲突
+  不可重建；X/Y 命中=0、无否决且 0–2 项=5、3 项=10。此为 v5.1 冻结映射。
+
+evidence_rule: >
+  每个 block_quote 必须能在 canonical text 中逐字定位；定位失败 → 该块不计。
+  焦点角色只能由 Python 排序选出（LLM 不直接指定焦点角色）。
+
+abstain_rule: >
+  无法确认块边界/归属、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN；
+  ABSTAIN 不自动转 0，单独统计 abstention_rate。

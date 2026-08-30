@@ -1,0 +1,514 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "blocks": [
+      {
+        "block_quote": "婚前狂欢夜。\n\n闺蜜江灵突然要跟未婚夫周野“赌把大的”。\n\n“我猜你手里有几颗糖。”\n\n“猜对了，不管我的赌约是什么，你都要照办。”\n\n“猜错了，剩下的酒，我全包。”\n\n“我猜，５颗。”\n\n周野摊开右手，３颗。\n\n江灵仰头就要灌酒。\n\n可下一秒——\n\n“你赢了。”\n\n周野从裤兜里伸出左手。\n\n“还有２颗，在这里。”\n\n江灵笑看着他。\n\n眼中却闪出泪光。\n\n她打开提前写好的纸条。\n\n“那就抱歉了，我没想到自己随口就能猜中。”\n\n“你们的婚礼，推迟三年。”",
+        "character": "江灵",
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "满场愕然。\n\n周野却依然笑着。\n\n“我们几个从大学赌到现在，什么时候玩不起过。”\n\n“愿赌服输。”",
+        "character": "周野",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "这不是周野第一次拿我做赌注了。\n\n我抬头看向已过１２点的时钟。\n\n手机震动。\n\n“生日快乐。”\n\n“２７岁没结婚，你就嫁给我。还作数？”\n\n我回复：\n\n“愿赌服输。”",
+        "character": "齐心",
+        "block_type": "直接感知",
+        "a_body": null,
+        "b_sensory": "我抬头看向已过１２点的时钟。手机震动。",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "……\n\n短暂的死寂后，客厅里炸了锅。\n\n“玩这么大？”\n\n“婚礼不是儿戏啊！”\n\n“齐心手写了五百张请柬你知道有多累吗？亲戚全都通知了，说不结就不结，像什么话？”\n\n几个人七嘴八舌地围上来。\n\n越说越急，最后齐齐转向江灵：\n\n“你可是齐心最好的朋友，说句话呀，刚刚就是开个玩笑，不是真赌。”",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "江灵坐在角落里，手里端着酒杯。\n\n避开所有人的目光，慢慢摇匀杯中的红酒。\n\n“我没有开玩笑。”\n\n“你们知道的，我从不拿赌约开玩笑。”\n\n“败运。”",
+        "character": "江灵",
+        "block_type": "对话",
+        "a_body": "江灵坐在角落里，手里端着酒杯。避开所有人的目光，慢慢摇匀杯中的红酒。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "“败运”两个字一出来，客厅的空气彻底凝固了。\n\n所有人都意识到。\n\n这场婚礼，真的黄了。\n\n原因无它。\n\n除了我一个人在画廊工作。\n\n周野他们这帮人，做的就是“赌博”的生意——\n\n珠宝玉石。\n\n他们每个月都要去边境赌石。\n\n甚至他们创业的第一桶金，都是大学时期一起去赌石赌来的。\n\n赌定无悔，是他们的铁律。\n\n没有人再说话了。",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我垂下眼，给自己倒了杯酒：\n\n“周野，你怎么说？”\n\n周野看着我，眼神里带着一丝酒意。\n\n伸出手，习惯性地捏了捏我的脸颊。\n\n“齐心，婚礼三年后还是可以举行的，反正我们时间还长。”\n\n“但为了一场婚期，败了大家的运，那就太不值得了。”\n\n“你会理解的，对不对？”",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": "伸出手，习惯性地捏了捏我的脸颊。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "意料之中的答案。\n\n我能低下头，咽下那口酸涩。\n\n再抬头，已经重新挂上了笑意。\n\n“我不理解，但我同意。”\n\n周野松了一口气，失笑地看着我：\n\n“还能玩梗，看来心情还行。”\n\n气氛骤降，一时没有人再说话。",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": "我能低下头，咽下那口酸涩。",
+        "b_sensory": null,
+        "c_inner": "意料之中的答案。我能低下头，咽下那口酸涩。再抬头，已经重新挂上了笑意。",
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "就在这时候，客厅门被推开了。\n\n沈崖站在门口，也不知道什么时候出去的。\n\n他推着一个三层大蛋糕进来。\n\n上面插着蜡烛，写着“齐心２７岁生日快乐”。\n\n“生日快乐！”\n\n周野先是吃了一惊，接着如梦初醒般，开始第一个鼓掌。\n\n婚前狂欢夜，就这样荒诞地变成了我的生日Ｐａｒｔｙ。",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "几轮酒过。\n\n包厢里充斥着骰盅和唱歌的嘈杂声。\n\n我站起身，走到周野身边。\n\n伸手从他西装裤兜里掏出一把喜糖。\n\n“为什么？”\n\n周野笑了一下。\n\n“就知道瞒不过你。”\n\n他伸长手臂，把我揽在怀里，声音有些微醺的沙哑：\n\n“江灵输了就要喝下全部的酒，她肝不好。如果是你，你也会这样做。”",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": "伸手从他西装裤兜里掏出一把喜糖。他伸长手臂，把我揽在怀里，声音有些微醺的沙哑。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我侧首，定定地看着他。\n\n很想问他，是不是早就知道赌约是什么？\n\n所以早就做好了准备？\n\n但话到嘴边，又觉得毫无意义。",
+        "character": "齐心",
+        "block_type": "想法",
+        "a_body": "我侧首，定定地看着他。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我起身，又去找了江灵。\n\n“为什么？”\n\n江灵看着我。\n\n酒意在她眼中烧起两把不管不顾的炙热火焰。\n\n“因为我爱周野。”\n\n“但我不会跟你道歉，为了你，我已经忍让七年。”",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": "酒意在她眼中烧起两把不管不顾的炙热火焰。",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "意料之中的答案，意料之外的态度。\n\n这就是我从大学开始最好的朋友。\n\n我猛地仰头喝下一大口酒。\n\n突然觉得眼前的一切是那么狗血，又那么可笑。",
+        "character": "齐心",
+        "block_type": "想法",
+        "a_body": "我猛地仰头喝下一大口酒。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我放下酒杯，准备再给自己倒一杯。\n\n一双手稳稳地按住了我的手背。\n\n沈崖不知道什么时候站到了我身后。\n\n俯下身，温热的呼吸凑近我的耳边。\n\n“确认完了吗？”\n\n“那就３天后，结婚？”",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": "一双手稳稳地按住了我的手背。俯下身，温热的呼吸凑近我的耳边。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我微微仰头，看着沈崖。\n\n“说了愿赌服输，但我的生日不是刚开始么？你就这么确定我已经输定了？”\n\n沈崖笑得狡黠。\n\n“没关系，７年我都等着，不差这一天。”",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": "我微微仰头，看着沈崖。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我站起身，对着江灵，扬声道：\n\n“江灵，我也要跟你赌一把。”\n\n包厢里的音乐声似乎都停滞了一瞬。\n\n所有人都愣住了。\n\n平时跟我关系最好的两个朋友最先反应过来，立刻开始起哄：\n\n“对啊！周野，你把婚约赌输了，齐心可以再赢回来嘛！”\n\n“就是就是，我那伴郎服还挺帅的，就这么取消实在太可惜了，赶紧再赌一把！”",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": "我站起身，对着江灵，扬声道",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "可周野的脸色却瞬间沉了下来。\n\n“齐心，不要胡闹。”\n\n“我已经说了愿赌服输，那就只能三年后结婚。”\n\n江灵也适时地捂住嘴，发出一阵干呕的声音。\n\n周野立刻扶住她，转头对我冷声道：\n\n“她已经喝多了，你别再跟她赌了。实在想赌，换个人。”",
+        "character": null,
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我看着周野护着江灵的样子，心里那点最后的期待也开始渐渐缩水。\n\n“好啊。”\n\n我拿起骰盅，用力摇了摇。\n\n“那我跟你赌。大，还是小？”\n\n我紧紧盯着周野的眼睛，内心生出类似孤注一掷的情感。",
+        "character": "齐心",
+        "block_type": "想法",
+        "a_body": "我拿起骰盅，用力摇了摇。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "其实，骰盅里根本没有骰子。\n\n我这么问，只是想试探他的态度。\n\n只要他愿意跟我赌，只要他肯给我一个公平竞争的机会。\n\n我就愿意拿我余生所有的运气，毁了沈崖的赌约。\n\n去等他三年。\n\n感情里，谁又不是个赌徒呢？",
+        "character": "齐心",
+        "block_type": "想法",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "可周野的脸色更差了。\n\n他冷冷地看着我，眼神里满是失望和厌恶：\n\n“输了就缠着赌到赢为止，齐心，你连赌品都没有了吗？”",
+        "character": null,
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我了然。\n\n心里泛起无限的苦涩。\n\n“你连赌都不敢跟我赌了吗？”\n\n“你觉得我会逼你娶我是吗？”\n\n心底那点残存的温度一点一点凉下去。",
+        "character": "齐心",
+        "block_type": "想法",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我当着他的面，缓缓打开了骰盅。\n\n里面空空如也。\n\n所有人都惊讶地看着那个空荡荡的骰盅。\n\n安静了几秒之后，阿凯小声说了一句：\n\n“空赌啊……那不就是必输。”\n\n我努力扯出一个笑容，看着周野：\n\n“我根本没想过要赢你，你何必这么如临大敌呢？”",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": "我当着他的面，缓缓打开了骰盅。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "周野哽住了。\n\n他看着那个空骰盅，似乎意识到了什么。\n\n伸出手，想要拉我。\n\n“我只是不想让你输……”\n\n可你已经让我输了，输得彻彻底底。\n\n我避开了他的手。",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": "伸出手，想要拉我。我避开了他的手。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "周野的手僵在半空，随后笑道：\n\n“我知道你一直想结婚，不就三年吗？难道你对我们的感情没信心？”\n\n“你不会觉得这三年内你会变心吧？反正我十年都不会变。”\n\n我气急反笑。\n\n三言两语之间，好像我才是那个对感情不坚定的人。",
+        "character": "齐心",
+        "block_type": "想法",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": "三言两语之间，好像我才是那个对感情不坚定的人。",
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "看着气氛越跑越偏，终于有人站起来打圆场：\n\n“算了算了，三点多了，今天要不就到这吧。”\n\n几个人如蒙大赦，纷纷起身。\n\n周野扶着江灵站起来，对我说：\n\n“我先送她回去，再送你，反正顺路。”\n\n我笑了笑：\n\n“不用了，我坐沈崖的车。”\n\n他还想说什么。\n\n沈崖已经走进电梯，按着开门键喊我：\n\n“齐心，走了。”\n\n我快步走进电梯，跟他一起离开。",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "宿醉中，我被一阵接一阵的手机声吵醒。\n\n“齐心，酒店那边到底怎么说？”\n\n“齐心，你二叔问婚礼到底还办不办了？”\n\n“你这死丫头，怎么突然取消婚礼，赶紧回来解释！”\n\n我头痛欲裂。\n\n愣在床上好一会儿，才反应过来昨晚的一切不是梦。\n\n盼了七年的婚礼，真的因为一个猜糖游戏，没了。",
+        "character": "齐心",
+        "block_type": "直接感知",
+        "a_body": "宿醉中，我被一阵接一阵的手机声吵醒。我头痛欲裂。愣在床上好一会儿",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我揉了揉太阳穴，点开微信。\n\n９９＋未读讯息。\n\n我点开江灵发来的语音。\n\n“齐心……昨晚的话，说出口就不收回了。你做好准备。”\n\n再往下，是沈崖发来的消息。\n\n“桌上有洗好的苹果，吃了解酒。别忘了你说的，愿赌服输。”",
+        "character": "齐心",
+        "block_type": "直接感知",
+        "a_body": "我揉了揉太阳穴",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "而周野的对话框，干干净净。\n\n朋友圈昨晚有人发了合照，配文“生日快乐，永不散场”。\n\n滤镜是暖色的，每个人都在笑。\n\n我站在蛋糕前面，蜡烛的光映在脸上，看起来好像是真的开心。\n\n下面有人评论“婚礼啥时候补啊”。\n\n发合照的人回了个“哈哈，不讲不讲”。",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我深吸一口气，拨通了周野的号码。\n\n“齐心？”\n\n背景音里，传来江灵的声音：\n\n“周野，我头好疼……”\n\n周野不等我开口，立刻急促地对我说：\n\n“爸妈那边你说一下，酒店退订的事你也顺便处理一下吧，违约金我来出。”\n\n“我这会儿走不开，江灵吐了几次，胃还是不舒服，我陪她去医院挂个水。”",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "没有一句抱歉。\n\n他理所当然地认为，我会像过去七年里的每一次一样。\n\n无条件支持并配合他的每一个决定。\n\n“好。”\n\n我轻声应了一句，挂断了电话。",
+        "character": "齐心",
+        "block_type": "想法",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": "没有一句抱歉。他理所当然地认为，我会像过去七年里的每一次一样。无条件支持并配合他的每一个决定。",
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "拿出一个空纸箱，开始收拾那些和周野有关的东西。\n\n大学时他熬夜为我手写的恋爱纪念册。\n\n里面还夹着大三那年他送的干枯玫瑰花瓣。\n\n轻轻一碰，就碎成了红色的粉末。",
+        "character": "齐心",
+        "block_type": "直接感知",
+        "a_body": "轻轻一碰，就碎成了红色的粉末。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我们亲手制作的第一对情侣马克杯。\n\n杯底还有他歪歪扭扭刻的“Ｚ＆Ｑ”。\n\n现在看也已经褪色了。\n\n还有一个特殊的祖母绿翡翠手镯。\n\n大四时几个好友组团去赌石。\n\n他力排众议，非要选那枚大家都不看好的又黑又重的石头。\n\n我掏出身上所有的积蓄给他。\n\n原石切开的那一刻，他兴奋地把我抱起来亲吻。\n\n“齐心，我要用这块翡翠打一个最好的镯子给你。”\n\n“珠宝的价值在于永恒，你就是我的无价之宝。”",
+        "character": "齐心",
+        "block_type": "笼统叙述",
+        "a_body": "原石切开的那一刻，他兴奋地把我抱起来亲吻。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "七年，两千五百多个日夜。\n\n我以为我们早就赢了。\n\n却没想到他会赌上我们的未来。\n\n我把这些东西一件件扔进纸箱。\n\n然后把它拖到楼下。",
+        "character": "齐心",
+        "block_type": "想法",
+        "a_body": "我把这些东西一件件扔进纸箱。然后把它拖到楼下。",
+        "b_sensory": null,
+        "c_inner": "七年，两千五百多个日夜。我以为我们早就赢了。却没想到他会赌上我们的未来。",
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "收破烂的阿姨惊呼出声：\n\n“姑娘，你是不是扔错了？这都多好的东西啊！”\n\n我平静地笑了笑。\n\n“没扔错。”\n\n“这些都不要了，你要的话，都收走。”\n\n阿姨千恩万谢地接过纸箱。\n\n我脱下手上那枚订婚钻戒，放进纸箱里。\n\n“对了，这个也送你。”\n\n阿姨愣在原地，满脸不可置信。",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": "我脱下手上那枚订婚钻戒，放进纸箱里。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我打了个车，来到酒店。\n\n经理看到我独自一人走进来，问道：\n\n“齐心小姐，您一个人来的吗？”\n\n我回答：\n\n“哦……我爱人忙着去通知亲戚们改期的事情了。”\n\n经理恍然大悟，高兴地连连点头：\n\n“原来是改期啊！我还以为取消了呢。准备改到哪天？我马上帮您办。”\n\n“后天，谢谢。”",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "走出酒店大门的时候，阳光有些刺眼。\n\n我抬起头，看着湛蓝的天空。\n\n觉得心里某个一直悬着的东西，终于彻底落了地。\n\n这７年的大梦。\n\n终于醒了。",
+        "character": "齐心",
+        "block_type": "想法",
+        "a_body": "我抬起头，看着湛蓝的天空。",
+        "b_sensory": "走出酒店大门的时候，阳光有些刺眼。",
+        "c_inner": "觉得心里某个一直悬着的东西，终于彻底落了地。这７年的大梦。终于醒了。",
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "晚上回到家，周野就坐在沙发上等我。\n\n我愣了一下。\n\n“你怎么来了？”\n\n周野眉头紧锁，言语间满是压抑的怒气。\n\n“酒店那边跟我说，你没有取消婚礼，只是延期到后天？”",
+        "character": null,
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "原来是为了这件事。\n\n我低头换鞋。\n\n“嗯，但是定酒店的钱我已经转你账户了。”\n\n他露出一副极力忍耐的表情。\n\n终于忍不住说出了重话。\n\n“再等三年，你就等不了了吗？”\n\n“齐心，你的生活里就只有嫁给我这一件事了吗？你是嫁不出去了吗？”",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": "我低头换鞋。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "他站起身，走到我面前。\n\n“赌石这么久，阿凯他们都很相信运气的。”\n\n“现在是因为公司没遇到什么事，如果遇到了，大家心里肯定对我们反悔结婚有意见。”\n\n“是我一直把你保护得太好了，你以为公司走到今天很容易？你怎么就不能懂点事？”\n\n说完，他快步走向大门。",
+        "character": null,
+        "block_type": "对话",
+        "a_body": "他站起身，走到我面前。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "“酒店那边的电话我不会再接，婚礼你直接取消。不然到时没有新郎，丢人的是你。”\n\n“明天我要跟江灵他们去云南赌石，大概一个星期回来。你自己好好冷静冷静。”\n\n门被重重关上。\n\n我站在原地，听着楼道里渐行渐远的脚步声。\n\n走到密码锁前。\n\n把密码从我们在一起的日期，改成了我自己的生日。",
+        "character": "齐心",
+        "block_type": "直接感知",
+        "a_body": "我站在原地，听着楼道里渐行渐远的脚步声。走到密码锁前。把密码从我们在一起的日期，改成了我自己的生日。",
+        "b_sensory": "门被重重关上。",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "第二天一早，周野的电话打了过来。\n\n“齐心，我到机场了，还有一小时才进安检。你要不要来……送送我？”\n\n过去每次他去外地，都是我接机送机，风雨无阻。\n\n“不去了，今天有事。”\n\n电话那头顿了一下，声音更加放软了一些：\n\n“昨天我有点情绪，说的一些话你不要当真。我保证，等你三十岁的时候，一定给你一个最好的婚礼。”",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": "过去每次他去外地，都是我接机送机，风雨无阻。",
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "“如果那天，江灵又要跟你打赌呢？”\n\n电话那头明显一窒。\n\n接着，他的声音染上了不悦：\n\n“齐心，你还是在计较这件事。”\n\n“我没有计较。我只是想说，如果在你心里，赌约比诺言重要，那就不要轻易许下诺言。”\n\n又是一番漫长的沉默。",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": "我没有计较。我只是想说，如果在你心里，赌约比诺言重要，那就不要轻易许下诺言。",
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我轻声喊他：\n\n“阿野。”\n\n“嗯？”\n\n这时，电话那头传来了飞机引擎启动的轰鸣声。\n\n我笑了笑，轻声说：\n\n“这七年，还是要谢谢你。”\n\n轰鸣声中，他有些怔忪地问：\n\n“你说什么？”\n\n“没什么。”我对着手机说，“阿野，祝你们一路顺风。”",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": "这时，电话那头传来了飞机引擎启动的轰鸣声。",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "“好。”他顿了顿，像是察觉到什么，语气里带着一丝安抚。\n\n“齐心，你不要担心，我不会……”\n\n话还没说完，电话那头传来江灵娇柔的声音：\n\n“周野，快来取票啦！”\n\n我按下了挂断键。\n\n然后打开手机，点进周野的家人群，点击“删除并退出”。",
+        "character": "齐心",
+        "block_type": "直接感知",
+        "a_body": "我按下了挂断键。然后打开手机，点进周野的家人群，点击“删除并退出”。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "沈崖打来电话。\n\n“我在楼下了。”他的声音低沉温和。\n\n“明天就是婚礼，现在接你去试婚纱。”\n\n“好。”\n\n我拿起包，轻快地走了出去。",
+        "character": "齐心",
+        "block_type": "对话",
+        "a_body": "我拿起包，轻快地走了出去。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "……\n\n晚上，瑞丽某酒店。\n\n阿凯瘫在大堂沙发上刷手机，忽然一个激灵坐直了。\n\n“我槽！”\n\n他举着手机转向周野。\n\n“阿野！齐心发朋友圈了！她明天结婚啊！”\n\n周野疲惫地揉了揉眉心。\n\n“让她结。“\n\n“我不回去，看她怎么结！”",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "阿凯支支吾吾，冷汗冒了出来。\n\n“新郎是、新郎是……”\n\n“哎你自己看吧。”\n\n实在不敢说，直接把手机递给了周野。\n\n周野的视线漫不经心地扫过去，骤然顿住。\n\n瞳孔猛地收缩。\n\n他猛地站起身，不顾江灵在身后错愕的呼喊。\n\n像个疯子一样从大堂奔了出去。",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": "阿凯支支吾吾，冷汗冒了出来。周野的视线漫不经心地扫过去，骤然顿住。瞳孔猛地收缩。他猛地站起身……像个疯子一样从大堂奔了出去。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": true
+      },
+      {
+        "block_quote": "周野连外套都没来得及披。\n\n只穿着件单薄的衬衫，一路狂奔出酒店大堂。\n\n他一边跑，一边给齐心打电话。\n\n可那边响起的一直都是忙音。\n\n他拦下一辆亮着空车灯的出租车。\n\n可下一秒，一股不小的力道抵住了车门。\n\n江灵半个身子挤了进来，发丝凌乱，胸口剧烈起伏着：\n\n“周野！你要去哪儿？！”",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": true
+      },
+      {
+        "block_quote": "“去机场！”\n\n周野双眼猩红，一把推开她的手。\n\n“你松开！”\n\n“你疯了吗！”\n\n江灵死死拽住他。\n\n“明天就是赌石会！大家把全部身家都押上了，你这个时候临时离开，我们怎么办？！”\n\n她身后传来阿凯和另外几个朋友的声音。\n\n＂阿野，你先下来，有话好好说。＂",
+        "character": null,
+        "block_type": "对话",
+        "a_body": "周野双眼猩红，一把推开她的手。江灵死死拽住他。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "“我管不了那么多了！”\n\n周野猛地转头，眼底满是血丝，声音嘶哑。\n\n“她要结婚了！”\n\n“沈崖那家伙……我操他妈的！”\n\n他气得浑身发抖，狠狠一拳砸在前座靠背上。\n\n“砰”的一声闷响。\n\n司机被这一拳吓了一跳，扭头骂骂咧咧。\n\n＂你们到底走不走？不走别耽误我做生意！＂",
+        "character": null,
+        "block_type": "对话",
+        "a_body": "他气得浑身发抖，狠狠一拳砸在前座靠背上。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "江灵一把攥住了他的领带。\n\n死死盯着他的眼睛，厉声道：\n\n“你清醒一点！”\n\n“结婚是那么容易的事情吗？酒店、请柬、亲戚、朋友，哪一样是说办就办的？”\n\n“这么长时间，除了你，齐心还喜欢过什么人？万一她就是为了逼你回去结婚呢？”\n\n这句话像一盆冷水，兜头浇下。\n\n周野愣住了。\n\n他胸口剧烈起伏着，眼神从猩红渐渐变得涣散。",
+        "character": null,
+        "block_type": "对话",
+        "a_body": "江灵一把攥住了他的领带。死死盯着他的眼睛。他胸口剧烈起伏着，眼神从猩红渐渐变得涣散。",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient":

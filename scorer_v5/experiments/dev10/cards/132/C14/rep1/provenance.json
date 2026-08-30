@@ -1,0 +1,41 @@
+{
+  "version": "v5.1-provenance-1",
+  "records": [
+    {
+      "run_id": "dev10_v5_r2",
+      "book_id": "132",
+      "metric_id": "C14",
+      "rep": 1,
+      "model": "MiniMax-M3",
+      "provider": "minimax-cn",
+      "model_params": {
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "seed": 0,
+        "max_tokens": 8192
+      },
+      "prompt_hash": "8b77f1811d20f9498dd020c5d01cf6dc085988be77cfbf830eb960733b5587eb",
+      "spec_hash": "9befbf7f93247e0c6b2c0bd8c9163bef8f34cfed859ac9d8361135a8e33dff84",
+      "text_hash": "53944a060a31c434b7f128261dd34ccc0b267e1995a90f367335f689d474333e",
+      "sidecar_hash": "e2570472e02dcc5b43e1630e37849195ae8356b6f8a636e01e6df504498747c0",
+      "raw_stdout_hash": "c2ee382b61bc9576af177d66d97650eed18d1d446806879177b58ed632f73561",
+      "parsed_output": {
+        "status": "ABSTAIN",
+        "reason": "正文为超长连续叙事，虽可明确感知到主要叙述角色为韩惠珍，且存在大量身体感受、感官信息和直接内心呈现，但无法在不逐块可靠切分并逐项保留字数证据、场景数、码点总数及C类候选判定依据的情况下完成符合spec-v5.1-draft-4的综合判定；尤其X1、X2、Y1、Y2需对全文逐块计算，当前证据不足。"
+      },
+      "validator_result": {
+        "parse_status": "OK",
+        "v1_schema_ok": true,
+        "v2_evidence_ok": true,
+        "v3_logic_ok": true,
+        "outcome": "ABSTAIN",
+        "accepted_semantic_facts": true,
+        "is_abstain": true,
+        "issues": [],
+        "evidence_locations": {}
+      },
+      "final_score": null,
+      "timestamp": "2026-08-29T17:27:47.502403+00:00"
+    }
+  ]
+}

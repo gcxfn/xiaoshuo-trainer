@@ -1,0 +1,14 @@
+{
+  "http_status": 200,
+  "usage": {
+    "total_tokens": 21404,
+    "total_characters": 0,
+    "prompt_tokens": 21187,
+    "completion_tokens": 217,
+    "prompt_tokens_details": {
+      "cached_tokens": 21186
+    }
+  },
+  "id": "06e24a929ae471c4aa288c49fdc4dc13",
+  "model_returned": "MiniMax-M3"
+}

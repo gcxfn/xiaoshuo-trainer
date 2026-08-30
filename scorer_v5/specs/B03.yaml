@@ -1,0 +1,125 @@
+metric_id: B03
+construct: 信息差设置
+version: spec-v5.1-draft-9
+semantic_definition: '核心秘密必须同时满足：与主线冲突直接相关；至少一方主要角色明确不知道而读者或另一角色 知道；其埋设、揭开或利用在正文有可定位状态变化。每条秘密强制五格：内容、知方、不知方、
+  首次可观察投放位置、状态变化/利用场景。角色"知道"只能由叙述明示、明确反应、使用该信息 或后文揭示支持；读者推断不算。普通世界观背景、未改变状态的设定不算秘密。
+
+  '
+semantic_outputs:
+  secrets:
+  - content: 秘密内容
+  - knower: 知方（叙述明示/明确反应/使用信息/后文揭示）
+  - unknower: 不知方
+  - first_drop_quote: 首次可观察投放位置的对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - state_change_quote: 状态变化/利用场景对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - is_independent: 是否独立秘密（知情主体或功能不同，用于①去重）
+  - bottom_card_held: ②反制底牌：主角方转折前已持有、目标方未公开（引文）
+  - reveal_turns_mainline: ③秘密揭开/利用后是否改变主线目标/关系/资源/计划（引文）
+derived_features:
+- independent_secret_count: 独立秘密计数（LLM 标 is_independent，Python 去重计数，判定 ①≥2）
+- bottom_card_flag: ②是否成立（LLM 判定，Python 校验引文可定位）
+- turn_point_flag: ③是否成立（LLM 判定，Python 校验引文可定位）
+- combo_10: (①且②) 或 (①且③)
+- combo_5: 恰好一项，或 ②且③但①不成立
+score_scale:
+  allowed:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+  - 10
+ordinal_mapping:
+- score: 0
+  when:
+    field: criterion_count
+    op: eq
+    value: 0
+- score: 9
+  when:
+    or:
+    - and:
+      - field: c1
+        op: is_true
+      - field: c2
+        op: is_true
+      - field: independent_secret_count
+        op: eq
+        value: 2
+    - and:
+      - field: c1
+        op: is_true
+      - field: c3
+        op: is_true
+      - field: independent_secret_count
+        op: eq
+        value: 2
+- score: 10
+  when:
+    or:
+    - and:
+      - field: c1
+        op: is_true
+      - field: c2
+        op: is_true
+      - field: independent_secret_count
+        op: gte
+        value: 3
+    - and:
+      - field: c1
+        op: is_true
+      - field: c3
+        op: is_true
+      - field: independent_secret_count
+        op: gte
+        value: 3
+- score: 7
+  when:
+    and:
+    - field: c2
+      op: is_true
+    - field: c3
+      op: is_true
+    - field: c1
+      op: is_false
+- score: 5
+  when:
+    and:
+    - field: c1
+      op: is_true
+    - field: c2
+      op: is_false
+    - field: c3
+      op: is_false
+- score: 3
+  when:
+    and:
+    - field: c2
+      op: is_true
+    - field: c1
+      op: is_false
+    - field: c3
+      op: is_false
+- score: 1
+  when:
+    and:
+    - field: c3
+      op: is_true
+    - field: c1
+      op: is_false
+    - field: c2
+      op: is_false
+mapping_note: 'v5.1-draft-4（Step 12.5）正式启用七档。冻结 v4.0.0 边界语义逐字保留：0项=0、 (①且②)或(①且③)=10
+  原封不动；冻结 5 分支（恰好一项，或②且③但①不成立）细分： ②且③无①=7、①only=5、②only=3、③only=1。此为 v5.1 冻结映射，后续修改必须升版本并登记。
+
+
+  （draft-4 Step 12.5 Step 4：ordinal_mapping 为声明式条件，阈值/断点全部在 YAML 中，ordinal.py 为通用解释器，不再硬编码阈值。）
+  （Step 12.5 二次修订：9=①&(②或③) 且独立秘密=2；10=①&(②或③) 且独立秘密≥3，用户裁定全七档）'
+evidence_rule: '通用 *_quote 输出规则：quote 必须是 canonical text 连续逐字子串；优先最短且足以证明判定的片段；禁止跨位置拼接；禁止用 …… 或 ... 省略；禁止改写、概括、纠正标点或更换中文/英文引号；必须单行、禁止换行；需要两处证据时分放不同 quote 字段或数组项。若该引文可能在正文中出现多次（短句/常用词/无标点片段），必须同时提供 nearby_anchor（邻近唯一上下文片段的 span 编号），帮助 Python 唯一定位；未提供导致歧义拒绝时该证据作废。 first_drop_quote / state_change_quote / bottom_card_quote 必须能在 canonical
+  text 中逐字定位； 定位失败 → 对应判定项不成立。①独立秘密计数由 Python 按 is_independent 去重。
+
+  '
+abstain_rule: '无法确认秘密五格完整、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN； ABSTAIN 不自动转 0，单独统计 abstention_rate。
+
+  '

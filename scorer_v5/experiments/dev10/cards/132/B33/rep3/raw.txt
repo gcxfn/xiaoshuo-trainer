@@ -1,0 +1,86 @@
+Looking at this text, I need to identify independent "small satisfaction points" (小爽点) — scenes where the protagonist (韩惠珍 or 韩家成 as the clearly righteous side) takes active action that results in visible victory for their side, with on-the-spot closure, and outside the finale.
+
+I need to carefully analyze the finale first, then identify qualifying events with verbatim quotes.
+
+**Finale determination:** The final conflict that resolves the main storyline is the confrontation with 罗美娟 at the sanatorium (Chapter 20-21), where all parties are rescued and justice is served. Events at/after this point (Chapter 21's aftermath) don't qualify as new small satisfaction points.
+
+**Qualifying small satisfaction points found:**
+
+1. 韩家成 overturning 陆向文's narrative with the box contents — active revelation producing A1 (陆向文's fear/reaction)
+2. 陆振海 exposed as letter concealer — 陈律师's evidence producing A1/A3
+3. 陆向文's doctorate publicly suspended — A4 (公开通告)
+4. 韩家成 exposing old photo proving collusion — A1 (陆向文 turns pale)
+5. 马荣's accomplice identity exposed — A4 evidence
+6. 陆向文 confesses under pressure — A1 (broken response)
+7. 陈律师 reveals 罗美娟's true identity — A1 (陆向文's blood drains)
+8. 陆向文 secretly switching to fake parameters at sanatorium — active deception producing A1 (罗美娟's smile disappears)
+
+The finale scene (罗美娟 defeated, all rescued) is the terminal scene — no events after Chapter 20 qualify.
+
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "finale_quote": "医护人员将他们和陆振海同时送往医院。韩家成也因腿部伤势再次加重，被推进手术室。",
+    "events": [
+      {
+        "active_action_quote": "韩家成拿起那份裁定书，放到博士学位证旁边。",
+        "nearby_anchor": "我的学位证为什么在他手里，你该问他。",
+        "a_code": "A1",
+        "a_quote": "陆向文突然冲过来。家成，今天是团聚的日子，有什么事以后再说！",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "她翻开最后一页。我只看了一眼，浑身的血就凉了。",
+        "nearby_anchor": "签收人不是陆向文。是和我同床共枕十八年的陆振海。",
+        "a_code": "A1",
+        "a_quote": "陆振海的脸一阵青一阵白。时间太久，我记不清了。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "陈律师替韩家成处理好伤口，随后打开电脑。她登录学校官网，输入调查编号。页面上很快出现一份公开通告。陆向文的博士论文涉嫌侵占他人研究成果。学校暂停其学位效力。",
+        "nearby_anchor": null,
+        "a_code": "A4",
+        "a_quote": "陆向文的博士论文涉嫌侵占他人研究成果。学校暂停其学位效力，并要求他在规定期限内回去接受问询。他名下的专利收益也已被冻结。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "铁盒也被工作人员当场打开。里面放着几份原料采购合同。最下面还压着一张旧照片。",
+        "nearby_anchor": "照片拍摄于八年前。地点是一家国外餐厅。陆向文、陆广生和一名金发男人坐在同一张桌前。",
+        "a_code": "A1",
+        "a_quote": "陆向文看见照片，脸色惨白。这不是原件。有人故意害我！",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "贺主任接到电话。警方在那套公寓里找到了陆广生。",
+        "nearby_anchor": null,
+        "a_code": "A4",
+        "a_quote": "他已经死亡多日。而房间墙上，用红色颜料写着一句话。下一个，就是韩家成。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "陆向文说完这句话，低下头不敢看我。我却觉得周围的一切都变得陌生。",
+        "nearby_anchor": "她不是我妈。我从来没有见过她。",
+        "a_code": "A1",
+        "a_quote": "陆向文双手捂住脸。我一开始只想拿到研究资料。我没想让家成坐牢。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我拿着协议去见陆向文。他看到罗美娟的名字后，整个人猛地后退。",
+        "nearby_anchor": "她说公司需要一项新技术，只要我帮她拿到，她就接我和爸去国外生活。",
+        "a_code": "A1",
+        "a_quote": "陆向文死死盯着照片，嘴唇逐渐失去血色。过了许久，他终于抬起头。她不是八年前才联系我的。从我十岁进陆家的第一天起，她就一直在给我写信。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "陆向文把电脑接入金属箱，输入一串密码。三分钟后，金属箱果然发出刺耳的警报。屏幕上所有数据同时变红。韩家成猛地拔掉电源。",
+        "nearby_anchor": "整栋楼的铁门开始自动开启。外面的行动人员立刻冲向主楼。",
+        "a_code": "A1",
+        "a_quote": "罗美娟脸上的笑瞬间消失。你骗我？",
+        "qualifies": true
+      }
+    ]
+  },
+  "reason": "主线终局为罗美娟在疗养院被制服、三人获救（第20-21章），其后第21章的善后/审判/年节情节不构成新的主角主动闭环爽点。共识别8个符合'胜负可见+主角方主动+当场闭环+终局外'的独立小爽点，每个均有A1或A4逐字证据。多个发现（如陆向文获博士学位、金镯子、礼物等）属于对手得意/欺骗展示，不单独计为爽点；陈律师揭露快递签收人、官网学位暂停通告、铁盒照片、公寓陆广生之死等均独立构成闭环场景。韩家成在疗养院外的对话/拔电源与陆向文接入金属箱的主动动作合并为同一事件。排除了计划/内心独白/未产生A证据的行为。"
+}
+```

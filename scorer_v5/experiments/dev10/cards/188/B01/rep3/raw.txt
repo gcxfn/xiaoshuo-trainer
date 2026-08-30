@@ -1,0 +1,79 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "我女儿出生后的第三分钟，我在手术灯的反光里看见了弹幕。",
+        "nearby_anchor": "【别让你老公单独抱孩子。】...所以他会把你的孩子换给许清漪，再假装那具死胎是你的女儿。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "下一秒我偏过头，看见他手机屏幕上刚发出去的一行字。",
+        "nearby_anchor": ""清漪，撑住。孩子的事我会想办法的。"",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "护士把孩子抱到我胸前。",
+        "nearby_anchor": "她耳后有一点极淡的香气。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "我侧过身，避开。",
+        "nearby_anchor": "他的手僵在半空。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "弹幕慢慢浮出来。",
+        "nearby_anchor": "【他就是靠这句话让你放手的。】",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "凌晨一点，护士推着车进来。",
+        "nearby_anchor": ""闻女士，该给宝宝测黄疸了。"",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "凌晨两点半，陆时谦进来。",
+        "nearby_anchor": "他手里拿着一只奶瓶。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "三点多，又有医生送药进来。",
+        "nearby_anchor": ""闻女士，您精神高度紧张，影响恢复。"",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "他摔门出去。",
+        "nearby_anchor": "女儿被声音惊醒，皱着小脸哭。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_qu

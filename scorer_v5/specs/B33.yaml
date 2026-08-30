@@ -1,0 +1,116 @@
+metric_id: B33
+construct: 小爽点密度
+version: spec-v5.1-draft-9
+semantic_definition: '独立小爽点必须同时满足胜负可见、主角方主动、当场闭环。胜负证据至少一类：A1对手受挫 反应（语塞、改口、僵住、退让、离场或计划落空）；A2对手基于假象信任/得意/放松/轻敌；A3第
+  三方明确倒向主角方或质疑对手；A4主角方当场取得钱、证据、地位、承诺或关键信息。每类须逐字 证据。
+  你判断：胜负可见、主角主动、当场闭环。终局排除由程序根据 finale_quote 完成，不要因终局位置把 qualifies 判否。
+  终局按全局主线规则：最后一个改变主线最终归属/结果的冲突目标场景；开放结局、无明确最终归属、或无法识别唯一终局时，finale_quote=null，不排除任何场景，不是 ABSTAIN。
+  事件按因果连续段合并：同一主动动作及连续反应只计 1；新的主角 主动行动且产生独立 A 结果才新计；计划、内心嘲讽、离开且无 A 证据不计。
+  确认没有合格事件时，status=OK 且 events=[]，不是 ABSTAIN。
+
+  '
+semantic_outputs:
+  finale_quote: 主线终局场景对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（最后一个改变主线最终归属/结果的冲突目标场景）；开放结局或无明确最终归属时为 null（无可识别终局，不排除任何场景）
+  events:
+  - active_action_quote: 主角主动动作对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段），必须能在 canonical text 中逐字找到
+  - nearby_anchor: 邻近锚点/段落证据（可选，帮助 Python 定位）
+  - a_code: A 证据代码（A1/A2/A3/A4）
+  - a_quote: A 证据对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段），必须能在 canonical text 中逐字找到
+  - qualifies: 是否符合小爽点定义（胜负可见+主角主动+当场闭环）；终局排除由程序根据 finale_quote 完成，LLM 不判断终局外
+  exclude_notes:
+  - 计划/内心嘲讽/离开且无 A 证据，标记为不计
+derived_features:
+- resolved_start_offset: Python 在 canonical text 中定位 active_action_quote 生成的起始偏移
+- resolved_end_offset: Python 定位 a_quote 引文结束生成的结束偏移
+- finale_start: Python 定位 finale_quote 生成的终局起点偏移（finale_quote 为 null 时不排除任何事件）
+- is_finale: Python 判断事件是否落在 finale_start 之后（终局事件不计入 N）
+- N: 独立小爽点件数（按 resolved 位置区间因果连续段合并、排除终局后计数）
+- L: len(re.sub(r'\s+', '', canonical_text))
+- K: L/1000
+- F: N / K（保存原始连续值，两位小数展示）
+score_scale:
+  allowed:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+  - 10
+ordinal_mapping:
+- score: 0
+  when:
+    field: F
+    op: lt
+    value: 0.6
+- score: 1
+  when:
+    and:
+    - field: F
+      op: gte
+      value: 0.6
+    - field: F
+      op: lt
+      value: 0.75
+- score: 3
+  when:
+    and:
+    - field: F
+      op: gte
+      value: 0.75
+    - field: F
+      op: lt
+      value: 0.9
+- score: 5
+  when:
+    and:
+    - field: F
+      op: gte
+      value: 0.9
+    - field: F
+      op: lt
+      value: 1.2
+- score: 7
+  when:
+    and:
+    - field: F
+      op: gte
+      value: 1.2
+    - field: F
+      op: lt
+      value: 1.5
+- score: 9
+  when:
+    and:
+    - field: F
+      op: gte
+      value: 1.5
+    - field: F
+      op: lt
+      value: 1.8
+- score: 10
+  when:
+    field: F
+    op: gte
+    value: 1.8
+mapping_note: 'v5.1-draft-4（Step 12.5）全七档，冻结 v4.0.0 边界语义逐字保留： F<0.60=0、F≥1.80=10。
+  断点与 draft-3 快照一致：0.60/0.75/0.90/1.20/1.50/1.80 → 0/1/3/5/7/9/10。终局排除改为语义终局：
+  LLM 输出 finale_quote（最后一个改变主线归属/结果的场景）；开放结局为 null 不排除。此为 v5.1
+  冻结映射，后续修改必须升版本并登记。'
+evidence_rule: '通用 *_quote 输出规则：quote 必须是 canonical text 连续逐字子串；优先最短且足以证明判定的片段；禁止跨位置拼接；禁止用 …… 或 ... 省略；禁止改写、概括、纠正标点或更换中文/英文引号；必须单行、禁止换行；需要两处证据时分放不同 quote 字段或数组项。若该引文可能在正文中出现多次（短句/常用词/无标点片段），必须同时提供 nearby_anchor（邻近唯一上下文片段的 span 编号），帮助 Python 唯一定位；未提供导致歧义拒绝时该证据作废。 B33 短引文约束：active_action_quote/a_quote/finale_quote 必须单行、禁止换行、建议 10–60 字、最短片段；允许去掉外围中文引号复制内部文字（须仍为原文连续子串）；finale_quote 只给一行短锚点。 LLM 输出的 active_action_quote、a_quote 与 finale_quote 引文必须能在 canonical text 中逐字定位；
+  Python 定位失败 → 该件标记 evidence_mismatch，不计入 N。 每件必须有 resolved_start_offset < resolved_end_offset，区间重叠或缺失报校验失败。
+  终局事件（resolved_start_offset ≥ finale_start）不计入 N；finale_quote 为 null（开放结局/无明确最终归属）时不排除任何事件。
+
+  '
+abstain_rule: 'K=0 时输入无效（构建侧拒绝）。 无法确认事件边界、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN；
+  无法识别唯一终局应 finale_quote=null 并继续列出事件，不是 ABSTAIN。
+  确认没有任何合格事件应输出 OK 且对应事件数组为空，不是 ABSTAIN。 ABSTAIN
+  不自动转 0，单独统计 abstention_rate。
+
+  '
+event_schema:
+- active_action_quote: 主角主动动作对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（无 offset 字段）
+- nearby_anchor: 邻近锚点（可选）
+- a_code: A 证据代码（A1/A2/A3/A4）
+- a_quote: A 证据对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+- qualifies: 是否符合定义

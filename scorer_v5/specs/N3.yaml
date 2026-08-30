@@ -1,0 +1,118 @@
+metric_id: N3
+construct: 强情弱写
+version: spec-v5.1-draft-9
+semantic_definition: '列出全书所有可观察情绪峰值候选（情绪状态或关系状态发生最大改变且有位置/前后状态）。每个 候选必须记录场景、位置、变化前后状态和逐字承载证据。按"改变主线情绪或关系状态"→"后果
+  不可逆性"→"后文明确回指"排序；同序并列全部保留，并对每个并列候选执行同一计数。选定峰值 两侧各 200 个非空白 Unicode 码点的窗口；跨段按正文码点连续截取，窗口不足则记录实际长度。
+  ①峰值可定位：候选有明确状态变化和唯一位置；无候选为 0 分。 ②直给词收敛：窗口内直接描述极限情绪强度的词计数≤2。词表固定包含"嘶吼、撕心裂肺、目眦欲裂、
+  崩溃、痛不欲生、嚎啕大哭、歇斯底里、绝望、狂喜、欣喜若狂"等；同一词每次出现计一次，否定/ 引用他人说法仍按字面出现计数，隐喻不计。 ③承载转译：窗口有动作、物件、声场、静默或短句等可观察承载，且情绪状态与其因果可指认；
+  仅形容词不成立。 ④主角本体收敛：主角若有宣泄，窗口内无上述极限词直接描述其本体，或其反应主要由动作/物件/ 短句承载；配角宣泄不替代③。
+
+  '
+semantic_outputs:
+  peaks:
+  - peak_quote: 峰值候选句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（有明确状态变化和位置）
+  - peak_rank_note: 三序判定：主线情绪/关系状态改变/不可逆/后文回指（LLM 判序）
+  - transference_quote: ③承载转译对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（动作/物件/声场/静默/短句）
+  - convergence_quote: ④主角本体收敛对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（若主角宣泄，反应由动作/物件/短句承载）
+  - extreme_word_quotes: 极限词候选（LLM 标，Python 用固定词表匹配计数）
+  criteria:
+  - peak_found: ①峰值存在（至少一个可定位候选）
+  - extreme_le_2: ②窗口内极限词 ≤2
+  - transference: ③承载转译
+  - convergence: ④本体收敛
+  selection_note:
+  - LLM 列全部峰值候选并保留并列；Python 按三序排序并保留同序并列，对每个并列候选执行 同一计数（②③④ 以并列候选各自窗口分别判定，取最高档路径留档）
+derived_features:
+- resolved_peak_offsets: Python 定位各 peak_quote 生成的码点偏移清单（并列候选全部保留）
+- peak_selection: Python 按三序排序保留同序并列（无候选则①不成立）
+- windows_200: Python 对每个并列候选截取峰值两侧各 200 非空白码点
+- extreme_word_counts: Python 用固定词表匹配各窗口内极限词计数（判定 ②≤2，取并列候选最高档路径）
+- transference_ok: Python 校验各并列候选 transference_quote 在对应窗口内
+- convergence_ok: Python 校验各并列候选 convergence_quote 在对应窗口内
+- extreme_word_count: 最佳路径窗口内极限词计数（并列候选取最高档路径，同档取最小词数；7/9 细分：4 项时 ≥1 为 7、=0 为 9）
+- peak_all_irreversible: 最佳路径候选的三序判定均含"后果不可逆"（LLM peak_rank_note，Python 校验；10 档强度条件）
+- criterion_count: ①②③④成立计数（并列候选取最高档路径）
+score_scale:
+  allowed:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+  - 10
+ordinal_mapping:
+- score: 0
+  when:
+    field: peak_found
+    op: is_false
+- score: 1
+  when:
+    field: criterion_count
+    op: eq
+    value: 1
+- score: 3
+  when:
+    field: criterion_count
+    op: eq
+    value: 2
+- score: 5
+  when:
+    field: criterion_count
+    op: eq
+    value: 3
+- score: 7
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 4
+    - field: extreme_word_count
+      op: gte
+      value: 1
+- score: 9
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 4
+    - field: extreme_word_count
+      op: eq
+      value: 0
+    - field: peak_all_irreversible
+      op: is_false
+- score: 10
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 4
+    - field: extreme_word_count
+      op: eq
+      value: 0
+    - field: peak_all_irreversible
+      op: is_true
+mapping_note: '（draft-4 Step 12.5 二次修订：用户裁定全七档。冻结 0 分支仅保留"无候选"=0；原
+  合并进 0 的计数 1–2 项拆分：1 项=1、2 项=3、3 项=5；4 项（①+②③④全成立）按窗口极限词数与
+  三序不可逆细分：extreme_word_count≥1=7、=0=9、=0 且 peak_all_irreversible（三序判定全含
+  "后果不可逆"）=10。7/9 细分依据：extreme_word_count 连续计数；9/10 细分依据：peak_all_irreversible
+  （LLM peak_rank_note 三序判定，Python 校验），单调递进。）
+
+  spec-v5.1-draft-3 restores the v4.0.0 frozen 0/5/10 branch semantics
+  after independent threshold review: 峰值候选恢复为全书全部候选、三序排序并保留同序并列，对每个 并列候选执行同一计数；极限词表恢复为
+  v4.0.0 冻结词表（嘶吼、撕心裂肺、目眦欲裂、崩溃、 痛不欲生、嚎啕大哭、歇斯底里、绝望、狂喜、欣喜若狂，含"等"字开放语义，固定匹配以 v4 anchor
+  词表为准）；④恢复为"主角本体收敛"（主角宣泄时窗口内无极限词直接描述其本体，或 反应主要由动作/物件/短句承载），而非身份/动机收敛。此为 v5.1 冻结映射。
+
+
+  （draft-4 Step 12.5 Step 4：ordinal_mapping 为声明式条件，阈值/断点全部在 YAML 中，ordinal.py 为通用解释器，不再硬编码阈值。）'
+evidence_rule: '通用 *_quote 输出规则：quote 必须是 canonical text 连续逐字子串；优先最短且足以证明判定的片段；禁止跨位置拼接；禁止用 …… 或 ... 省略；禁止改写、概括、纠正标点或更换中文/英文引号；必须单行、禁止换行；需要两处证据时分放不同 quote 字段或数组项。若该引文可能在正文中出现多次（短句/常用词/无标点片段），必须同时提供 nearby_anchor（邻近唯一上下文片段的 span 编号），帮助 Python 唯一定位；未提供导致歧义拒绝时该证据作废。 peak_quote / transference_quote / convergence_quote 必须能在 canonical
+  text 中逐字定位； extreme_word_quotes 必须能定位且词在固定词表内（Python 匹配）。 ②窗口与计数完全由 Python 计算；并列候选取最高档路径留档。
+
+  '
+abstain_rule: '无法确认峰值/转译/收敛、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN； ABSTAIN 不自动转 0，单独统计 abstention_rate。
+
+  '
+extreme_word_list: '固定极限词表（v4.0.0 anchor）：嘶吼、撕心裂肺、目眦欲裂、崩溃、痛不欲生、嚎啕大哭、 歇斯底里、绝望、狂喜、欣喜若狂；另按
+  v4 anchor 的"等"字开放语义保留同义极限词匹配位。 词表冻结，修改必须升版本登记。
+
+  '

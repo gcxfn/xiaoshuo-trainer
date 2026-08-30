@@ -1,0 +1,64 @@
+metric_id: B33
+construct: 小爽点密度
+version: spec-v5.1-draft-4
+semantic_definition: >
+  独立小爽点必须同时满足胜负可见、主角方主动、终局外当场闭环。胜负证据至少一类：A1对手受挫
+  反应（语塞、改口、僵住、退让、离场或计划落空）；A2对手基于假象信任/得意/放松/轻敌；A3第
+  三方明确倒向主角方或质疑对手；A4主角方当场取得钱、证据、地位、承诺或关键信息。每类须逐字
+  证据。
+  终局按全局主线规则：最后一个改变主线最终归属/结果的冲突目标场景；开放结局或无明确最终归属
+  则无可识别终局，不排除场景。事件按因果连续段合并：同一主动动作及连续反应只计 1；新的主角
+  主动行动且产生独立 A 结果才新计；计划、内心嘲讽、离开且无 A 证据不计。
+
+semantic_outputs:
+  # LLM 只提供语义判断与逐字证据；严禁输出 L/K/F/offset/score。
+  events:
+    - active_action_quote: "主角主动动作逐字引文，必须能在 canonical text 中逐字找到"
+    - nearby_anchor: "邻近锚点/段落证据（可选，帮助 Python 定位）"
+    - a_evidence: "A 证据代码（A1/A2/A3/A4）+ 对应逐字引文"
+    - qualifies: 是否符合小爽点定义（胜负可见+主角主动+终局外+当场闭环）
+  exclude_notes:
+    - 计划/内心嘲讽/离开且无 A 证据，标记为不计
+
+derived_features:
+  # 全部 Python 产生；LLM 不报 offset。
+  - resolved_start_offset: Python 在 canonical text 中定位 active_action_quote 生成的起始偏移
+  - resolved_end_offset: Python 定位 a_evidence 引文结束生成的结束偏移
+  - is_finale: Python 用主线终局偏移判断是否终局（终局事件不计入 N）
+  - N: 独立小爽点件数（按 resolved 位置区间因果连续段合并后计数）
+  - L: len(re.sub(r'\s+', '', canonical_text))
+  - K: L/1000
+  - F: N / K（保存原始连续值，两位小数展示）
+
+score_scale:
+  allowed: [0, 1, 3, 5, 10]
+
+ordinal_mapping:
+  - F_lt_0_60: 0
+  - F_ge_0_60_lt_0_80: 1
+  - F_ge_0_80_lt_1_00: 3
+  - F_ge_1_00_lt_1_20: 5
+  - F_ge_1_20: 10
+
+mapping_note: >
+  v5.1-draft-4（Step 12.5）七档制落地为子集五档，冻结 v4.0.0 边界语义逐字保留：
+  F<0.60=0、F≥1.20=10 原封不动（10 分支不细分，断点不变）。
+  仅冻结 5 分支（0.60≤F<1.20）内按 F 单调细分为 1/3/5。连续原始值 F 始终保留。
+  此为 v5.1 冻结映射，后续修改必须升版本并登记。
+
+evidence_rule: >
+  LLM 输出的 active_action_quote 与 a_evidence 引文必须能在 canonical text 中逐字定位；
+  Python 定位失败 → 该件标记 evidence_mismatch，不计入 N。
+  每件必须有 resolved_start_offset < resolved_end_offset，区间重叠或缺失报校验失败。
+  终局事件（resolved 位置落在主线终局区间内）不计入 N。
+
+abstain_rule: >
+  K=0 时输入无效（构建侧拒绝）。
+  无法确认事件边界、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN；
+  ABSTAIN 不自动转 0，单独统计 abstention_rate。
+
+event_schema:
+  - active_action_quote: 主角主动动作逐字引文（无 offset 字段）
+  - nearby_anchor: 邻近锚点（可选）
+  - a_evidence: A 证据代码 + 引文
+  - qualifies: 是否符合定义

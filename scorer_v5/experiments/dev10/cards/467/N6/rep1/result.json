@@ -1,0 +1,31 @@
+{
+  "status": "ABSTAIN",
+  "book_id": "467",
+  "metric_id": "N6",
+  "rep": 1,
+  "id": "467",
+  "score": null,
+  "abstained": true,
+  "continuous": {},
+  "error": null,
+  "validation": {
+    "parse_status": "OK",
+    "v1_schema_ok": true,
+    "v2_evidence_ok": true,
+    "v3_logic_ok": true,
+    "outcome": "ABSTAIN",
+    "accepted_semantic_facts": true,
+    "is_abstain": true,
+    "issues": [],
+    "evidence_locations": {}
+  },
+  "provider": "minimax-cn",
+  "model": "MiniMax-M3",
+  "model_params": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 0,
+    "max_tokens": 8192
+  },
+  "timestamp": "2026-08-29T17:29:16.554524+00:00"
+}

@@ -1,0 +1,98 @@
+metric_id: C01
+construct: 开篇钩子强度
+version: spec-v5.1-draft-9
+semantic_definition: '只检查正文前 500 个非空白 Unicode 码点，标题不计。四项均须逐字证据： ①悬念缺口：前 500 码点可写成一个具体"谁/为何/会怎样"问题，且后文有明确事件或陈述回答；
+  ②高概念反常：改变日常规则或主角生存、身份、关系状态的可观察设定； ③即时压力：前 500 码点有可识别截止时间或不可逆后果，且主角当前行动受其约束； ④信息效率：前
+  500 码点各有一条焦点角色身份线索和核心冲突目标/阻碍线索。
+
+  '
+semantic_outputs:
+  items:
+  - suspense_question_quote: ①悬念问题句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（前 500 码点内）
+  - suspense_answer_quote: ①后文解答句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（可不在前 500）
+  - high_concept_quote: ②高概念反常设定句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - pressure_quote: ③截止时间/不可逆后果句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - identity_clue_quote: ④焦点角色身份线索对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - conflict_clue_quote: ④核心冲突目标/阻碍线索对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - item_hits: 四项分别判定（bool 数组，每项带引文）
+  boundary_note:
+  - Python 先切前 500 非空白码点；跨边界证据只计边界内可观察部分（LLM 不判边界）
+derived_features:
+- window_500: Python 截取前 500 非空白码点
+- item1_in_window: Python 校验 suspense_question_quote 落在前 500（否则该项不计）
+- item2_in_window: Python 校验 high_concept_quote 落在前 500
+- item3_in_window: Python 校验 pressure_quote 落在前 500
+- item4_in_window: Python 校验两条线索均落在前 500
+- item_count: 四项成立计数（Python 按引文定位 + LLM 语义判定综合）
+score_scale:
+  allowed:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+  - 10
+ordinal_mapping:
+- score: 0
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 0
+    - field: has_window_quote
+      op: is_false
+- score: 1
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 0
+    - field: has_window_quote
+      op: is_true
+- score: 3
+  when:
+    field: item_count
+    op: eq
+    value: 1
+- score: 5
+  when:
+    field: item_count
+    op: eq
+    value: 2
+- score: 7
+  when:
+    field: item_count
+    op: eq
+    value: 3
+- score: 9
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 4
+    - field: max_quote_offset
+      op: gte
+      value: 300
+- score: 10
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 4
+    - field: max_quote_offset
+      op: lt
+      value: 300
+mapping_note: 'v5.1-draft-4（Step 12.5）正式启用七档。冻结 v4.0.0 边界语义逐字保留：0-1项=0、4项=10 原封不动；冻结
+  5 分支（2-3项）细分为 2=5、3=7，且 1=3 为 0 分支内的单调细分。 此为 v5.1 冻结映射，后续修改必须升版本并登记。
+
+
+  （draft-4 Step 12.5 Step 4：ordinal_mapping 为声明式条件，阈值/断点全部在 YAML 中，ordinal.py 为通用解释器，不再硬编码阈值。）
+  （Step 12.5 二次修订：1=0项但窗口内有引文；9=4项且最大引文位置≥300；10=4项且最大引文位置<300，用户裁定全七档）'
+evidence_rule: '通用 *_quote 输出规则：quote 必须是 canonical text 连续逐字子串；优先最短且足以证明判定的片段；禁止跨位置拼接；禁止用 …… 或 ... 省略；禁止改写、概括、纠正标点或更换中文/英文引号；必须单行、禁止换行；需要两处证据时分放不同 quote 字段或数组项。若该引文可能在正文中出现多次（短句/常用词/无标点片段），必须同时提供 nearby_anchor（邻近唯一上下文片段的 span 编号），帮助 Python 唯一定位；未提供导致歧义拒绝时该证据作废。 每项引文必须能在 canonical text 中逐字定位；前 500 码点边界由 Python 判定，跨边界项不计。 悬念解答句允许在前
+  500 之后（Python 只校验其存在）。
+
+  '
+abstain_rule: '无法确认某项证据、两种解释均合理或证据冲突时，允许 ABSTAIN；ABSTAIN 不自动转 0，单独统计 abstention_rate。
+
+  '

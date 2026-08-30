@@ -1,0 +1,14 @@
+{
+  "run_id": "dev10_v5_r2",
+  "expected": 180,
+  "written": 180,
+  "blocked": 0,
+  "by_status": {
+    "FAIL_PARSE": 174,
+    "ABSTAIN": 5,
+    "FAIL_SCHEMA": 1
+  },
+  "provider": "minimax-cn",
+  "model": "MiniMax-M3",
+  "timestamp": "2026-08-29T17:36:27.525608+00:00"
+}

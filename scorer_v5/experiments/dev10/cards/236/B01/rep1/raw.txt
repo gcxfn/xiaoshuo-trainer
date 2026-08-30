@@ -1,0 +1,33 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "周寻本想转身的动作一滞。",
+        "nearby_anchor": "“溪姐太狠了，为了姐夫把那个恋爱脑学霸耍得团团转，让他心甘情愿放弃清北特招，选了个二本院校。你没看到班导今天的脸色，黑得跟锅底似的。”",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "周寻手中的啤酒轰然落地，酒瓶碎裂，喷溅而出的啤酒湿透他全身。",
+        "qualifies": true
+      },
+      {
+        "event_quote": "陆临风已经代替你和学校签了合同了，如果你不去，违约金高达数百万。",
+        "nearby_anchor": "她有些歉疚：“临风也不是故意的。他已经被清北特招，这种关键时候绝不能出事。”",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "他拨通了一个号码：“……妈，回海城认祖归宗的事，我答应了。”",
+        "qualifies": true
+      },
+      {
+        "event_quote": "简溪掏出合同，拿出印泥，“你在上面按个手印吧，大学先去读，反正研究生还是能考名校的。”",
+        "nearby_anchor": "周寻不能理解她是怎么能用一种如此轻描淡写的语气说出如此残忍的话。",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      }
+    ]
+  }
+}
+```

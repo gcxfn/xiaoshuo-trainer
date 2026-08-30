@@ -1,0 +1,37 @@
+{
+  "status": "FAIL_PARSE",
+  "book_id": "236",
+  "metric_id": "C14",
+  "rep": 3,
+  "id": "236",
+  "score": null,
+  "abstained": false,
+  "continuous": {},
+  "error": "Expecting value: line 1 column 1 (char 0)",
+  "validation": {
+    "parse_status": "FAIL_PARSE",
+    "v1_schema_ok": false,
+    "v2_evidence_ok": true,
+    "v3_logic_ok": true,
+    "outcome": "FAIL_PARSE",
+    "accepted_semantic_facts": false,
+    "is_abstain": false,
+    "issues": [
+      {
+        "layer": "V1",
+        "path": "$",
+        "message": "Expecting value: line 1 column 1 (char 0)"
+      }
+    ],
+    "evidence_locations": {}
+  },
+  "provider": "minimax-cn",
+  "model": "MiniMax-M3",
+  "model_params": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 0,
+    "max_tokens": 8192
+  },
+  "timestamp": "2026-08-29T17:34:25.825625+00:00"
+}

@@ -1,0 +1,3 @@
+```json
+{"status": "ABSTAIN", "reason": "This is a lengthy narrative (21 chapters) and the opening lines ('我有两个儿子，一个亲生，一个继子。') introduce the backstory/setup but do not contain a clear single earliest qualifying abnormal event within the first ~10% of the text. The candidates that could qualify (陆向文回国跪下喊妈/带回博士证, 亲儿子韩家成破箱归来, 无罪裁定书揭露, etc.) all appear well beyond the q≤10.00% threshold based on a rough paragraph/line estimation. Without reliable ability to pinpoint exact code-point offsets and confirm whether any candidate falls within the first 10% of the canonical text, I cannot make a definitive determination."}
+```

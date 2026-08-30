@@ -1,0 +1,44 @@
+{
+  "version": "v5.1-provenance-1",
+  "records": [
+    {
+      "run_id": "dev10_v5_r2",
+      "book_id": "188",
+      "metric_id": "N6",
+      "rep": 1,
+      "model": "MiniMax-M3",
+      "provider": "minimax-cn",
+      "model_params": {
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "seed": 0,
+        "max_tokens": 8192
+      },
+      "prompt_hash": "9db88828de937210e620afaea21f575c13f5ea8b1c7bffdc5fa272d25e2954e6",
+      "spec_hash": "9befbf7f93247e0c6b2c0bd8c9163bef8f34cfed859ac9d8361135a8e33dff84",
+      "text_hash": "a336d6186c20fc681c92b0896bbd040864e330cf1aed2a85f53b150fe614ab2f",
+      "sidecar_hash": "dae6a9d3fdb2e106ba1ce4442164908e75e65a6f1e442827954bd5b307241f34",
+      "raw_stdout_hash": "cc610a8ec9324709709aa1c098f9a89ada0493680cdc5fd7c98043181a8f6cf7",
+      "parsed_output": null,
+      "validator_result": {
+        "parse_status": "FAIL_PARSE",
+        "v1_schema_ok": false,
+        "v2_evidence_ok": true,
+        "v3_logic_ok": true,
+        "outcome": "FAIL_PARSE",
+        "accepted_semantic_facts": false,
+        "is_abstain": false,
+        "issues": [
+          {
+            "layer": "V1",
+            "path": "$",
+            "message": "Expecting value: line 1 column 1 (char 0)"
+          }
+        ],
+        "evidence_locations": {}
+      },
+      "final_score": null,
+      "timestamp": "2026-08-29T17:28:29.566906+00:00"
+    }
+  ]
+}

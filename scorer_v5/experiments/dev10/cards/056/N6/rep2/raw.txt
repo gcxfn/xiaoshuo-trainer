@@ -1,0 +1,3 @@
+```json
+{"status":"ABSTAIN","reason":"The text does not contain exchanges where the surface meaning and true intent are opposite or significantly divergent in a way that is revealed by action, third-party reaction, or later text. Dialogue between the characters is largely sincere (e.g., candid discussions about the fake-boyfriend arrangement, straightforward questions and answers). What appears is honest communication, role-play cooperation, and gradually developing genuine feelings — not 言此意彼 subtext exchanges. No qualifying N6 event can be identified."}
+```

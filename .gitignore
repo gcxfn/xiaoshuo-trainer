@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# 凭证（绝不入库）
+.env
+*.key
+*.pem
+*token*
+
+# 评分运行产物（大、可重建、含 staging raw）
+scorer_v5/experiments/dev10/runs/
+
+# 打包/临时
+*.zip
+*.tar.gz
+Desktop/
+
+# 历史审计（只读，非正式输入）
+archive/

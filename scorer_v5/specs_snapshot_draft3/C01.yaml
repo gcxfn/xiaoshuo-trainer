@@ -1,0 +1,50 @@
+metric_id: C01
+construct: 开篇钩子强度
+version: spec-v5.1-draft-2
+semantic_definition: >
+  只检查正文前 500 个非空白 Unicode 码点，标题不计。四项均须逐字证据：
+  ①悬念缺口：前 500 码点可写成一个具体"谁/为何/会怎样"问题，且后文有明确事件或陈述回答；
+  ②高概念反常：改变日常规则或主角生存、身份、关系状态的可观察设定；
+  ③即时压力：前 500 码点有可识别截止时间或不可逆后果，且主角当前行动受其约束；
+  ④信息效率：前 500 码点各有一条焦点角色身份线索和核心冲突目标/阻碍线索。
+
+semantic_outputs:
+  # LLM 只提供语义判断与逐字证据；严禁输出 offset/比例/score。
+  items:
+    - suspense_question_quote: ①悬念问题句逐字引文（前 500 码点内）
+    - suspense_answer_quote: ①后文解答句逐字引文（可不在前 500）
+    - high_concept_quote: ②高概念反常设定句逐字引文
+    - pressure_quote: ③截止时间/不可逆后果句逐字引文
+    - identity_clue_quote: ④焦点角色身份线索逐字引文
+    - conflict_clue_quote: ④核心冲突目标/阻碍线索逐字引文
+    - item_hits: "四项分别判定（bool 数组，每项带引文）"
+  boundary_note:
+    - Python 先切前 500 非空白码点；跨边界证据只计边界内可观察部分（LLM 不判边界）
+
+derived_features:
+  # 全部 Python 产生。
+  - window_500: Python 截取前 500 非空白码点
+  - item1_in_window: Python 校验 suspense_question_quote 落在前 500（否则该项不计）
+  - item2_in_window: Python 校验 high_concept_quote 落在前 500
+  - item3_in_window: Python 校验 pressure_quote 落在前 500
+  - item4_in_window: Python 校验两条线索均落在前 500
+  - item_count: 四项成立计数（Python 按引文定位 + LLM 语义判定综合）
+
+score_scale:
+  allowed: [0, 1, 3, 5, 7, 9, 10]
+
+ordinal_mapping:
+  - four: 10
+  - two_or_three: 5
+  - zero_or_one: 0
+
+mapping_note: >
+  spec-v5.1-draft-2 restores the v4.0.0 frozen 0/5/10 branch semantics after
+  independent threshold review; no unvalidated intermediate ordinal band is used.
+
+evidence_rule: >
+  每项引文必须能在 canonical text 中逐字定位；前 500 码点边界由 Python 判定，跨边界项不计。
+  悬念解答句允许在前 500 之后（Python 只校验其存在）。
+
+abstain_rule: >
+  无法确认某项证据、两种解释均合理或证据冲突时，允许 ABSTAIN；ABSTAIN 不自动转 0，单独统计 abstention_rate。

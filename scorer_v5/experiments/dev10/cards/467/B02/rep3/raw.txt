@@ -1,0 +1,23 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "conflicts": [
+      {
+        "entity_a": "姜瓷",
+        "entity_b": "陆晓丹",
+        "issue": "陆晓丹要求姜瓷作为嫂子替自己盛饭，姜瓷拒绝服从这一伺候要求",
+        "round1_quote": "她看见我，只扫了一眼。\n\u201c嫂子，给我盛饭。\u201d\n她说得很自然。\n像我从今天开始，就该接下这个家的活。",
+        "round2_quote": "我看着她。\n\u201c你没手？\u201d",
+        "round3_quote": "陆晓丹终于把手机放下。\n\u201c什么意思？\u201d",
+        "round4_quote": null,
+        "round_count": 2,
+        "nearby_anchor": "新婚第二天早上饭桌",
+        "same_lineage": true,
+        "qualifies": true
+      }
+    ]
+  },
+  "reason": "首合格冲突发生在文本开头饭桌场景：陆晓丹开口要求姜瓷盛饭，姜瓷以\u201c你没手？\u201d作为针对性回应，构成第一组\u201c行动→针对性回应\u201d交换。双方就\u201c嫂子是否该伺候小姑子盛饭\u201d这一事项立场相左，实体可稳定指认，回合引文逐字可定位。"
+}
+```

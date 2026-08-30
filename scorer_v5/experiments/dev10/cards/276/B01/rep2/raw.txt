@@ -1,0 +1,18 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "我端起茶盏，还没碰到唇，眼前忽然飘过一行弹幕。",
+        "nearby_anchor": "高考后的那个暑假，我家资助多年的贫困生陶蔓送来一罐茶。",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "我笑了笑，抬手作势要喝。",
+        "qualifies": true
+      }
+    ]
+  },
+  "reason": "开篇叙事的平静日常被突然出现的超常设定弹幕打破，属于'超常设定显形'类外部异常事件。主角在看到弹幕后立刻改变了行动（假意端杯、实际未喝、改将茶喂给奶奶），满足即时改变行动/决定的要求。"
+}
+```

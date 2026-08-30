@@ -1,0 +1,18 @@
+# 当前实验运行配置（Step 12）
+# 模型不是项目永久固定项；每个具体实验应冻结并记录自己的 provider/model/参数。
+# 2026-08-30 用户授权：Smoke5/19/150 及之后的正式评分模型统一改用
+# commandcode/deepseek-v4-flash；2026-08-30 用户指令：思考模式 off。
+# 2026-08-30 config-4：max_tokens 8192→32768——deepseek-v4-flash 长 prompt 强制思考
+# 吃掉 ~6800+ tokens，8192 剩余不足导致 content 空（empty model content）。
+config_version: v5.1-config-5
+provider: commandcode
+model: deepseek/deepseek-v4-flash
+temperature: 0.0
+top_p: 1.0
+seed: 0
+seed_supported: true
+reasoning_mode: "off"
+max_tokens: 32768
+timeout: 180
+prompt_version: v5.1-prompt-9
+metric_spec_version: spec-v5.1-draft-9

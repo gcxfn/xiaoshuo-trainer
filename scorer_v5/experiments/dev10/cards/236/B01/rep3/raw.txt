@@ -1,0 +1,58 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "他身后传来几道熟悉的嗓音，听起来是简溪的好闺蜜。",
+        "nearby_anchor": "今天做完，兼职费加上奖金，他就凑齐和女友简溪一起上大学的学费了！下一秒，他身后传来几道熟悉的嗓音，听起来是简溪的好闺蜜。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      },
+      {
+        "event_quote": "\"都快点，溪姐特意吩咐了，今晚要在壹号会所顶层包厢给姐夫一个惊喜！\"",
+        "nearby_anchor": "周寻身形一顿，心跳加速。怪不得她今晚说自己有事，原来是想给他一个惊喜。可会所顶层包厢好贵的......",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      },
+      {
+        "event_quote": "\"溪姐太狠了，为了姐夫把那个恋爱脑学霸耍得团团转，让他心甘情愿放弃清北特招，选了个二本院校。你没看到班导今天的脸色，黑得跟锅底似的。\"",
+        "nearby_anchor": "周寻本想转身的动作一滞。",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "周寻手中的啤酒轰然落地，酒瓶碎裂，喷溅而出的啤酒湿透他全身。",
+        "qualifies": true
+      },
+      {
+        "event_quote": "他换上服务员的套装，捧着要将他淹没的花束来到包厢外。正打算推门而入，就从门框的透明玻璃上见到了坐在包厢正中央的人，一脸娇羞地缩在身边人的怀中。赫然就是他的女朋友，简溪！而一脸宠溺把她搂在怀中的男人，正是他的兄弟，陆临风！",
+        "nearby_anchor": "还不等他回过神，会所主管已经听到动静推开门，皱着眉怒斥：",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      },
+      {
+        "event_quote": "\"临风，我喜欢你。\"",
+        "nearby_anchor": "从三岁认识你到今天，我们认识了六千天，占据整个人生的五分之一。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      },
+      {
+        "event_quote": "\"我们分手！我现在就去改志愿！\"",
+        "nearby_anchor": "下一秒，他的手腕被她攥住，用最温柔的语气说出最冰冷刺骨的话：",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      }
+    ]
+  },
+  "reason": "候选事件中，闺蜜背后议论揭穿'恋爱脑学霸被耍得团团转'属于外部信息揭露（身份/真相暴露），且主角在同一场景内随后做出'啤酒轰然落地'的直接反应行动，符合异常事件定义。其余候选或为主角内心情绪/决定（不算外部事件），或不满足即时改变行动的条件。"
+}
+```

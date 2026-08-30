@@ -1,0 +1,61 @@
+metric_id: N7
+construct: 角色间认知操控
+version: spec-v5.1-draft-3
+semantic_definition: >
+  先枚举每个候选做局：操控者刻意使受骗者形成错误认知，受骗者据此作出决定，决定造成可观察
+  实质损失。主角反操控、配角受骗、第三方受损均可计；直接暴力/伤害而无错误信息环节不计。
+  一次性蓄意性由伪造/编造准备、明知真相仍投放、投放后获益或明确有目的安排任一项证明；巧合、
+  误会或读者知道不算。长期人设须有至少两个场景维持证据。
+  每局填四格：①意图/知情；②受骗者实际接收的假信息/伪装；③错误认知下的具体行动，或有机会、
+  知悉选择却因错误认知不行动；④行动后地位、财产、人身、关键关系或计划败亡的实质损失。
+  缺任一格，决策闭环不成立。
+  三要件：①载体至少两类，从 C1 当面言语、C2 第三方之口、C3 道具文书、C4 行为模式伪装、
+  C5 信息屏蔽中计不同类；②同一假信息/人设在至少两个不同场景投放或维持；③四格闭环完整。
+  多局按字典序选择：成立要件数（3>2>1>0）→③闭环完整→跨场景投放/维持场景数→可观察损失数量。
+  完全同序全部留档。0 要件=0 分，1–2 要件=5 分，3 要件=10 分。
+
+semantic_outputs:
+  # LLM 只提供语义判断与逐字证据；严禁输出 offset/比例/score。
+  plots:
+    - plot_quote: "做局关键句逐字引文"
+    - a_intent_quote: "①意图/知情逐字引文"
+    - false_info_quote: "②受骗者实际接收的假信息/伪装逐字引文"
+    - wrong_decision_quote: "③错误认知下的具体行动/不行动逐字引文"
+    - loss_quote: "④实质损失逐字引文"
+    - carriers: "载体类代码（C1 当面言语/C2 第三方之口/C3 道具文书/C4 行为模式伪装/C5 信息屏蔽）"
+    - scenes: "同一假信息/人设投放或维持的场景引文清单（Python 判 ≥2 场景）"
+    - completes: 四格是否闭环（bool）
+  selection_note:
+    - LLM 列局并填要件；Python 按字典序选局（要件数→闭环→跨场景数→损失数，完全同序全部留档）
+
+derived_features:
+  # 全部 Python 产生。
+  - plot_offsets: Python 定位各局 offset
+  - best_plot: Python 按字典序取最佳局（并列全部留档）
+  - closure_count: 四格闭环数（Python 校验引文可定位后计数）
+  - carrier_count: 载体类数（Python 去重，判定 ≥2）
+  - scene_count: 跨场景数（Python 用要件引文 offset 判定 ≥2）
+  - requirement_count: 成立要件数（载体 ≥2 / 跨场景 ≥2 / 闭环完整）
+
+score_scale:
+  allowed: [0, 1, 3, 5, 7, 9, 10]
+
+ordinal_mapping:
+  - zero: 0
+  - one_or_two: 5
+  - three: 10
+
+mapping_note: >
+  spec-v5.1-draft-3 restores the v4.0.0 frozen 0/5/10 branch semantics after
+  independent threshold review: 载体恢复为 C1 当面言语/C2 第三方之口/C3 道具文书/C4 行为模式
+  伪装/C5 信息屏蔽；②恢复为同一假信息/人设在至少两个场景投放或维持；④恢复为可观察实质损失
+  （不以 A 获得优势替代）；多局按字典序选择且完全同序全部留档。0 要件=0、1–2=5、3=10。
+  此为 v5.1 冻结映射。
+
+evidence_rule: >
+  所有引文必须能在 canonical text 中逐字定位；定位失败 → 对应要件不计。
+  载体类必须是 C1-C5 之一（Python 校验枚举）。
+
+abstain_rule: >
+  无法确认做局/要件边界、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN；
+  ABSTAIN 不自动转 0，单独统计 abstention_rate。

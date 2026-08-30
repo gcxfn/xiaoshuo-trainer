@@ -1,0 +1,104 @@
+metric_id: B16
+construct: 结尾闭环度
+version: spec-v5.1-draft-9
+semantic_definition: '先列开篇承诺/核心意象、主线冲突和全部主要对手，再检查结尾连续场景。结尾部分以最后一个 正文场景开始向前取全文最后 15.00%
+  码点作为扫描范围，但闭环对象以场景清单为准，不把比例 本身当作结局。 直接 0 分否决：V1=结尾出现求赞、点赞、断更等元话语；V2=结尾另起与主线无关的新事件并以
+  其替代主线结果。否决须逐字定位。 无否决时判：①开篇承诺/核心意象在结尾以同一功能的场景或明确陈述回收，须并列两处证据； ②主线胜负/关系/归属在结尾以人物在场的交锋、清算、裁决或明确行动呈现，纯事后通报不成立；
+  ③先列主要对手清单，结尾对每个对手给出可确定最终状态；多线文本逐条核对，开放结局如实 标记未闭合，不因缺少传统审判自动判坏。
+
+  '
+semantic_outputs:
+  ending_items:
+  - veto1_quote: V1 元话语（求赞/点赞/断更等）句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（若有）
+  - veto2_quote: V2 另起无关新事件替代主线结果句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（若有）
+  - callback_quote: ①回收句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（结尾）
+  - opening_quote_ref: ①开篇对应承诺/意象句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（并列两处证据，不以固定码点边界硬切）
+  - mainline_resolve_quote: ②主线胜负/归属呈现句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（人物在场交锋/清算/裁决/行动）
+  - antagonist_final_states: ③对手终态清单：{ antagonist, state_quote, terminal }
+  - item_hits: ①②③分别成立（bool）
+  selection_note:
+  - 否决先扫；①②③ 项由 Python 校验引文定位与末 15% 边界后计数
+derived_features:
+- last_15pct_window: Python 截取末 15% 非空白码点
+- veto_found: Python 校验 veto1/veto2 引文定位且落在末 15% 扫描范围（若有→直接 0）
+- item1_ok: ①成立——callback_quote 落在末 15% 且 opening_quote_ref 可定位（开篇承诺/核心意象并列两处证据；不以固定码点边界硬切）
+- item2_ok: ②成立——mainline_resolve_quote 落在末 15% 且非纯事后通报（LLM 判场景呈现，Python 校验引文）
+- item3_ok: ③成立——全部 antagonist_final_states 引文可定位且落在末 15%
+- last_5pct_ok: 闭环关键引文全部落在末 5% 非空白码点（callback/mainline/全部终态；7/9/10 细分依据）
+- callback_latest: ①回收引文 callback_quote 为全书最后一个可定位闭环关键引文（9/10 细分依据）
+- item_count: ①②③成立计数（V 否决优先）
+score_scale:
+  allowed:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+  - 10
+ordinal_mapping:
+- score: 0
+  when:
+    field: veto_found
+    op: is_true
+- score: 1
+  when:
+    field: item_count
+    op: eq
+    value: 0
+- score: 3
+  when:
+    field: item_count
+    op: eq
+    value: 1
+- score: 5
+  when:
+    field: item_count
+    op: eq
+    value: 2
+- score: 7
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 3
+    - field: last_5pct_ok
+      op: is_false
+- score: 9
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 3
+    - field: last_5pct_ok
+      op: is_true
+    - field: callback_latest
+      op: is_false
+- score: 10
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 3
+    - field: last_5pct_ok
+      op: is_true
+    - field: callback_latest
+      op: is_true
+mapping_note: '（draft-4 Step 12.5 二次修订：用户裁定全七档。冻结 0 分支仅保留 V 否决=0；计数细分：
+  0 项=1、1 项=3、2 项=5；3 项按闭环关键引文（callback/mainline/全部终态）末 5% 位置细分：
+  last_5pct_ok 为假=7、为真且 callback_latest 为假=9、为真且 callback_latest 为真=10。
+  7/9 细分依据：last_5pct_ok（Python 用末 5% 起始位置判定闭环引文落点）；9/10 细分依据：
+  callback_latest（①回收引文是否为全书最后一个关键闭环落点，Python 定位比较），单调递进。）
+
+  v5.1-draft-4（Step 12.5）正式启用七档。冻结 v4.0.0 边界语义逐字保留：否决（V1/V2 逐字 定位且末15%）或≤1项=0、3项=10
+  原封不动；冻结 5 分支（2项）=5。否决或 0/1 项状态合并于 0 分支，仅 3 个可达状态（0/5/10），故无 1/3/7/9 档。 此为 v5.1 冻结映射，后续修改必须升版本并登记。
+
+
+  （draft-4 Step 12.5 Step 4：ordinal_mapping 为声明式条件，阈值/断点全部在 YAML 中，ordinal.py 为通用解释器，不再硬编码阈值。）'
+evidence_rule: '通用 *_quote 输出规则：quote 必须是 canonical text 连续逐字子串；优先最短且足以证明判定的片段；禁止跨位置拼接；禁止用 …… 或 ... 省略；禁止改写、概括、纠正标点或更换中文/英文引号；必须单行、禁止换行；需要两处证据时分放不同 quote 字段或数组项。若该引文可能在正文中出现多次（短句/常用词/无标点片段），必须同时提供 nearby_anchor（邻近唯一上下文片段的 span 编号），帮助 Python 唯一定位；未提供导致歧义拒绝时该证据作废。 所有引文必须能在 canonical text 中逐字定位；①②③引文必须落在末 15%（Python 用 offset 判定）；
+  veto 引文落在末 15% 内才生效；opening_quote_ref 必须可定位并与 callback_quote 构成并列两处证据。
+
+  '
+abstain_rule: '无法确认闭环项边界、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN； ABSTAIN 不自动转 0，单独统计 abstention_rate。
+
+  '

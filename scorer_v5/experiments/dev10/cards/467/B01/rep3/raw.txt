@@ -1,0 +1,58 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "结婚第二天，婆婆端着饭盆走进厨房，朝我努努嘴：\"给你小姑子盛碗饭。\"",
+        "nearby_anchor": "新婚次日被扇耳光，我反手一锅热汤扣头",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      },
+      {
+        "event_quote": "陆成泽那一巴掌落下来前，我没有躲。",
+        "nearby_anchor": "02",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "我把整碗汤扣了下去。",
+        "qualifies": true
+      },
+      {
+        "event_quote": "我把菜刀拍在案板上。",
+        "nearby_anchor": "03",
+        "is_external_event": false,
+        "same_scene_action": true,
+        "action_quote": "\"今天谁再动我一根手指头，我让这房子变成凶宅。\"",
+        "qualifies": false
+      },
+      {
+        "event_quote": "邵敏忽然从包里又取出一叠打印纸。",
+        "nearby_anchor": "05",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      },
+      {
+        "event_quote": "一个穿白裙的女人从小区门口冲进来。",
+        "nearby_anchor": "10",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      },
+      {
+        "event_quote": "他把玻璃瓶落在地上，碎片弹开。",
+        "nearby_anchor": "15",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      }
+    ]
+  },
+  "reason": "首个满足定义的异常事件为陆成泽的家暴（打耳光），属于身份暴露/暴力事故类外部事件。异常后同一场景内主角直接采取反击行动（将热汤扣在陆成泽头上），符合即时改变主角行动/决定的因果连接要求。其他候选事件（保险/贷款揭露、陈冉出现、玻璃瓶威胁）虽为外部事件，但均非发生在主角日常打破的最早时刻，或同一场景内无主角直接行动改变。"
+}
+```

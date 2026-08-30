@@ -1,0 +1,133 @@
+metric_id: B18
+construct: 中段塌陷
+version: spec-v5.1-draft-9
+semantic_definition: '列全文连续场景。开篇钩子是正文顺序中首次使主线冲突可识别的场景，多候选取最早；最终高潮是 最后一次不可逆确定主线冲突归属/结果的场景，多候选取最晚；无端点则不排除并记录理由，两端
+  同场只排除一次。中段为全部场景减去实际识别的端点，报出分母清单。开放结局不能把最后一段 机械认作高潮。 每个中段场景填：边界、冲突目标、状态类别、变化前状态、变化后状态、逐字证据、有效性。
+  四类为新信息、关系翻转、资源得失、计划进退。只有前后状态不同且有证据才有效；重复施压/拒绝、 等待、回忆、环境描写和仅有决定准备意图无效。一个场景多类仍只计一个有效场景。
+  `无效占比=无效中段场景数/中段总数`，精确比较：≥50% 或连续无效 ≥3 为 0 分；[40%,50%) 为 1 分；[30%,40%) 为 3 分；
+  [25%,30%) 为 5 分；[15%,25%) 为 7 分；[5%,15%) 为 9 分；<5% 为 10 分。中段总数为 0 时记录端点清单，
+  无效数=0、比例约定为 0， 走 10 分路径，但必须在 held-out 复核。
+
+  '
+semantic_outputs:
+  endpoints:
+  - hook_quote: 开篇钩子对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（首次使主线冲突可识别的场景）
+  - climax_quote: 最终高潮对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（最后一次不可逆确定主线冲突归属/结果的场景）
+  middle_scenes:
+  - scene_quote: 中段场景对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - state_before: 状态前
+  - state_after: 状态后
+  - state_axis: 状态类别（新信息/关系翻转/资源得失/计划进退）
+  - valid: 前后状态是否不同且可验证（LLM 判定，Python 校验引文）
+  selection_note:
+  - LLM 列端点与中段场景；Python 判定端点选取（最早/最晚）、中段分母、占比与连续段
+derived_features:
+- hook_offset: Python 定位 hook_quote
+- climax_offset: Python 定位 climax_quote
+- middle_scene_count: 中段场景数（分母 = 全部场景 - 实际识别端点；Python 校验 scene_quote 落在中段区间）
+- valid_count: 有效场景数（LLM 判 valid，Python 校验引文）
+- invalid_ratio: 无效占比（无效/总，判定 ≥50% 塌陷、≥25% 轻度）
+- consecutive_invalid: 连续无效最大长度（判定 ≥3）
+score_scale:
+  allowed:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+  - 10
+ordinal_mapping:
+- score: 0
+  when:
+    or:
+    - field: invalid_ratio
+      op: gte
+      value: 0.5
+    - field: consecutive_invalid
+      op: gte
+      value: 3
+- score: 1
+  when:
+    and:
+    - field: invalid_ratio
+      op: gte
+      value: 0.4
+    - field: invalid_ratio
+      op: lt
+      value: 0.5
+    - field: consecutive_invalid
+      op: lt
+      value: 3
+- score: 3
+  when:
+    and:
+    - field: invalid_ratio
+      op: gte
+      value: 0.3
+    - field: invalid_ratio
+      op: lt
+      value: 0.4
+    - field: consecutive_invalid
+      op: lt
+      value: 3
+- score: 5
+  when:
+    and:
+    - field: invalid_ratio
+      op: gte
+      value: 0.25
+    - field: invalid_ratio
+      op: lt
+      value: 0.3
+    - field: consecutive_invalid
+      op: lt
+      value: 3
+- score: 7
+  when:
+    and:
+    - field: invalid_ratio
+      op: gte
+      value: 0.15
+    - field: invalid_ratio
+      op: lt
+      value: 0.25
+    - field: consecutive_invalid
+      op: lt
+      value: 3
+- score: 9
+  when:
+    and:
+    - field: invalid_ratio
+      op: gte
+      value: 0.05
+    - field: invalid_ratio
+      op: lt
+      value: 0.15
+    - field: consecutive_invalid
+      op: lt
+      value: 3
+- score: 10
+  when:
+    and:
+    - field: invalid_ratio
+      op: lt
+      value: 0.05
+    - field: consecutive_invalid
+      op: lt
+      value: 3
+mapping_note: 'v5.1-draft-4（Step 12.5 二次修订，用户裁定全七档）：冻结 0 分支语义保留——invalid_ratio≥50% 或连续无效
+  ≥3 → 0。冻结 5 分支（[25%,50%) 且无连续≥3）按连续区间单调细分为 1=[40%,50%)、3=[30%,40%)、5=[25%,30%)；
+  冻结 10 分支（<25%）细分为 7=[15%,25%)、9=[5%,15%)、10=<5%。7/9 细分依据：无效占比越低档位越高，
+  断点 0.40/0.30/0.15/0.05 为授权细分（快照"5/10 分支内部单调细分"授权），登记于本 note。中段总数为 0 时走
+  10 分路径并在 held-out 复核。此为 v5.1 冻结映射。
+
+
+  （draft-4 Step 12.5 Step 4：ordinal_mapping 为声明式条件，阈值/断点全部在 YAML 中，ordinal.py 为通用解释器，不再硬编码阈值。）'
+evidence_rule: '通用 *_quote 输出规则：quote 必须是 canonical text 连续逐字子串；优先最短且足以证明判定的片段；禁止跨位置拼接；禁止用 …… 或 ... 省略；禁止改写、概括、纠正标点或更换中文/英文引号；必须单行、禁止换行；需要两处证据时分放不同 quote 字段或数组项。若该引文可能在正文中出现多次（短句/常用词/无标点片段），必须同时提供 nearby_anchor（邻近唯一上下文片段的 span 编号），帮助 Python 唯一定位；未提供导致歧义拒绝时该证据作废。 hook_quote / climax_quote / scene_quote 必须能在 canonical text 中逐字定位；
+  场景落在中段区间（Python 用 offset 判定）才计入分母；定位失败 → 该场景不计。
+
+  '
+abstain_rule: '无法确认端点/场景边界、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN； ABSTAIN 不自动转 0，单独统计 abstention_rate。
+
+  '

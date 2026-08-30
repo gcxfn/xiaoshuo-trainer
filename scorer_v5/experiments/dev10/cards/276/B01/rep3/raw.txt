@@ -1,0 +1,18 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "我端起茶盏，还没碰到唇，眼前忽然飘过一行弹幕。",
+        "nearby_anchor": "高考后的那个暑假",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "我笑了笑，抬手作势要喝。",
+        "qualifies": true
+      }
+    ]
+  },
+  "reason": "候选异常事件为开头出现的超常设定显形（眼前飘过弹幕预言互换身体、命运级消息），属外部事件且打破主角日常预期。主角在同一场景内随即改变行动，未真饮茶并将茶转喂奶奶，构成直接因果连接。"
+}
+```

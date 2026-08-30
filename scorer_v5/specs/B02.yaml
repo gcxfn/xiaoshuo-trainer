@@ -1,0 +1,137 @@
+metric_id: B02
+construct: 冲突出现速度
+version: spec-v5.1-draft-9
+semantic_definition: '合格对抗性冲突要求至少两个可识别实体围绕同一事项立场相左，并完成至少两个 "行动/陈述→针对性回应"的交换。一个回合是甲的可识别言语/动作后，乙针对该言语/动作的
+  可识别回应；乙→甲为下一回合。单方独白、广播、无回应动作不构成第二回合。单方宣布、 纯内心不满、未点破误会不计。功能人员按章办事的流程摩擦不计，除非从明确的羞辱、驱逐、
+  利益阻断或其他利害对撞点开始。前置楔子/闪回摘要仅在明确写出双方立场、同一事项和实际 对撞结果时计入；只有"后来发生争执"的概述不计回合。
+  多人、非人实体和即时文字聊天均按可稳定指认实体及正文时间序列执行；异步留言须明确即时往返才计。
+  你的任务：找出语义上合格的冲突，给出双方、事项、回合对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段），并判断事项是否与独立主线冲突清单同源。
+  不要计算或输出码点位置、全文比例或窗口阈值；这些由程序完成。
+  确认没有合格冲突时，status=OK 且 conflicts=[]，不是 ABSTAIN。
+
+  '
+semantic_outputs:
+  conflicts:
+  - entity_a: 实体 A 识别（专名/稳定称谓/唯一身份）
+  - entity_b: 实体 B 识别
+  - issue: 立场相左事项
+  - round1_quote: 第一回合甲行动/陈述对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - round2_quote: 乙对甲第一回合的针对性回应对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - round3_quote: 甲对乙回应的再回应对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（若存在）
+  - round4_quote: 乙对甲再回应的再回应对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（若存在）
+  - round_count: 逐字可定位的回合数（A→B→A→B 完整两轮为4；A→B→A 为3；仅A→B 为2）
+  - nearby_anchor: 邻近锚点（可选，帮助 Python 定位）
+  - same_lineage: 事项与全局主线冲突清单是否同源（③）
+  - qualifies: 是否为合格对抗性冲突（两实体+立场相左+至少两个"行动/陈述→针对性回应"交换）
+  selection_note:
+  - LLM 列全部候选冲突并填回合引文；Python 校验引文可定位且按序，取最早合格冲突判定 ①②③
+derived_features:
+- resolved_round1_offset: Python 定位 round1_quote 生成的码点偏移
+- resolved_round_last_offset: Python 定位最后一个有效回合引文生成的码点偏移
+- L: len(re.sub(r'\s+', '', canonical_text))
+- first_round_le_500: resolved_round1_offset ≤ 500（判定 ①）
+- position_ratio: resolved_round1_offset / L（判定 ②≤15.00%）
+- round_count_ok: 合格回合数判定——Python 校验全部回合引文可定位、相邻引文按正文顺序且 round_count ≥4（至少两个完整"行动/陈述→针对性回应"交换）
+- qualifies_ok: LLM 判 qualifies 且 round_count_ok 成立（合格对抗性冲突）
+score_scale:
+  allowed:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+  - 10
+ordinal_mapping:
+- score: 0
+  when:
+    or:
+    - field: qualified
+      op: is_false
+    - field: position_ratio
+      op: gt
+      value: 0.15
+- score: 10
+  when:
+    and:
+    - field: first_round_le_500
+      op: is_true
+    - field: same_lineage
+      op: is_true
+- score: 1
+  when:
+    and:
+    - field: qualified
+      op: is_true
+    - field: position_ratio
+      op: lte
+      value: 0.15
+    - field: b02_hits
+      op: eq
+      value: 0
+- score: 3
+  when:
+    and:
+    - field: qualified
+      op: is_true
+    - field: position_ratio
+      op: lte
+      value: 0.15
+    - field: b02_hits
+      op: eq
+      value: 1
+    - field: position_ratio
+      op: gt
+      value: 0.08
+- score: 5
+  when:
+    and:
+    - field: qualified
+      op: is_true
+    - field: position_ratio
+      op: lte
+      value: 0.08
+    - field: b02_hits
+      op: eq
+      value: 1
+- score: 7
+  when:
+    and:
+    - field: qualified
+      op: is_true
+    - field: position_ratio
+      op: lte
+      value: 0.15
+    - field: b02_hits
+      op: eq
+      value: 2
+    - field: position_ratio
+      op: gt
+      value: 0.08
+    - field: first_round_le_500
+      op: is_false
+- score: 9
+  when:
+    and:
+    - field: qualified
+      op: is_true
+    - field: position_ratio
+      op: lte
+      value: 0.08
+    - field: b02_hits
+      op: eq
+      value: 2
+    - field: first_round_le_500
+      op: is_false
+mapping_note: 'v5.1-draft-4（Step 12.5 二次修订：用户裁定全七档）。冻结 v4.0.0 边界语义逐字保留： 无合格冲突或首回合
+  >15%=0；≤500且同源=10。 合格且首回合≤15%（非10）内按①②命中数 + 位置单调细分：hits=2 且位置≤8%（非≤500同源）=9、
+  hits=2 且位置>8%=7、hits=1 且位置≤8%=5、hits=1 且位置>8%=3、hits=0=1。此为 v5.1 冻结映射，后续修改必须升版本并登记。'
+evidence_rule: '通用 *_quote 输出规则：quote 必须是 canonical text 连续逐字子串；优先最短且足以证明判定的片段；禁止跨位置拼接；禁止用 …… 或 ... 省略；禁止改写、概括、纠正标点或更换中文/英文引号；必须单行、禁止换行；需要两处证据时分放不同 quote 字段或数组项。若该引文可能在正文中出现多次（短句/常用词/无标点片段），必须同时提供 nearby_anchor（邻近唯一上下文片段的 span 编号），帮助 Python 唯一定位；未提供导致歧义拒绝时该证据作废。 round1/round2/round3/round4_quote 必须能在 canonical text 中逐字定位且按正文顺序；
+  Python 定位失败或顺序错 → 该冲突不计回合。 Python 用位置判定 ①②，③由 LLM 的 same_lineage 提供（Python 校验引文）。
+
+  '
+abstain_rule: '无法从正文可靠判断冲突边界、回合数或同源关系、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN；
+  确认没有合格冲突应输出 OK 且 conflicts=[]，不是 ABSTAIN。 ABSTAIN 不自动转 0，单独统计
+  abstention_rate。
+
+  '

@@ -1,0 +1,154 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "池珩推开门。\n包厢里光线柔和，落地窗外能看到半个京城的天际线。一张红木圆桌，对面坐着两个人。\n一个四十多岁的女人，珠光宝气，正笑着喝茶——应该是媒人。\n另一个。\n池珩的脚步顿了一下。\n对面的姑娘穿一件月白色的旗袍，料子薄，勾勒出清瘦的腰线。黑发盘起，露出一截细白的脖子。侧脸轮廓干净利落，睫毛在眼下投出一小片阴影。\n她正低头搅咖啡，听到门响，抬了眼。\n那一眼。\n池珩的大脑空白了零点三秒。\n然后他低头看了看自己的人字拖。\n再抬头看她。\n得\n来都来了。\n\"嗨。\"池珩拉开椅子坐下，把冰红茶往桌上一放，\"开始吧，争取半小时搞定。\"",
+        "nearby_anchor": "推开门，对面坐着个姑娘。\n全京城排队想见她一面的那种。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "裴清宁放下咖啡杯，视线从池珩的人字拖移到他脸上，停了三秒。\n\"炒饭没有。\"她开口了，声音清清冷冷的，\"但粤式煲仔饭不错。\"",
+        "nearby_anchor": "然而裴清宁放下咖啡杯，视线从池珩的人字拖移到他脸上，停了三秒。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "\"这次的，我要了。\"",
+        "nearby_anchor": "池珩走到门口，裴清宁的声音从后面传过来。\n\"池珩。\"\n他回头。",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "\"……行吧。\"\n池珩转身往外走，走了两步又停下来。\n\"那个……我卡里真的只有三百块。\"\n\"我知道。\"\n池珩点了点头，推开门，拖鞋啪嗒啪嗒的声音渐渐远去。",
+        "qualifies": true
+      },
+      {
+        "event_quote": "包厢的门突然被推开。\n一个二十来岁的年轻男人走进来，西装笔挺，头发梳得一丝不苟，手腕上一块表反射出刺眼的光。\n\"清宁，听说你今天在这儿，我特意过来打个招呼——\"",
+        "nearby_anchor": "包厢的门突然被推开。",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "一个二十来岁的年轻男人走进来，西装笔挺，头发梳得一丝不苟，手腕上一块表反射出刺眼的光。\n\"清宁，听说你今天在这儿，我特意过来打个招呼——\"\n他话说到一半，看见了池珩。\n准确地说，是看见了池珩的人字拖。\n\"这位是？\"年轻男人的嘴角微微扬起，那种带着优越感的弧度，像是看到了什么有趣的东西。",
+        "nearby_anchor": "\"清宁，听说你今天在这儿，我特意过来打个招呼——\"",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "\"你这表，高仿吧？\"",
+        "nearby_anchor": "池珩看了陆明轩一眼，目光从他的定制西装移到那块表上，然后移到他锃亮的皮鞋上。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "池珩站在璟华阁的时候，太阳已经偏西了。\n手机震了一下。\n他妈的消息：\"怎么样？人家姑娘什么反应？\"\n池珩单手打字：\"挺好的，人挺客气。\"",
+        "nearby_anchor": "池珩走出璟华阁的时候，太阳已经偏西了。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "一个陌生号码发来一条短信。\n\"池珩，下周六晚七点，裴清宁小姐的地址会发给你。请务必准时。——裴府管家，周叔。\"",
+        "nearby_anchor": "手机又震了。\n一个陌生号码发来一条短信。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "\"你在中东待了三年。\"",
+        "nearby_anchor": "裴清宁微顿。\n她伸手去拿茶壶倒茶，动作优雅从容。茶汤是浅金色的，注入杯中时带着一股淡淡的茉莉香。",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "\"成交。\"\n她伸出手。\n池珩看了看那只手——指甲修剪得整齐，没涂指甲油，指节分明。\n他握了上去。\n裴清宁的手凉的，骨节纤细，但力度不弱。\n握了两秒，松开。\n\"从下周一开始。\"她拿起包，\"我会让周叔把新住处的钥匙给你。\"",
+        "qualifies": true
+      },
+      {
+        "event_quote": "陆明轩站在三步开外，手里端着红酒杯，嘴角噙着一丝笑。\n身后跟着两个人。一个高瘦，一个矮胖，看着像是跟班。\n\"好久不见。\"陆明轩走上前，语气亲热得像多年老友，\"上次璟华阁一别，就想找机会跟你聊聊。\"",
+        "nearby_anchor": "声音从右边传来。\n池珩转头。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "致辞进行到一半——\n\"另外，今天借这个机会，跟大家分享一个好消息。\"裴父的语调微上扬，嘴角带笑。\n裴清宁的身体突然绷紧了。\n池珩侧头看她。\n她的脸色在一瞬间变了。\n\"他要说什么？\"池珩低声问。\n裴清宁没答。\n台上的声音继续：\"裴氏与陆氏的战略合作已经进入最后阶段。为了深化两家的关系——\"\n裴清宁的杯子放下了。不是放——是顿。\n杯底撞在窗台的大理石台面上，发出一声脆响。\n周围几个人回头看了。\n池珩的眉头皱了起来。\n\"——我很高兴地宣布，小女清宁与陆家明轩，将在今年年底正式——\"\n\"爸。\"\n裴清宁的声音不大，但宴会厅的话筒把她父亲的声音放得很大。在这个嘈杂的环境里，她的声音理应被淹没。\n但她还是开口了。\n并且她迈步向前走去。",
+        "nearby_anchor": "酒会临近尾声的时候，出事了。",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "\"诸位好。\"池珩扫了一眼全场，语气随意得像在楼下早餐店跟老板打招呼，\"池珩，清宁的男朋友。\"",
+        "qualifies": true
+      },
+      {
+        "event_quote": "未知号码：\"池珩，我是陆明轩。我们需要谈谈。明天中午，老地方。\"",
+        "nearby_anchor": "他爸的消息：\n\"你小子到底在搞什么！裴家大小姐？你哪来的本事？\"\n\"给我打电话！立刻！\"\n\"我跟你说，你要是骗人家姑娘，我打断你的腿！\"\n池珩把消息已读了，没回。\n打开另一条——",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "\"裴老先生今天上午把小姐叫过去了。谈了两个小时。\"\n池珩手里的手柄停了。\n\"怎么样？\"\n\"小姐出来的时候——\"周叔顿了一下，\"脸色不太好。\"",
+        "nearby_anchor": "这次不是裴清宁。\n是一个他存过的号码。\n\"周叔\"",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "\"我爸今天给了我一个月。\"\n\"一个月？\"\n\"一个月之内，如果我拿不出足够的理由推翻跟陆家的合作——联姻就继续推进。\"",
+        "nearby_anchor": "裴清宁看着他。",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "他走了。\n助理跟在后面，临关门时多看了池珩一眼。",
+        "nearby_anchor": "裴建安盯着他看了两秒。\n然后哼笑了一声。\n\"行了。改天再聊。\"",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "裴清宁和裴建安正式签署了股份转让协议。\n当天晚上，裴清宁的持股比例升至百分之三十四——超过了裴建国的百分之三十一。",
+        "nearby_anchor": "三天后。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "裴父进办公室，门关上。\n里面的声音隔着隔音玻璃听不清楚，但能看到裴父的表情从铁青到震惊再到沉默。\n四十分钟后，裴父出来了。\n脸色很差，但步伐没有失控。\n像是被人打了一记闷拳——疼，但还撑得住。",
+        "nearby_anchor": "第二天一早，裴父直接来了公司。\n这一次的碰面，池珩不在场。但周叔事后简略地跟他描述了经过——",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "那天晚上，池珩没有收到裴清宁的消息。\n他等到十一点，最终自己发了一条：\"吃了吗？\"\n没有回复。\n十一点半，他又发了一条：\"在公司还是回家了？\"\n还是没有回复。\n池珩看了看时间。\n他站起来，换了衣服，出门了。\n公寓楼下的街道已经很安静了。只有零星几辆车经过。\n他走到马路对面——裴氏集团大楼。\n抬头。\n顶层的灯——亮着。\n池珩站在楼下，手机攥在手里。\n犹豫了几秒。\n然后他推门进去了。",
+        "qualifies": true
+      },
+      {
+        "event_quote": "\"你觉得——我现在还需要一个'假'男友吗？\"",
+        "nearby_anchor": "裴清宁的呼吸明显加快了。\n她的手抬起来——攥住了他的衣摆。\n手指微收紧。",
+        "is_external_event": false,
+        "same_scene_action": true,
+        "action_quote": "\"不想了。\"\n声音低的，有点哑。\n\"当假的——不想了。\"",
+        "qualifies": false
+      }
+    ]
+  },
+  "reason": "最早满足外部异常事件定义的候选为相亲包厢中裴清宁说出\"这次的，我要了\"——这是打破主角原有日常预期（吃完走人）的命运级决策性外部事件，且主角在同一场景内（仍在318包厢）作出直接回应\"……行吧\"并确认下周六赴约（直接行动/决定）。其余候选（如陆明轩闯入、裴父当众宣布联姻、裴父叫裴清宁谈话、股份签署）均出现较晚。"
+}
+```

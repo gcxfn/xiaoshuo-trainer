@@ -1,0 +1,69 @@
+{
+  "manifest_id": "dev10_v5_r1",
+  "schema_version": "dev10-manifest-v5-r1",
+  "source_registry": "docs/v5/旧数据重新分类登记_v1.md",
+  "source_section": "B. Development",
+  "frozen_before_scoring": true,
+  "llm_calls_this_card": 0,
+  "books": [
+    {
+      "id": "276",
+      "path": "corpus/贫困生给我的换命茶，我反手给瘫痪多年的老奶喝.txt",
+      "nchars": 12026
+    },
+    {
+      "id": "073",
+      "path": "corpus/弹幕让我斗表姐，我把她捧成活靶子.txt",
+      "nchars": 37153
+    },
+    {
+      "id": "132",
+      "path": "corpus/各给52万留学，8年后继子博士归来亲儿拎破箱，我傻了.txt",
+      "nchars": 33906
+    },
+    {
+      "id": "188",
+      "path": "corpus/老公拿一具死胎换走我女儿.txt",
+      "nchars": 10481
+    },
+    {
+      "id": "467",
+      "path": "corpus/新婚次日被扇耳光，我反手一锅热汤扣头.txt",
+      "nchars": 34294
+    },
+    {
+      "id": "413",
+      "path": "corpus/未婚夫拿我做赌注，我加入赌局他却哭了.txt",
+      "nchars": 13050
+    },
+    {
+      "id": "056",
+      "path": "corpus/穿拖鞋去相亲，京城第一美人不让我走.txt",
+      "nchars": 35310
+    },
+    {
+      "id": "145",
+      "path": "corpus/归来后发现她怀孕，好兄弟竟在视频里对我笑.txt",
+      "nchars": 33700
+    },
+    {
+      "id": "236",
+      "path": "corpus/那年风起落花深.txt",
+      "nchars": 23459
+    },
+    {
+      "id": "303",
+      "path": "corpus/全家人都想姐姐继承家业，殊不知我才是最后赢家.txt",
+      "nchars": 15589
+    }
+  ],
+  "metrics": ["B01", "B02", "N6", "B33", "C14", "B36"],
+  "reps": [1, 2, 3],
+  "call_count": 180,
+  "model_config": "scorer_v5/config/formal_model.yaml",
+  "notes": [
+    "Dev10 book set is exactly the Development 10 from the v1 reclassification registry.",
+    "Development success is not model validation success.",
+    "This card freezes the roster and GATE only; no scoring LLM calls."
+  ]
+}

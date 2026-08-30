@@ -1,0 +1,105 @@
+metric_id: B09
+construct: 核心冲突强度
+version: spec-v5.1-draft-9
+semantic_definition: '使用全局主线冲突清单，禁止用结局结果反推未建立的矛盾。利害对象采用题材中立的状态轴： 人身安全/自由、关系归属、资源控制、名誉或制度资格。
+  等级：L3=已发生或迫近的死亡、长期剥夺自由、子女/身份归属丧失、终身性损害、实质名誉/制度资格 毁灭或同等不可逆后果；L2=重大财产/资源损失、婚姻或关键关系存废、长期但可逆的人身/资格限制；
+  L1=短期口角、轻微利益、一般面子或可即时修复的摩擦。等价结构按后果而非题材命名映射。
+
+  '
+semantic_outputs:
+  main_conflict:
+  - conflict_quote: 主线冲突建立场景对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - stake_state_before: 利害对象状态前
+  - stake_state_after: 利害对象状态后
+  - stake_level: 利害等级（L1/L2/L3，题材中立状态轴映射）
+  - zero_sum: ②零和判定是否成立（bool：双方争夺同一不可并存状态控制权，无共同实现路径）
+  - zero_sum_quote: 零和引文
+  - idle_segments: 无冲突连续区段清单（{ start_quote, end_quote }，LLM 标区段，Python 算比例）
+derived_features:
+- stake_ge_l3: ①利害≥L3（LLM 判 L 级，Python 布尔校验）
+- zero_sum_flag: ②零和（LLM 判定，Python 校验引文可定位）
+- idle_gap_ratio: Python 用 idle_segments 的 offset 区间算"最大单一连续无冲突区段"长度 / L（判定 ③≤30.00%，不把多个分离区段相加）
+- criterion_count: ①②③成立计数
+score_scale:
+  allowed:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+  - 10
+ordinal_mapping:
+- score: 0
+  when:
+    field: criterion_count
+    op: eq
+    value: 0
+- score: 1
+  when:
+    field: criterion_count
+    op: eq
+    value: 1
+- score: 3
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 2
+    - field: idle_gap_ratio
+      op: gt
+      value: 0.2
+- score: 5
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 2
+    - field: idle_gap_ratio
+      op: lte
+      value: 0.2
+- score: 7
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 3
+    - field: idle_gap_ratio
+      op: gt
+      value: 0.2
+- score: 9
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 3
+    - field: idle_gap_ratio
+      op: lte
+      value: 0.2
+    - field: idle_gap_ratio
+      op: gt
+      value: 0.1
+- score: 10
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 3
+    - field: idle_gap_ratio
+      op: lte
+      value: 0.1
+mapping_note: 'v5.1-draft-4（Step 12.5 二次修订：用户裁定全七档）。0=count0 冻结置顶；1=count1；
+  3=count2 且 gap>20%；5=count2 且 gap≤20%；7=count3 且 gap>20%；9=count3 且 gap≤20% 但>10%（未达极值）；
+  10=count3 且 gap≤10%（极值）。7/9 细分依据：criterion_count 定档位，idle_gap_ratio 定强弱（越小越强，
+  count2/3 各拆弱/强）；极值阈值 10% 登记于此。单调：档位越高越接近 10。
+
+
+  （draft-4 Step 12.5 Step 4：ordinal_mapping 为声明式条件，阈值/断点全部在 YAML 中，ordinal.py 为通用解释器，不再硬编码阈值。）'
+evidence_rule: '通用 *_quote 输出规则：quote 必须是 canonical text 连续逐字子串；优先最短且足以证明判定的片段；禁止跨位置拼接；禁止用 …… 或 ... 省略；禁止改写、概括、纠正标点或更换中文/英文引号；必须单行、禁止换行；需要两处证据时分放不同 quote 字段或数组项。若该引文可能在正文中出现多次（短句/常用词/无标点片段），必须同时提供 nearby_anchor（邻近唯一上下文片段的 span 编号），帮助 Python 唯一定位；未提供导致歧义拒绝时该证据作废。 conflict_quote / zero_sum_quote 必须能在 canonical text 中逐字定位； idle_segments
+  的 start_quote/end_quote 必须可定位（Python 据此算区间长度与占比）。
+
+  '
+abstain_rule: '无法确认利害等级/零和/区段边界、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN； ABSTAIN 不自动转 0，单独统计
+  abstention_rate。
+
+  '

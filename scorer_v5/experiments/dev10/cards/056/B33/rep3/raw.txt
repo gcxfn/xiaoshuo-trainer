@@ -1,0 +1,81 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "finale_quote": null,
+    "events": [
+      {
+        "active_action_quote": "你这表，高仿吧？表扣的接缝。真的那款，接缝在三点钟方向，你这个偏了两毫米。",
+        "nearby_anchor": "陆明轩进包厢嘲笑池珩之后",
+        "a_code": "A1",
+        "a_quote": "陆明轩的笑容凝固了。\"什么？\" …… \"你胡说什么——\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "陆少，麻烦让一让。",
+        "nearby_anchor": "包厢里裴清宁请陆明轩离开",
+        "a_code": "A1",
+        "a_quote": "陆明轩站在原地，脸上的表情像吞了只苍蝇。他想说什么，但裴清宁已经不看他了。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "让开。……陆明轩。我说你现在让开。",
+        "nearby_anchor": "璟华阁走廊里陆明轩拦裴清宁",
+        "a_code": "A1",
+        "a_quote": "陆明轩的话堵在嗓子里。……但从没见过她这种眼神。像是在看一个无关紧要的陌生人。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "裴清宁，我跟你说——你这个所谓男朋友，到底什么来路？",
+        "nearby_anchor": "年中酒会上陆明轩当面质问",
+        "a_code": "A1",
+        "a_quote": "陆明轩的笑容慢慢消失了。……你配不上她。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "陆少，你这话应该对着镜子说。",
+        "nearby_anchor": "酒会陆明轩挑衅后池珩反讽",
+        "a_code": "A1",
+        "a_quote": "陆明轩的脸色骤变。他的手微攥紧酒杯柄，指节发白。\"你——\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "这件事，我不同意。",
+        "nearby_anchor": "裴父在年中酒会上当众宣布清宁与陆明轩联姻",
+        "a_code": "A1",
+        "a_quote": "全场寂静。裴父的表情停滞了一瞬。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我已经有要交往的人了。",
+        "nearby_anchor": "裴父台上联姻致辞被打断后",
+        "a_code": "A1",
+        "a_quote": "整个宴会厅像是被按了暂停键。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "裴建安，是谁？我跟我父亲说。我是清宁的男朋友。",
+        "nearby_anchor": "年中酒会上裴清宁目光示向后池珩，全场注视",
+        "a_code": "A3",
+        "a_quote": "宴会厅里的安静持续了大概两秒。然后裴父的声音从台上传下来。很沉。\"清宁。过来。\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "钱立成那条线——他儿子海外公司的资金流向，我让人递材料到钱立成面前。",
+        "nearby_anchor": "裴清宁办公室密谈后",
+        "a_code": "A4",
+        "a_quote": "审批通过后再没卡过任何环节。听说他最近请了长病假，去外地疗养了。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "裴叔，今天想来认识您，也是清宁的意思。她说她家二叔对她最亲。",
+        "nearby_anchor": "京城郊区私人会所池珩约见裴建安",
+        "a_code": "A4",
+        "a_quote": "裴建安点了点头，表情松泛了些。\"不错不错。清宁这丫头眼光一向高，能被她看上的人——不简单。\"",
+        "qualifies": true
+      }
+    ]
+  },
+  "reason": "已逐条标注 A 证据；本作为开放结局网文，主线终局不明确（两人关系从假转真，无最终冲突归属收束），故 finale_quote 设为 null。"
+}
+```

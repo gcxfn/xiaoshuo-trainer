@@ -1,0 +1,63 @@
+metric_id: B34
+construct: 大爽点存在
+version: spec-v5.1-draft-3
+semantic_definition: >
+  先按场景清单列全部候选清算场。终局场优先取"最后一次不可逆确定主线冲突归属/结果"的场景；
+  没有该场时，按冲突目标列所有实时交锋，取最后一个可确定主线结果的场景；不存在可确定结果
+  时记录无清算场，不以情绪最强补选。并列场全部留档。
+  ①当众性：至少 3 个可识别角色实体在场，或正文明确有可识别群体围观；稳定称谓/唯一身份描述
+  可计，不要求自报姓名。
+  ②对手当场挫败：受罚、失态、被带走、归属落空或其他后果在场景内可见。
+  ③主角方触发：主角方的可观察言行直接引爆，不由旁白、巧合或事后转述替代。
+  ④不可逆代价：当场或紧邻连续段落出现法律制裁、身份揭穿、关系断绝、制度资格丧失、核心资源
+  不可恢复损失等前后状态变化；仅"大家很震惊"不成立。
+
+semantic_outputs:
+  # LLM 只提供语义判断与逐字证据；严禁输出 offset/比例/score。
+  candidates:
+    - scene_quote: "清算场关键句逐字引文"
+    - entities_present: "在场实体清单（稳定称谓/唯一身份描述）"
+    - public_quote: "①当众性引文（≥3 实体或明确群体围观）"
+    - defeat_quote: "②对手当场挫败引文"
+    - trigger_quote: "③主角方触发引文"
+    - cost_quote: "④不可逆代价引文"
+    - is_realtime: "该候选是否为实时交锋（非旁白/事后转述）"
+    - determines_mainline: "该候选是否可确定主线冲突结果（归属/结果明确）"
+    - item_hits: "①②③④分别成立（bool）"
+  selection_note:
+    - LLM 列候选场景并填项；Python 按冻结规则选清算场——优先"最后一次不可逆确定主线冲突
+      归属/结果"场景；无该场时，按冲突目标列所有实时交锋，取最后一个可确定主线结果的场景；
+      都不存在则记录无清算场。并列场全部留档，LLM 不做最后选择。
+
+derived_features:
+  # 全部 Python 产生。
+  - candidate_offsets: Python 定位各候选场景 offset
+  - finale_scene: Python 按冻结规则选清算场——优先"最后一次不可逆确定主线冲突归属/结果"场景；无该场时取最后一个可确定主线结果的实时交锋场景；都不存在则记录无清算场
+  - entity_count: 在场实体计数（Python 校验实体引文可定位后计数，判定 ①≥3）
+  - item_count: ①②③④成立计数（Python 校验引文可定位）
+  - combo_10: ①与④均成立且四项至少 3 项
+  - combo_5: 至少 3 项但缺①或④，或恰 2 项
+
+score_scale:
+  allowed: [0, 1, 3, 5, 7, 9, 10]
+
+ordinal_mapping:
+  - one_and_four_and_ge_3: 10
+  - other_ge_2: 5
+  - zero_or_one: 0
+
+mapping_note: >
+  spec-v5.1-draft-3 restores the v4.0.0 frozen 0/5/10 branch semantics after
+  independent threshold review: ①当众性恢复为至少 3 个可识别实体或明确群体围观（不排除
+  主角与主要对手外的在场者）；④不可逆代价恢复为当场/紧邻连续段落的实质前后状态变化；
+  清算场选择恢复冻结回退链（最后不可逆确定结果场 → 最后一个可确定主线结果的实时交锋场
+  → 无清算场）；①④+≥3 项=10、≥3 缺①或④或恰 2 项=5、≤1 项或无合格场=0。
+  此为 v5.1 冻结映射，后续修改必须升版本并登记。
+
+evidence_rule: >
+  所有引文必须能在 canonical text 中逐字定位；实体清单必须逐字可定位（不在场证据不计）。
+  清算场选择由 Python 按冻结回退链 offset 判定；并列场全部留档。
+
+abstain_rule: >
+  无法确认清算场/实体在场、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN；
+  ABSTAIN 不自动转 0，单独统计 abstention_rate。

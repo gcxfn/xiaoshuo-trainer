@@ -1,0 +1,26 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "池珩愣了一下。",
+        "nearby_anchor": "裴清宁的声音从后面传过来。\"池珩。\"",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "包厢的门突然被推开。",
+        "nearby_anchor": "一个二十来岁的年轻男人走进来，西装笔挺",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "池珩终于抬头了。他看了陆明轩一眼",
+        "qualifies": true
+      }
+    ]
+  },
+  "reason": "前列第一个候选'池珩愣了一下'是主角被裴清宁喊名字时的内部反应，不属于打破日常的外部事件。第二个候选是陆明轩推门闯入包厢的外部事件——一个打破相亲日常的意外闯入者，且主角在同一场景内对此做出直接反应（抬头观察、回应对方审视并反击'你这表，高仿吧？'）。该事件出现在早期相亲场景中，满足异常事件定义。"
+}
+```

@@ -1,0 +1,57 @@
+metric_id: B16
+construct: 结尾闭环度
+version: spec-v5.1-draft-4
+semantic_definition: >
+  先列开篇承诺/核心意象、主线冲突和全部主要对手，再检查结尾连续场景。结尾部分以最后一个
+  正文场景开始向前取全文最后 15.00% 码点作为扫描范围，但闭环对象以场景清单为准，不把比例
+  本身当作结局。
+  直接 0 分否决：V1=结尾出现求赞、点赞、断更等元话语；V2=结尾另起与主线无关的新事件并以
+  其替代主线结果。否决须逐字定位。
+  无否决时判：①开篇承诺/核心意象在结尾以同一功能的场景或明确陈述回收，须并列两处证据；
+  ②主线胜负/关系/归属在结尾以人物在场的交锋、清算、裁决或明确行动呈现，纯事后通报不成立；
+  ③先列主要对手清单，结尾对每个对手给出可确定最终状态；多线文本逐条核对，开放结局如实
+  标记未闭合，不因缺少传统审判自动判坏。
+
+semantic_outputs:
+  # LLM 只提供语义判断与逐字证据；严禁输出 offset/比例/score。
+  ending_items:
+    - veto1_quote: "V1 元话语（求赞/点赞/断更等）句逐字引文（若有）"
+    - veto2_quote: "V2 另起无关新事件替代主线结果句逐字引文（若有）"
+    - callback_quote: "①回收句逐字引文（结尾）"
+    - opening_quote_ref: "①开篇对应承诺/意象句逐字引文（并列两处证据，不以固定码点边界硬切）"
+    - mainline_resolve_quote: "②主线胜负/归属呈现句逐字引文（人物在场交锋/清算/裁决/行动）"
+    - antagonist_final_states: "③对手终态清单：{ antagonist, state_quote, terminal }"
+    - item_hits: "①②③分别成立（bool）"
+  selection_note:
+    - 否决先扫；①②③ 项由 Python 校验引文定位与末 15% 边界后计数
+
+derived_features:
+  # 全部 Python 产生。
+  - last_15pct_window: Python 截取末 15% 非空白码点
+  - veto_found: Python 校验 veto1/veto2 引文定位且落在末 15% 扫描范围（若有→直接 0）
+  - item1_ok: ①成立——callback_quote 落在末 15% 且 opening_quote_ref 可定位（开篇承诺/核心意象并列两处证据；不以固定码点边界硬切）
+  - item2_ok: ②成立——mainline_resolve_quote 落在末 15% 且非纯事后通报（LLM 判场景呈现，Python 校验引文）
+  - item3_ok: ③成立——全部 antagonist_final_states 引文可定位且落在末 15%
+  - item_count: ①②③成立计数（V 否决优先）
+
+score_scale:
+  allowed: [0, 5, 10]
+
+ordinal_mapping:
+  - veto_or_le_one: 0
+  - two: 5
+  - three: 10
+
+mapping_note: >
+  v5.1-draft-4（Step 12.5）正式启用七档。冻结 v4.0.0 边界语义逐字保留：否决（V1/V2 逐字
+  定位且末15%）或≤1项=0、3项=10 原封不动；冻结 5 分支（2项）=5。否决或 0/1 项状态合并于
+  0 分支，仅 3 个可达状态（0/5/10），故无 1/3/7/9 档。
+  此为 v5.1 冻结映射，后续修改必须升版本并登记。
+
+evidence_rule: >
+  所有引文必须能在 canonical text 中逐字定位；①②③引文必须落在末 15%（Python 用 offset 判定）；
+  veto 引文落在末 15% 内才生效；opening_quote_ref 必须可定位并与 callback_quote 构成并列两处证据。
+
+abstain_rule: >
+  无法确认闭环项边界、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN；
+  ABSTAIN 不自动转 0，单独统计 abstention_rate。

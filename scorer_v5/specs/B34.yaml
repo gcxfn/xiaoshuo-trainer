@@ -1,0 +1,137 @@
+metric_id: B34
+construct: 大爽点存在
+version: spec-v5.1-draft-9
+semantic_definition: '先按场景清单列全部候选清算场。终局场优先取"最后一次不可逆确定主线冲突归属/结果"的场景； 没有该场时，按冲突目标列所有实时交锋，取最后一个可确定主线结果的场景；不存在可确定结果
+  时记录无清算场，不以情绪最强补选。并列场全部留档。 ①当众性：至少 3 个可识别角色实体在场，或正文明确有可识别群体围观；稳定称谓/唯一身份描述 可计，不要求自报姓名。
+  ②对手当场挫败：受罚、失态、被带走、归属落空或其他后果在场景内可见。 ③主角方触发：主角方的可观察言行直接引爆，不由旁白、巧合或事后转述替代。 ④不可逆代价：当场或紧邻连续段落出现法律制裁、身份揭穿、关系断绝、制度资格丧失、核心资源
+  不可恢复损失等前后状态变化；仅"大家很震惊"不成立。取最高项数，所有并列最高场留档；≤1 项=0 分，
+  恰 2 项且缺 ①④=1 分，恰 2 项且含 ①④=3 分，≥3 项缺 ① 或缺 ④=5 分，3 项含 ①④=7 分，4 项含 ①④=9 分，
+  4 项含 ①④ 且在场实体 ≥5=10 分。
+
+  '
+semantic_outputs:
+  candidates:
+  - scene_quote: 清算场关键句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - entities_present: 在场实体清单（稳定称谓/唯一身份描述）
+  - public_quote: ①当众性引文（≥3 实体或明确群体围观）（无该项证据则或 null）
+  - defeat_quote: ②对手当场挫败引文（无该项证据则或 null）
+  - trigger_quote: ③主角方触发引文（无该项证据则或 null）
+  - cost_quote: ④不可逆代价引文（无该项证据则或 null）
+  - is_realtime: 该候选是否为实时交锋（非旁白/事后转述）
+  - determines_mainline: 该候选是否可确定主线冲突结果（归属/结果明确）
+  - item_hits: ①②③④分别成立（bool）
+  selection_note:
+  - LLM 列候选场景并填项；Python 按冻结规则选清算场——优先"最后一次不可逆确定主线冲突 归属/结果"场景；无该场时，按冲突目标列所有实时交锋，取最后一个可确定主线结果的场景；
+    都不存在则记录无清算场。并列场全部留档，LLM 不做最后选择。
+derived_features:
+- candidate_offsets: Python 定位各候选场景 offset
+- finale_scene: Python 按冻结规则选清算场——优先"最后一次不可逆确定主线冲突归属/结果"场景；无该场时取最后一个可确定主线结果的实时交锋场景；都不存在则记录无清算场
+- entity_count: 在场实体计数（Python 校验实体引文可定位后计数，判定 ①≥3；≥5 判定 10 分强度档）
+- item_count: ①②③④成立计数（Python 校验引文可定位；LLM 报 null=无该项证据，不计）
+- combo_10: ①与④均成立且四项至少 3 项
+- combo_5: 至少 3 项但缺①或④，或恰 2 项
+score_scale:
+  allowed:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+  - 10
+ordinal_mapping:
+- score: 0
+  when:
+    field: item_count
+    op: lte
+    value: 1
+- score: 1
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 2
+    - field: item1
+      op: is_false
+- score: 1
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 2
+    - field: item4
+      op: is_false
+- score: 3
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 2
+    - field: item1
+      op: is_true
+    - field: item4
+      op: is_true
+- score: 5
+  when:
+    and:
+    - field: item_count
+      op: gte
+      value: 3
+    - field: item1
+      op: is_false
+- score: 5
+  when:
+    and:
+    - field: item_count
+      op: gte
+      value: 3
+    - field: item4
+      op: is_false
+- score: 7
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 3
+    - field: item1
+      op: is_true
+    - field: item4
+      op: is_true
+- score: 10
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 4
+    - field: item1
+      op: is_true
+    - field: item4
+      op: is_true
+    - field: entity_count
+      op: gte
+      value: 5
+- score: 9
+  when:
+    and:
+    - field: item_count
+      op: eq
+      value: 4
+    - field: item1
+      op: is_true
+    - field: item4
+      op: is_true
+mapping_note: 'v5.1-draft-4（Step 12.5 二次修订，用户裁定全七档）：冻结 0/10 分支语义保留——≤1 项或无合格场=0，
+  4 项含 ①④ 且 entity_count ≥5=10（原 10 为 ①④+≥3 项，本次按项数单调细分）；冻结 5 分支按项数单调细分：
+  恰 2 项缺 ①④=1、恰 2 项含 ①④=3、≥3 项缺 ① 或 ④=5、3 项含 ①④=7、4 项含 ①④=9、4 项含 ①④ 且 entity_count
+  ≥5=10。7/9 细分依据：7=3 项含 ①④（较 5 更强但仍缺 ②/③ 之一）、9=4 项含 ①④（②③ 全成立）、10=4 项含 ①④
+  且 entity_count≥5（至少 5 个可定位在场实体，当众性强度更高）。断点 5（在场实体数）登记为授权细分。
+
+
+  （draft-4 Step 12.5 Step 4：ordinal_mapping 为声明式条件，阈值/断点全部在 YAML 中，ordinal.py 为通用解释器，不再硬编码阈值。）'
+evidence_rule: '通用 *_quote 输出规则：quote 必须是 canonical text 连续逐字子串；优先最短且足以证明判定的片段；禁止跨位置拼接；禁止用 …… 或 ... 省略；禁止改写、概括、纠正标点或更换中文/英文引号；必须单行、禁止换行；需要两处证据时分放不同 quote 字段或数组项。若该引文可能在正文中出现多次（短句/常用词/无标点片段），必须同时提供 nearby_anchor（邻近唯一上下文片段的 span 编号），帮助 Python 唯一定位；未提供导致歧义拒绝时该证据作废。 所有引文必须能在 canonical text 中逐字定位；实体清单必须逐字可定位（不在场证据不计）。 清算场选择由 Python
+  按冻结回退链 offset 判定；并列场全部留档。
+
+  '
+abstain_rule: '无法确认清算场/实体在场、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN； ABSTAIN 不自动转 0，单独统计 abstention_rate。
+
+  '

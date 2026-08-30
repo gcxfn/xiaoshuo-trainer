@@ -1,0 +1,17 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "陆成泽那一巴掌落下来前，我没有躲。",
+        "nearby_anchor": "啪的一声。\n很脆。",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "然后，我把整碗汤扣了下去。",
+        "qualifies": true
+      }
+    ]
+  }
+}
+```

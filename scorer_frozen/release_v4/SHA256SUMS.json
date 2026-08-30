@@ -1,0 +1,55 @@
+{
+  "schema_version": "anchor-v4-formal-sha256/v1",
+  "package_id": "anchor-v4-formal-20260828",
+  "version": "v4.0.0",
+  "hash_algorithm": "SHA-256",
+  "encoding": "UTF-8",
+  "canonical_payload_digest": "d7c726859c345851678f34b7eda459fcb1ede8b2516e407b6b5479426d847754",
+  "payload_self_excluded": true,
+  "payload_files": [
+    {
+      "path": "scorer/release_v4/anchor_v4_正式发布.md",
+      "sha256": "f2b1c91a7f15a955a169b5aea473c53950336229bb1d4e4cd9b09415b42ad8b9",
+      "bytes": 45271
+    },
+    {
+      "path": "scorer/release_v4/score_record.schema.json",
+      "sha256": "9843f0ec6a3925561d5ddaeb5499e6869a0cfd51b1d371657916d9b60466b260",
+      "bytes": 14883
+    },
+    {
+      "path": "scorer/release_v4/冻结清单.md",
+      "sha256": "52581693d8da5504301e48de39880111bfd4f5cf21de0c54d52789f1cf53ca62",
+      "bytes": 2549
+    },
+    {
+      "path": "scorer/release_v4/发布登记_v1.md",
+      "sha256": "02e52541c2fb7c6fb32c617d18768a37fa3b64f817b9ada88baa9464a1d894ab",
+      "bytes": 5064
+    },
+    {
+      "path": "scorer/release_v4/评分任务模板.md",
+      "sha256": "5d0f417af76e1bae0afda30bfdba6643bb25be8c37c936f598fcab814673cd6b",
+      "bytes": 7196
+    },
+    {
+      "path": "scorer/release_v4/构建侧输入审计.schema.json",
+      "sha256": "c4acb23209da3638a6942413cb1849ef5958ab6b2038e4dae62e8392fe54e9d4",
+      "bytes": 2326
+    },
+    {
+      "path": "scorer/release_v4/构建侧输入审计模板.md",
+      "sha256": "3bf32f0e85e1281ae3fb9e4bc6af116164e05eb0ea400e0eb2f4571e68a534fe",
+      "bytes": 2981
+    }
+  ],
+  "source_candidate": {
+    "path": "scorer/anchor_v4_全量19指标_候选.md",
+    "sha256": "94675a63d0c19e38bb00e7657c37ab2c496a629d30545e87f73d66fb0acf5a2c"
+  },
+  "notes": [
+    "All payload files are hashed after final write.",
+    "The build-input audit sidecar schema/template are payload files but sidecar records are generated outside this package and are not mounted to scoring workers.",
+    "This manifest is self-excluded from canonical_payload_digest to avoid circular hashing."
+  ]
+}

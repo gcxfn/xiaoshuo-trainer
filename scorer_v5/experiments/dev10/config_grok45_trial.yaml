@@ -1,0 +1,14 @@
+# Isolated grok-4.5 Smoke5 trial. Does NOT replace scorer_v5/config/formal_model.yaml.
+# provider/model recorded in provenance; historical trial only — current formal route is commandcode/deepseek-v4-flash (v5.1-config-2), not MiniMax-M3.
+config_version: v5.1-config-1
+provider: xai
+model: grok-4.5
+temperature: 0.0
+top_p: 1.0
+seed: 0
+seed_supported: true
+reasoning_mode: null
+max_tokens: 8192
+timeout: 180
+prompt_version: v5.1-prompt-6
+metric_spec_version: spec-v5.1-draft-7

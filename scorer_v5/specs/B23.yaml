@@ -1,0 +1,105 @@
+metric_id: B23
+construct: 主角能动性
+version: spec-v5.1-draft-9
+semantic_definition: '主动行动是主角方主动选择/发起的事件并产生可观察结果；结果表现为对手/世界状态的可验证改变 （反应、让步、受损、计划落空、环境变化等），但单纯内心活动、被动接话或唯一结果是"产生新
+  情绪"不计。同一目标、同一时空的连续动作合并为一件；独立结果或新选择才另计。 ①主动行动计数 ≥5；②递进链 ≥2（后行动依赖/升级前行动的结果，输入链两端证据）；
+  ③终局主动（决定性场面由主角发起，而非被动反应）。
+
+  '
+semantic_outputs:
+  actions:
+  - action_quote: 主动行动句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - observable_result: 可观察结果对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（对手/世界状态改变）
+  - chain_link: 递进链标记（本行动是否依赖/升级上一行动结果）
+  - finale_initiative_quote: 终局发起句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（③，若有）
+  criteria:
+  - count_ge_5: ①主动行动 ≥5
+  - chain_ge_2: ②递进链 ≥2
+  - finale_active: ③终局主动
+derived_features:
+- action_count: 主动行动计数（Python 按引文定位 + 结果校验后计数，判定 ①≥5）
+- chain_length: 递进链最长长度（Python 按 chain_link 序列计算，判定 ②≥2）
+- finale_quote_located: Python 校验 finale_initiative_quote 可定位
+- criterion_count: ①②③成立计数
+score_scale:
+  allowed:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+  - 10
+ordinal_mapping:
+- score: 0
+  when:
+    field: criterion_count
+    op: eq
+    value: 0
+- score: 1
+  when:
+    field: criterion_count
+    op: eq
+    value: 1
+- score: 3
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 2
+    - field: chain_length
+      op: lt
+      value: 4
+- score: 5
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 2
+    - field: chain_length
+      op: gte
+      value: 4
+- score: 7
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 3
+    - field: chain_length
+      op: lt
+      value: 4
+- score: 9
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 3
+    - field: chain_length
+      op: gte
+      value: 4
+    - field: chain_length
+      op: lt
+      value: 6
+- score: 10
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 3
+    - field: chain_length
+      op: gte
+      value: 6
+mapping_note: 'v5.1-draft-4（Step 12.5 二次修订：用户裁定全七档）。0=count0 冻结置顶；1=count1；
+  3=count2 且递进链<4；5=count2 且递进链≥4；7=count3 且递进链<4；9=count3 且递进链≥4 但<6（未达极值）；
+  10=count3 且递进链≥6（极值）。7/9 细分依据：criterion_count 定档位，chain_length 定强弱（count2/3 各拆弱/强）；
+  极值阈值 6 登记于此。单调：档位越高越接近 10。
+
+
+  （draft-4 Step 12.5 Step 4：ordinal_mapping 为声明式条件，阈值/断点全部在 YAML 中，ordinal.py 为通用解释器，不再硬编码阈值。）'
+evidence_rule: '通用 *_quote 输出规则：quote 必须是 canonical text 连续逐字子串；优先最短且足以证明判定的片段；禁止跨位置拼接；禁止用 …… 或 ... 省略；禁止改写、概括、纠正标点或更换中文/英文引号；必须单行、禁止换行；需要两处证据时分放不同 quote 字段或数组项。若该引文可能在正文中出现多次（短句/常用词/无标点片段），必须同时提供 nearby_anchor（邻近唯一上下文片段的 span 编号），帮助 Python 唯一定位；未提供导致歧义拒绝时该证据作废。 action_quote / observable_result 必须能在 canonical text 中逐字定位； 缺 observable_result
+  的 action 不计入①。链长由 Python 按 LLM 的 chain_link 序列计算。
+
+  '
+abstain_rule: '无法确认行动边界/结果、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN； ABSTAIN 不自动转 0，单独统计 abstention_rate。
+
+  '

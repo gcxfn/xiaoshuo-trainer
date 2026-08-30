@@ -1,0 +1,179 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "finale_quote": null,
+    "events": [
+      {
+        "active_action_quote": "我说：留我女儿来过我怀里的证据。",
+        "nearby_anchor": "袋口封上时，我让手机录了视频，拍清时间、床号和女儿腕牌。",
+        "a_code": "A1",
+        "a_quote": "他的脸色终于沉了一点。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "你在我生孩子的时候，给别的女人发消息。陆时谦，到底是谁该心虚？",
+        "nearby_anchor": "我笑了下。\"比如你发给许清漪的消息吗？\"",
+        "a_code": "A1",
+        "a_quote": "他沉默片刻，又恢复了那副温柔样子。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "陆时谦，今天起，你不能单独接近她。",
+        "nearby_anchor": "我闭了闭眼。握紧女儿的小手。",
+        "a_code": "A1",
+        "a_quote": "弹幕慢慢浮出来。……他就是靠这句话让你放手的。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "拿经皮黄疸仪来。",
+        "nearby_anchor": "护士笑了笑：\"需要去观察室，那里光线和温度更标准。\"",
+        "a_code": "A1",
+        "a_quote": "护士脸色僵住。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我的孩子不是你们效率的一部分。",
+        "nearby_anchor": "她看着我，语气很克制：\"闻女士，这样会影响我们工作效率。\"",
+        "a_code": "A1",
+        "a_quote": "她没再说话。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "拿出去。",
+        "nearby_anchor": "瓶身没有封签。配方标签是手写的。",
+        "a_code": "A1",
+        "a_quote": "陆时谦脸色彻底冷了。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "她说什么，我都听她的。",
+        "nearby_anchor": "陆时谦看向她：\"妈，您也跟着她闹？\"",
+        "a_code": "A1",
+        "a_quote": "他被噎住。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "药名、批号、开方医生、适应症，全部调出来。",
+        "nearby_anchor": "\"这是陆先生特别交代的舒缓方案。\"",
+        "a_code": "A1",
+        "a_quote": "医生愣住。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我睡死了，你好把孩子抱去哪儿？",
+        "nearby_anchor": "你不睡，不吃药，不让医生碰孩子。你要把自己熬死吗？",
+        "a_code": "A1",
+        "a_quote": "他脸上闪过一丝极快的难堪。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "你说，比我想的更不堪。",
+        "nearby_anchor": "在你眼里，我就这么不堪？",
+        "a_code": "A1",
+        "a_quote": "他摔门出去。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "这不是我的女儿。",
+        "nearby_anchor": "陆时谦说：\"她没撑住。\"",
+        "a_code": "A1",
+        "a_quote": "我耳朵里嗡的一声。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我报警说孩子被换，你们第一反应不是查孩子，是查我脑子？",
+        "nearby_anchor": "那人拎着评估箱，语气温和：\"闻女士，我们只是做一个简单的产后创伤筛查。\"",
+        "a_code": "A1",
+        "a_quote": "他眼神一沉。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "把真相说出/许清漪的孩子登记名。",
+        "nearby_anchor": "\"登记名，许清漪之女。\"",
+        "a_code": "A1",
+        "a_quote": "陆时谦猛地抬头。\"妈，这些事您别掺和。\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "把我的狗带上来，它能找到我女儿。",
+        "nearby_anchor": "所有人都用怜悯又防备的眼神看着我。",
+        "a_code": "A1",
+        "a_quote": "陆时谦红着眼看我。\"棠音，接受现实吧。\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "把我的女儿还给我。",
+        "nearby_anchor": "你干什么？",
+        "a_code": "A1",
+        "a_quote": "她眼泪瞬间掉下来。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "你们能让病历说谎，能让监控失明，能让医生闭嘴。但你换不了她从我血里带出来的味道。",
+        "nearby_anchor": "棠音，你现在的样子很难看。",
+        "a_code": "A1",
+        "a_quote": "陆时谦脸色白了一瞬。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "必须由警方联系司法鉴定机构，现场拆封采样包，全程录像。",
+        "nearby_anchor": "可以。",
+        "a_code": "A1",
+        "a_quote": "陆时谦冷声道：\"你连我都不信？\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "你值得吗？",
+        "nearby_anchor": "这句话像一巴掌打在他脸上。",
+        "a_code": "A1",
+        "a_quote": "他脸色白了一瞬。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "药先放下，等警察核对。",
+        "nearby_anchor": "正常医嘱，我们不拒绝。来路不明的东西，别往我女儿血管里送。",
+        "a_code": "A1",
+        "a_quote": "护士长脸色不自然。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "不是我写的，那是谁签的许清漪三个字？",
+        "nearby_anchor": "许清漪猛地抬头：\"那不是我写的！\"",
+        "a_code": "A1",
+        "a_quote": "她脸上没有血色。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "你让我抱着她的死胎听死亡通知。",
+        "nearby_anchor": "棠音，我只是……我只是想先稳住清漪。等她状态好一点，我会把孩子还给你。",
+        "a_code": "A1",
+        "a_quote": "他嘴唇动了动，一个字都说不出来。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "你是她父亲，所以更可怕。",
+        "nearby_anchor": "邹婉在旁边气得发抖。\"闻棠音，你别太过分。时谦是孩子父亲！\"",
+        "a_code": "A1",
+        "a_quote": "他眼神痛苦",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "她是有一个差点给她办死亡证明的父亲。",
+        "nearby_anchor": "孩子总归有陆家的血。你不能让她一辈子不认父亲。",
+        "a_code": "A1",
+        "a_quote": "邹婉脸色煞白。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "不必转达。",
+        "nearby_anchor": "我愿意净身出户。只求以后能远远看孩子一眼。",
+        "a_code": "A1",
+        "a_quote": "他眼神痛苦",
+        "qualifies": true
+      }
+    ]
+  },
+  "reason": "正文为开放结局：女儿被找回、陆时谦被批捕、离婚判下，但创伤恢复仍延续到知夏三个月后的日常生活。主线最终归属（女儿抚养权）已尘埃落定，刑事与民事程序已闭环，未出现新的改变归属的冲突目标场景；按终局规则，最后改变主线最终归属的冲突目标场景无法清晰定位在文本中明确出现（最后冲突为消防演练报警，属PTSD日常，非主线冲突），因此 finale_quote 标记为 null，不排除任何已识别场景。events 逐项列出主角主动动作与对应 A1 证据引文。"
+}
+```

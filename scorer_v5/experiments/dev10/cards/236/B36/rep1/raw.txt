@@ -1,0 +1,40 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "axes": [
+      {
+        "axis": "P2",
+        "axis_quote": "都快点，溪姐特意吩咐了，今晚要在壹号会所顶层包厢给姐夫一个惊喜！……溪姐太狠了，为了姐夫把那个恋爱脑学霸耍得团团转，让他心甘情愿放弃清北特招，选了个二本院校。……为了风哥，溪姐付出太多，连色相都出卖了。",
+        "is_core": true,
+        "core_scene_quotes": [
+          "她自顾自地将蓝宝石手链给陆临风戴上，又从礼物盒里取出一条红宝石手链戴在自己手腕上。一言不发宣誓主权的模样让周寻浑身一震。",
+          "我承认过吗？还是说，你拿那句我随口说的喜欢当表白？路边的花，天上的云，街边流浪的猫，我都喜欢。难道都是我男朋友吗？……周寻，清醒点吧。这不叫男女朋友，这叫舔狗……"
+        ],
+        "breadth_note": false
+      },
+      {
+        "axis": "P3",
+        "axis_quote": "周寻浑身发寒，连骨头缝里都透着寒气。高考成绩出来后，简溪的成绩低得可怕，堪堪超过二本线。二本学校学费高昂，他以为她根本负担不起。所以，他放弃清北特招，选择有高额奖金的二本院校，就是为了给她凑学费！如今，她们却告诉他——穷是假的，高考成绩是假的，感情是假的！一切都是假的！",
+        "is_core": true,
+        "core_scene_quotes": [
+          "周寻的眼眶通红，声音颤抖：这是一个局，对吗？为了让我放弃清北特招，将名额让给陆临风？",
+          "因为临风已经代替你和学校签了合同了，如果你不去，违约金高达数百万。……谁允许他替我签名的！……临风也不是故意的。他已经被清北特招，这种关键时候绝不能出事。……她有些歉疚：……你在上面按个手印吧，大学先去读，反正研究生还是能考名校的。"
+        ],
+        "breadth_note": true
+      },
+      {
+        "axis": "P5",
+        "axis_quote": "说着，她命令强硬地掰开他的嘴，毫不犹豫地将烈酒灌了进去！高浓度的烈酒在周寻猝不及防下被灌入他的喉咙。连食道都像是在被灼烧。他不受控制地咳嗽起来，浑身开始冒出红疹。……风哥，这还不是为了你。……周寻酒精过敏住院，才不会有机会更改自己的志愿，清北特招的名额才能属于你。",
+        "is_core": true,
+        "core_scene_quotes": [
+          "陆临风突然出现说道：交给我吧，我力气大。闺蜜乐得轻松。他冷冷瞥了一眼昏迷的周寻，唇角微勾，根本没打电话就转身离开了。",
+          "她强硬地拽住他：我没兴趣听你狡辩，跟我去学校礼堂，当着全校师生的面向临风道歉！……手指掐住他的伤口，力道大到直接撕裂那道口子，顿时有鲜血溢出。她明知道他有凝血障碍却视若无睹。"
+        ],
+        "breadth_note": false
+      }
+    ]
+  },
+  "reason": "The text presents three distinct relationship-conflict axes across the main storyline: P2 (Jianxi and her circle betrayed Zhouxun's trust by orchestrating the entire romance as a scheme for Lu Linfeng, then denying the relationship existed); P3 (Jianxi's family and Lu Linfeng wrongfully redirected Zhouxun's Tsinghua special-admission spot and his diligence/sacrifice to fund Jianxi's supposed tuition—falsely attributing the qualification to Lu Linfeng via forged contracts); and P5 (Jianxi forcibly poured liquor into the alcohol-allergic Zhouxun to prevent him from changing his college choice, and later dragged his bleeding wound to force a public apology). The P3 axis satisfies the breadth requirement (P1/P3/P4 coverage), and P2/P3/P5 are all core drivers directly altering Zhouxun's goals, plans, resources, and relationships across multiple main-line scenes (the revelation in the private room, the locked volunteer system, the hospital discharge and forced fingerprint on the contract, the alley beating and the human-trafficking attempt). Conditions ① (≥2 distinct axes), ② (core drive with ≥2 main-line scenes per axis), and ③ (breadth including P3) are all met."
+}
+```

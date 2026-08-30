@@ -1,0 +1,13 @@
+{
+  "note": "Offline replay-safety check after CHANGES_REQUESTED. No HTTP. Existing run root not written.",
+  "command": "python scorer_v5/experiments/dev10/run_dev10.py --smoke --pending-only --run-id dev10_v5_r3_draft7_smoke",
+  "run_id": "dev10_v5_r3_draft7_smoke",
+  "jobs": 10,
+  "pending": 0,
+  "http": 0,
+  "is_done_includes": ["OK", "ABSTAIN", "FAIL_PARSE", "FAIL_DUPLICATE_KEY", "FAIL_SCHEMA", "SCHEMA_FAIL", "EVIDENCE_FAIL", "LOGIC_FAIL", "BLOCKED"],
+  "old_r3_summary_sha256": "d512c171fcdbab67a5be9ec8f6d443d6dde7c922ae2df69b4909f42f94cfd914",
+  "old_draft6_summary_sha256": "63b4073a9d6b1f33451055dc0d682043e1b934439bcc9b587c984ece9a78ef65",
+  "existing_run_staging_present": false,
+  "new_isolated_http_run": "not_executed_no_authorization"
+}

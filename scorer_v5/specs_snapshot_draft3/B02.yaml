@@ -1,0 +1,65 @@
+metric_id: B02
+construct: 冲突出现速度
+version: spec-v5.1-draft-3
+semantic_definition: >
+  合格对抗性冲突要求至少两个可识别实体围绕同一事项立场相左，并完成至少两个
+  "行动/陈述→针对性回应"的交换。一个回合是甲的可识别言语/动作后，乙针对该言语/动作的
+  可识别回应；乙→甲为下一回合。单方独白、广播、无回应动作不构成第二回合。单方宣布、
+  纯内心不满、未点破误会不计。功能人员按章办事的流程摩擦不计，除非从明确的羞辱、驱逐、
+  利益阻断或其他利害对撞点开始。前置楔子/闪回摘要仅在明确写出双方立场、同一事项和实际
+  对撞结果时计入；只有"后来发生争执"的概述不计回合。记录双方、事项、两个回合引文、
+  首回合码点位置和核心冲突同源证据。多人、非人实体和即时文字聊天均按可稳定指认实体及
+  正文时间序列执行；异步留言须明确即时往返才计。
+  判定项：①首合格冲突首回合≤500码点；②首回合位置≤全文15.00%；③事项与独立主线冲突
+  清单同源。
+
+semantic_outputs:
+  # LLM 只提供语义判断与逐字证据；严禁输出 offset/比例/score。
+  conflicts:
+    - entity_a: 实体 A 识别（专名/稳定称谓/唯一身份）
+    - entity_b: 实体 B 识别
+    - issue: 立场相左事项
+    - round1_quote: "第一回合甲行动/陈述逐字引文"
+    - round2_quote: "乙对甲第一回合的针对性回应逐字引文"
+    - round3_quote: "甲对乙回应的再回应逐字引文（若存在）"
+    - round4_quote: "乙对甲再回应的再回应逐字引文（若存在）"
+    - round_count: "逐字可定位的回合数（A→B→A→B 完整两轮为4；A→B→A 为3；仅A→B 为2）"
+    - nearby_anchor: 邻近锚点（可选，帮助 Python 定位）
+    - same_lineage: 事项与全局主线冲突清单是否同源（③）
+    - qualifies: 是否为合格对抗性冲突（两实体+立场相左+至少两个"行动/陈述→针对性回应"交换）
+  selection_note:
+    - LLM 列全部候选冲突并填回合引文；Python 校验引文可定位且按序，取最早合格冲突判定 ①②③
+
+derived_features:
+  # 全部 Python 产生。
+  - resolved_round1_offset: Python 定位 round1_quote 生成的码点偏移
+  - resolved_round_last_offset: Python 定位最后一个有效回合引文生成的码点偏移
+  - L: len(re.sub(r'\s+', '', canonical_text))
+  - first_round_le_500: resolved_round1_offset ≤ 500（判定 ①）
+  - position_ratio: resolved_round1_offset / L（判定 ②≤15.00%）
+  - round_count_ok: 合格回合数判定——Python 校验全部回合引文可定位、相邻引文按正文顺序且 round_count ≥4（至少两个完整"行动/陈述→针对性回应"交换）
+  - qualifies_ok: LLM 判 qualifies 且 round_count_ok 成立（合格对抗性冲突）
+
+score_scale:
+  allowed: [0, 1, 3, 5, 7, 9, 10]
+
+ordinal_mapping:
+  - no_qualified_conflict_or_gt_15: 0
+  - le_500_and_lineage: 10
+  - qualified_le_15_other: 5
+
+mapping_note: >
+  spec-v5.1-draft-3 restores the v4.0.0 frozen 0/5/10 branch semantics after
+  independent threshold review: 合格冲突必须包含至少两个完整"行动/陈述→针对性回应"交换
+  （Python 校验 round_count ≥4），否则走 0 分支。round_count<4 不得因 qualifies 判定得 5/10。
+  此为 v5.1 冻结映射，后续修改必须升版本并登记。
+
+evidence_rule: >
+  全部回合引文必须能在 canonical text 中逐字定位且按正文顺序（round1<round2<round3<round4）；
+  定位失败或顺序错误 → 该候选不计。round_count_ok 由 Python 计算（LLM 只提供逐字引文与
+  round_count 自报，Python 校验自报与实际定位数一致）。③同源由 LLM 判定（对照全局主线清单），
+  Python 只校验引文可定位。
+
+abstain_rule: >
+  无法确认合格冲突边界/回合完整性、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN；
+  ABSTAIN 不自动转 0，单独统计 abstention_rate。

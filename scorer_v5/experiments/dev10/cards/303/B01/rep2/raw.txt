@@ -1,0 +1,30 @@
+Looking at this text, I need to identify the earliest "异常事件" (abnormal event) — an external event that breaks the protagonist's daily life/expectations, such as supernatural revelation, death/arrest/betrayal/identity exposure/accident, or fate-level news.
+
+Let me trace the earliest candidates in order:
+
+**Candidate 1: Chapter 1, P3** — "直到祖母尝了姐姐做的菜，当场宣布她继承家业。" — This is the grandmother publicly announcing the sister as heir. This is an external event (a public declaration by the family authority figure), breaking the protagonist's 17-year expectation of being the heir.
+
+After this event in the same scene: the protagonist attempts to seek help from parents ("我试图求助父母"), then throws away the ring ("我一把甩掉订婚戒指"), and declares "这门亲事，我不认。这个家，我再也不会回。" — These are direct actions/decisions connected to the abnormal event. Not just "feeling shocked."
+
+Position check: Chapter 1 has roughly 10 paragraphs; P3 ≤ 3 ✓. The first sentence appears very early in the text, well within q ≤ 10%.
+
+This is a textbook qualifying case: external family decision announcement → protagonist's immediate direct decision to reject the arranged marriage and leave.
+
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "直到祖母尝了姐姐做的菜，当场宣布她继承家业。",
+        "nearby_anchor": "我愣住了。\n这十七年，我每一天都在为成为合格的继承人做准备。",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "我一把甩掉订婚戒指。\n这门亲事，我不认。\n这个家，我再也不会回。",
+        "qualifies": true
+      }
+    ]
+  },
+  "reason": "祖母当场宣布姐姐为继承人属于命运级外部事件（家族继承权公开宣告），打破主角十七年的日常预期。同一场景内，主角在异常之后直接做出与异常有因果连接的决定行动（甩掉订婚戒指、拒绝联姻、宣布不再回这个家），非仅情绪反应。位置在chapter_1 P3，符合P≤3且首句位置在全文极靠前处，q≤10%。"
+}
+```

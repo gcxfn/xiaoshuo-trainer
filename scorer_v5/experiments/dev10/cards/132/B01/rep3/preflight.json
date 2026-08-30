@@ -1,0 +1,61 @@
+{
+  "ok": true,
+  "errors": [],
+  "checks": {
+    "spec_hash": {
+      "ok": true,
+      "value": "9befbf7f93247e0c6b2c0bd8c9163bef8f34cfed859ac9d8361135a8e33dff84"
+    },
+    "spec_versions": {
+      "ok": true,
+      "value": {
+        "B01": "spec-v5.1-draft-4",
+        "B02": "spec-v5.1-draft-4",
+        "B03": "spec-v5.1-draft-4",
+        "C01": "spec-v5.1-draft-4",
+        "B08": "spec-v5.1-draft-4",
+        "B09": "spec-v5.1-draft-4",
+        "B16": "spec-v5.1-draft-4",
+        "B23": "spec-v5.1-draft-4",
+        "B30": "spec-v5.1-draft-4",
+        "B34": "spec-v5.1-draft-4",
+        "B36": "spec-v5.1-draft-4",
+        "C22": "spec-v5.1-draft-4",
+        "N3": "spec-v5.1-draft-4",
+        "N6": "spec-v5.1-draft-4",
+        "B31": "spec-v5.1-draft-4",
+        "B33": "spec-v5.1-draft-4",
+        "C14": "spec-v5.1-draft-4",
+        "B18": "spec-v5.1-draft-4",
+        "N7": "spec-v5.1-draft-4"
+      }
+    },
+    "prompt_hash": {
+      "ok": true,
+      "value": "b1cfa29e8f0435b1c37c8360e4699575730d884fc8aa58979c5713b141b4aac1"
+    },
+    "scoring_code_version": {
+      "ok": true,
+      "value": "v5.1-scoring-1"
+    },
+    "scoring_code_files": {
+      "ok": true,
+      "value": "omitted"
+    },
+    "model_config": {
+      "ok": true,
+      "value": "749c08ac461ebe1f8bdcd822e445dc4aead3cbbeefa1a06a6fb089d7e724b319"
+    },
+    "canonical_text_hash": {
+      "ok": true,
+      "value": "53944a060a31c434b7f128261dd34ccc0b267e1995a90f367335f689d474333e"
+    },
+    "context_budget": {
+      "ok": true,
+      "value": {
+        "text_len": 33906,
+        "max_tokens": 8192
+      }
+    }
+  }
+}

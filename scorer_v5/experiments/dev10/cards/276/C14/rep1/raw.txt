@@ -1,0 +1,1024 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "blocks": [
+      {
+        "block_quote": "高考后的那个暑假，我家资助多年的贫困生陶蔓送来一罐茶。",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我妈心疼得不行：\"人家一片真心，亲手揉的茶叶，你可不能嫌弃。\"",
+        "character": "方梅",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我端起茶盏，还没碰到唇，眼前忽然飘过一行弹幕。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "我端起茶盏",
+        "b_sensory": "眼前忽然飘过一行弹幕",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "【别喝！喝了你就会和她互换身体。】",
+        "character": null,
+        "block_type": "其他",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": true
+      },
+      {
+        "block_quote": "【她顶着你的身份上清华，继承奶奶的遗产。你求助无门，最后精神崩溃。】",
+        "character": null,
+        "block_type": "其他",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": true
+      },
+      {
+        "block_quote": "【你妈还把你卖进大山，拿彩礼钱给她换苹果17。】",
+        "character": null,
+        "block_type": "其他",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": true
+      },
+      {
+        "block_quote": "我手一顿。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "我手一顿",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "互换身体？",
+        "character": "岑宁",
+        "block_type": "想法",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我看向卧室里瘫痪三年的奶奶，忽然笑了。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "忽然笑了",
+        "b_sensory": "我看向卧室里瘫痪三年的奶奶",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "这茶来得真及时！",
+        "character": "岑宁",
+        "block_type": "想法",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "奶啊，你有救了！",
+        "character": "岑宁",
+        "block_type": "想法",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "客厅里还贴着\"金榜题名\"的红纸。",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "阮晴站在我家客厅里，穿着一件洗得发白的裙子。",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "方梅一看见她就眼眶发红，马上把她拉到沙发上坐。",
+        "character": "方梅",
+        "block_type": "直接感知",
+        "a_body": null,
+        "b_sensory": "方梅一看见她就眼眶发红",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"小晴，你这孩子，来就来，带什么东西？\"",
+        "character": "方梅",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "阮晴把小陶罐捧到我面前，还给我端来一杯茶。",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"方姨，我没钱买礼物。\"",
+        "character": "阮晴",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"我知道宁宁姐喜欢喝茶，就自己去山上摘了点。\"",
+        "character": "阮晴",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"茶不多，我晒了好几天，又亲手揉出来的。\"",
+        "character": "阮晴",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "说着，她摊开手，掌心有几道浅浅的红痕。",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "方梅心疼得眼圈都红了。",
+        "character": "方梅",
+        "block_type": "直接感知",
+        "a_body": "眼圈都红了",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"哎哟，你这孩子怎么这么实诚？手都伤了。\"",
+        "character": "方梅",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "阮晴摇头。",
+        "character": "阮晴",
+        "block_type": "直接感知",
+        "a_body": "阮晴摇头",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"没事的。只要宁宁姐喜欢，我就高兴。\"",
+        "character": "阮晴",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "她说这句话时，眼神落在我脸上。",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我接过陶罐和杯子，茶香从杯子里飘上来。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "我接过陶罐和杯子",
+        "b_sensory": "茶香从杯子里飘上来",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "不难闻。",
+        "character": "岑宁",
+        "block_type": "想法",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "香味底下压着一股灰腥气。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": null,
+        "b_sensory": "香味底下压着一股灰腥气",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "这时，我的眼前忽然飘过几行透明的弹幕：",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": null,
+        "b_sensory": "我的眼前忽然飘过几行透明的弹幕",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "【别喝！喝了你就会慢慢和她互换身体。】",
+        "character": null,
+        "block_type": "其他",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": true
+      },
+      {
+        "block_quote": "【她顶着你的状元身份上清华，继承奶奶的遗产。你求助无门，最后精神崩溃。】",
+        "character": null,
+        "block_type": "其他",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": true
+      },
+      {
+        "block_quote": "【你妈还把你卖进大山，拿钱给贫困生妹妹换苹果17。】",
+        "character": null,
+        "block_type": "其他",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": true
+      },
+      {
+        "block_quote": "我心口猛地一紧。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "我心口猛地一紧",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "方梅见我不动，立刻沉下脸。",
+        "character": "方梅",
+        "block_type": "直接感知",
+        "a_body": null,
+        "b_sensory": "方梅见我不动，立刻沉下脸",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"岑宁，你什么意思？\"",
+        "character": "方梅",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"人家小晴大老远送来，你连喝一口都不愿意？\"",
+        "character": "方梅",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "阮晴连忙摆手。",
+        "character": "阮晴",
+        "block_type": "直接感知",
+        "a_body": "阮晴连忙摆手",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"方姨，别怪姐姐。\"",
+        "character": "阮晴",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"姐姐刚考了状元，以后要去最好的大学，不喜欢我做的粗茶也正常。\"",
+        "character": "阮晴",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "她越这么说，方梅越来气。",
+        "character": "方梅",
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"她有什么资格嫌弃？你还惦记着她。她倒好，一点人情味都没有。\"",
+        "character": "方梅",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我看着方梅。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": null,
+        "b_sensory": "我看着方梅",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "这是我亲妈。",
+        "character": "岑宁",
+        "block_type": "想法",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我高考全市第一，她没问我累不累。",
+        "character": "岑宁",
+        "block_type": "想法",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "阮晴只拿出一罐茶，她就恨不得把心掏给人家。",
+        "character": "岑宁",
+        "block_type": "想法",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我笑了笑，抬手作势要喝。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "我笑了笑，抬手作势要喝",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "阮晴眼睛明显亮了一下。",
+        "character": "阮晴",
+        "block_type": "直接感知",
+        "a_body": null,
+        "b_sensory": "阮晴眼睛明显亮了一下",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "她盯着我的唇。",
+        "character": "阮晴",
+        "block_type": "直接感知",
+        "a_body": null,
+        "b_sensory": "她盯着我的唇",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "像在等什么大事发生。",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我把杯子送到嘴边，又停下。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "我把杯子送到嘴边，又停下",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"但是我现在胃有点不舒服，不想喝茶。\"",
+        "character": "岑宁",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "阮晴脸上的笑僵住。",
+        "character": "阮晴",
+        "block_type": "直接感知",
+        "a_body": null,
+        "b_sensory": "阮晴脸上的笑僵住",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "方梅立刻皱眉。",
+        "character": "方梅",
+        "block_type": "直接感知",
+        "a_body": "方梅立刻皱眉",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"你又作什么？\"",
+        "character": "方梅",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我把杯子放回桌上，看向阮晴。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "我把杯子放回桌上，看向阮晴",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"谢谢妹妹。\"",
+        "character": "岑宁",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"你亲手摘的，我肯定会好好喝。\"",
+        "character": "岑宁",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"今天不舒服，等晚点我慢慢泡。\"",
+        "character": "岑宁",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "阮晴紧紧盯着我。",
+        "character": "阮晴",
+        "block_type": "直接感知",
+        "a_body": null,
+        "b_sensory": "阮晴紧紧盯着我",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"真的？\"",
+        "character": "阮晴",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"真的。\"",
+        "character": "岑宁",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我把小陶罐抱在怀里。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "我把小陶罐抱在怀里",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"以后天天喝。\"",
+        "character": "岑宁",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "她这才松了一口气。",
+        "character": "阮晴",
+        "block_type": "直接感知",
+        "a_body": null,
+        "b_sensory": "她这才松了一口气",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "临走前，她还特意拉住我的手。",
+        "character": "阮晴",
+        "block_type": "直接感知",
+        "a_body": "她还特意拉住我的手",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"宁宁姐，你一定要喝。\"",
+        "character": "阮晴",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"这个茶要坚持喝，才有用。\"",
+        "character": "阮晴",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我点头。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "我点头",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"好。\"",
+        "character": "岑宁",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "方梅亲自把她送下楼。",
+        "character": "方梅",
+        "block_type": "直接感知",
+        "a_body": "方梅亲自把她送下楼",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "回来后，她还在数落我。",
+        "character": "方梅",
+        "block_type": "直接感知",
+        "a_body": "她还在数落我",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"你看看小晴，多懂事，多知道感恩。\"",
+        "character": "方梅",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"你呢？考了个第一，尾巴就翘上天了。\"",
+        "character": "方梅",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我低头看着陶罐，没说话。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "我低头看着陶罐",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "傍晚。",
+        "character": null,
+        "block_type": "其他",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "方梅从厨房探出头。",
+        "character": "方梅",
+        "block_type": "直接感知",
+        "a_body": "方梅从厨房探出头",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"宁宁，要不要喝茶？我给你泡。\"",
+        "character": "方梅",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "她声音装得随意。",
+        "character": "方梅",
+        "block_type": "直接感知",
+        "a_body": "她声音装得随意",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "眼神却一直盯着我手边的小陶罐。",
+        "character": "方梅",
+        "block_type": "直接感知",
+        "a_body": null,
+        "b_sensory": "眼神却一直盯着我手边的小陶罐",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我把陶罐拿起来。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "我把陶罐拿起来",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"不用，我自己来。\"",
+        "character": "岑宁",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "方梅松了口气。",
+        "character": "方梅",
+        "block_type": "直接感知",
+        "a_body": "方梅松了口气",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"那你记得喝，别浪费人家小晴一番心意。\"",
+        "character": "方梅",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我烧水，温杯，泡茶。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "我烧水，温杯，泡茶",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "等茶汤变成浅黄色，我端着杯子转身。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "我端着杯子转身",
+        "b_sensory": "等茶汤变成浅黄色",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "没有回自己房间。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "而是进了奶奶的屋。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "而是进了奶奶的屋",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "门关上。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "门关上",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "反锁。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "反锁",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "奶奶躺在床上，身体枯瘦，半边身子僵硬。",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "她已经三年没能好好说话。",
+        "character": null,
+        "block_type": "笼统叙述",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "可她看见我，浑浊的眼珠还是动了一下。",
+        "character": "岑秀兰",
+        "block_type": "直接感知",
+        "a_body": "浑浊的眼珠还是动了一下",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我蹲在床边，眼泪差点掉下来。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "我蹲在床边，眼泪差点掉下来",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"奶奶，她们想抢我的命。\"",
+        "character": "岑宁",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "\"我一定会护好自己，也会让你好起来。\"",
+        "character": "岑宁",
+        "block_type": "对话",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "我用棉签蘸了茶汤，先润了润奶奶干裂的唇。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "我用棉签蘸了茶汤，先润了润奶奶干裂的唇",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "又用小勺舀起一点点，慢慢送进她嘴里。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": "又用小勺舀起一点点，慢慢送进她嘴里",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "奶奶喉咙艰难地动了一下。",
+        "character": "岑秀兰",
+        "block_type": "直接感知",
+        "a_body": "奶奶喉咙艰难地动了一下",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "咽下去了。",
+        "character": "岑秀兰",
+        "block_type": "直接感知",
+        "a_body": "咽下去了",
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "下一秒，眼前浮出新的弹幕。",
+        "character": "岑宁",
+        "block_type": "直接感知",
+        "a_body": null,
+        "b_sensory": "眼前浮出新的弹幕",
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": false
+      },
+      {
+        "block_quote": "【绑定完成。】",
+        "character": null,
+        "block_type": "其他",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient": true
+      },
+      {
+        "block_quote": "【饮茶者：岑秀兰。】",
+        "character": null,
+        "block_type": "其他",
+        "a_body": null,
+        "b_sensory": null,
+        "c_inner": null,
+        "y_flag": null,
+        "x2_omniscient

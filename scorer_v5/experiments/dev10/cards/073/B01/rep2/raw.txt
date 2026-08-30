@@ -1,0 +1,18 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "拜堂到第二拜时，太子萧承玦忽然握住我的手。",
+        "nearby_anchor": "他说：\"阿姒，云蘅有了我的孩子。\"",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "\"既然有孕，就接进来吧。\"",
+        "qualifies": true
+      }
+    ]
+  },
+  "reason": "首个候选为萧承玦在大婚拜堂时告知云蘅有孕一事，属于打破主角日常/预期的外部异常事件（身份暴露+命运级消息）。同一场景内主角随即以'既然有孕，就接进来吧'作出与异常直接连接的决定，且首句位于正文开头（q≤10%）。"
+}
+```

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:novel-training:anchor-v4.0.0:build-input-audit",
+  "title": "v4.0.0 构建侧输入审计 sidecar",
+  "description": "受限构建侧 sidecar 的机器校验契约。它记录原始输入到匿名去首行正文的可复核计量，不是评分 JSONL，不得挂载给评分 worker，也不得与 score_record 合并。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "package_id",
+    "version",
+    "record_type",
+    "source_sha256",
+    "encoding",
+    "original_length",
+    "raw_bytes",
+    "first_line_removed",
+    "first_line_terminator",
+    "L",
+    "K",
+    "statistics_script",
+    "statistics_command"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "anchor-v4-build-input-audit/v1"
+    },
+    "package_id": {
+      "type": "string",
+      "const": "anchor-v4-formal-20260828"
+    },
+    "version": {
+      "type": "string",
+      "const": "v4.0.0"
+    },
+    "record_type": {
+      "type": "string",
+      "const": "build_input_audit_sidecar"
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "encoding": {
+      "type": "string",
+      "const": "UTF-8"
+    },
+    "original_length": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit",
+        "value"
+      ],
+      "properties": {
+        "unit": {
+          "type": "string",
+          "const": "unicode_code_points_before_first_line_removal"
+        },
+        "value": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "raw_bytes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "first_line_removed": {
+      "type": "boolean",
+      "const": true
+    },
+    "first_line_terminator": {
+      "type": "string",
+      "enum": [
+        "LF",
+        "CRLF",
+        "CR"
+      ]
+    },
+    "L": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "K": {
+      "type": "number",
+      "minimum": 0
+    },
+    "statistics_script": {
+      "type": "string",
+      "const": "Python re.sub(r\"\\s+\", \"\", text) followed by len"
+    },
+    "statistics_command": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": ".*re\\.sub.*"
+    }
+  }
+}

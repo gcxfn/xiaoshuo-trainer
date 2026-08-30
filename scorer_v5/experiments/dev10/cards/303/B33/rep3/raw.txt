@@ -1,0 +1,88 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "finale_quote": "夏月殊。\n\n夏总，这里是法务部，破产重整方案的文件已经准备好了，需要您签字。\n\n送上来吧。",
+    "events": [
+      {
+        "active_action_quote": "我一把甩掉订婚戒指。",
+        "nearby_anchor": "这门亲事，我不认。\n这个家，我再也不会回。",
+        "a_code": "A1",
+        "a_quote": "谢听晚的声音不大，却压着一股让人喘不过气的威严。\n\"月殊，把戒指捡起来。\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "\"我不嫁。\"",
+        "nearby_anchor": "我把戒指放在茶几上，推了回去。",
+        "a_code": "A1",
+        "a_quote": "谢听晚的笑意没有维持超过两秒。\n\"你以为你还有别的选择？\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "\"两次就够你决定把女儿嫁给他了？\"",
+        "nearby_anchor": "空气突然冷下来。",
+        "a_code": "A1",
+        "a_quote": "谢听晚放下筷子，不满地瞪了我一眼。\n\"你怎么跟你爸说话的？\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我站在ATM机前，把密码改了一遍。",
+        "nearby_anchor": "余额：八万三千四百块。",
+        "a_code": "A4",
+        "a_quote": "十七年的压岁钱、奖学金、比赛奖金，全存在一张谢听晚不知道的卡里。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "\"我想吃辣的。\"",
+        "nearby_anchor": "整张桌子安静了。",
+        "a_code": "A1",
+        "a_quote": "夏谨一皱眉。\n\"你姐好心好意给你做菜，你挑三拣四什么？\"\n谢听晚跟着叹气。\n\"月殊，你就不能让人省心一回？\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我把护照塞进书包夹层，然后躺回床上。",
+        "nearby_anchor": "整个过程不到四十秒。",
+        "a_code": "A4",
+        "a_quote": "签证三天后出签。\n舅舅把电子签证发到我的备用邮箱里，附了一句——机票我帮你订了，下周二里昂直飞，你确认一下时间。",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "拎着行李走出大门的那一刻，手机震了一下。",
+        "nearby_anchor": "我把书包背上，换了一双平底鞋，最后看了一眼这间没有锁的房间。",
+        "a_code": "A1",
+        "a_quote": "\"夏月殊，你给我滚回来。你以为跑了就有用吗？你护照是偷走的，我可以报警。\n你信不信我让你一辈子回不了国？\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "我看了三秒，开口。\n\"报价偏高百分之十五，但他们的产能利用率只有六成，有议价空间。如果合同周期拉长到两年，他们会降。\"",
+        "nearby_anchor": "其他实习生面面相觑。",
+        "a_code": "A1",
+        "a_quote": "Marc挑了一下眉毛。\n\"你怎么知道他们的产能利用率？\"\n会议室安静了两秒。\nMarc咧嘴笑了。\n\"好，这个case交给你跟。\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "\"那个人是我。\"",
+        "nearby_anchor": "厨房里的暖光灯嗡嗡地响。",
+        "a_code": "A1",
+        "a_quote": "周今越的表情凝固了大概有五秒。\n然后他慢慢地、不确定地重复了一遍。\n\"你？\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "\"妈，我是来接手公司的。\"",
+        "nearby_anchor": "五年不见，她老了不止五岁。",
+        "a_code": "A1",
+        "a_quote": "她的眼泪掉下来了。\n\"你回来了就好……你回来了就好……\"",
+        "qualifies": true
+      },
+      {
+        "active_action_quote": "\"姐，你的围裙沾了面粉。\"",
+        "nearby_anchor": "现在，做主的人站在她面前了。",
+        "a_code": "A1",
+        "a_quote": "她看着我，嘴唇张了张，说了一句——\n\"妹妹，你回来了。\"",
+        "qualifies": true
+      }
+    ]
+  },
+  "reason": "终局为夏月殊回到夏氏总部签字接管破产重整方案，主线最终归属已明确（她成为实际控制人）。在此终局之前识别出11个独立小爽点：甩戒指/拒嫁/反问父亲/改密取钱/要求吃辣/偷护照出逃/拿到实习offer/Marc认可case/揭露联姻真相/回夏氏宣布接手/对夏月唯的碾压性回应。每个事件均满足主角方主动、胜负可见（对手受挫/当场取得关键资源）、终局外当场闭环。"
+}
+```

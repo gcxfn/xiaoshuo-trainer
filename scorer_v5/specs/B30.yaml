@@ -1,0 +1,111 @@
+metric_id: B30
+construct: 压抑铺垫充分度
+version: spec-v5.1-draft-9
+semantic_definition: '压抑事件是对主角方造成具体侵害、贬损或委屈的事件，必须有受害实体、动作/发生事实和直接 后果。按同一时空、同一受害对象或同一冲突目标切分；同一动作的多种后果合并，完全重复的
+  回忆不新计。每条记录前状态、侵害动作、后状态、位置和对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）。 ①事件≥3起；②升级：相邻或可比较事件中至少出现范围扩大、程度加深、施害者升级或不可逆 后果加重之一，并列出前后状态；③克制呈现：直白情绪/说理块为连续≥51个非空白码点、主要为
+  情绪标签或抽象控诉，且无新的外部动作、对话交换或感官输入；全文≤2块，同时至少两起计入 事件的主要证据是事实动作/物件/结果而非情绪标签。该定义不以题材形式排除心理、职场、幻想
+  或非人叙事。
+
+  '
+semantic_outputs:
+  events:
+  - event_quote: 压抑事件对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（受害实体+动作/事实+直接后果）
+  - state_before: 状态前
+  - state_after: 状态后（可验证改变）
+  - escalation_type: 升级类型（范围扩大/程度加深/施害者升级/不可逆后果加重）或 null
+  - escalation_prev_quote: 上一事件引文（用于 Python 校验升级序列）
+  - primary_evidence: 本事件主要证据类型：fact（事实动作/物件/结果）或 emotion（情绪标签）
+  - catharsis_block_quotes: 直白情绪/说理候选块对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）清单（LLM 标候选，Python 判 ≥51 码点且全文 ≤2 块）
+  criteria:
+  - count_ge_3: ①事件 ≥3
+  - escalation: ②至少一次升级
+  - catharsis_ok: ③直白情绪/说理块 ≤2 块且至少两起事件主要证据为事实动作/物件/结果
+derived_features:
+- event_count: 压抑事件计数（Python 按引文定位 + 状态改变校验后计数，判定 ①≥3）
+- escalation_flag: ②升级（Python 按 escalation_type 非空 + 上一事件可定位判定）
+- catharsis_block_count: 直白情绪/说理块数（Python 校验候选块 ≥51 码点后计数，判定 ≤2 块）
+- fact_carried_count: 主要证据为事实动作/物件/结果的计入事件数（Python 校验引文可定位后计数，判定 ≥2）
+- criterion_count: ①②③成立计数
+score_scale:
+  allowed:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+  - 10
+ordinal_mapping:
+- score: 0
+  when:
+    field: criterion_count
+    op: eq
+    value: 0
+- score: 1
+  when:
+    field: criterion_count
+    op: eq
+    value: 1
+- score: 3
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 2
+    - field: event_count
+      op: lt
+      value: 5
+- score: 5
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 2
+    - field: event_count
+      op: gte
+      value: 5
+- score: 7
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 3
+    - field: event_count
+      op: lt
+      value: 5
+- score: 9
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 3
+    - field: event_count
+      op: gte
+      value: 5
+    - field: event_count
+      op: lt
+      value: 8
+- score: 10
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 3
+    - field: event_count
+      op: gte
+      value: 8
+mapping_note: 'v5.1-draft-4（Step 12.5 二次修订：用户裁定全七档）。0=count0 冻结置顶；1=count1；
+  3=count2 且事件<5；5=count2 且事件≥5；7=count3 且事件<5；9=count3 且事件≥5 但<8（未达极值）；
+  10=count3 且事件≥8（极值）。7/9 细分依据：criterion_count 定档位，event_count 定强弱（count2/3 各拆弱/强）；
+  极值阈值 8 登记于此。单调：档位越高越接近 10。
+
+
+  （draft-4 Step 12.5 Step 4：ordinal_mapping 为声明式条件，阈值/断点全部在 YAML 中，ordinal.py 为通用解释器，不再硬编码阈值。）'
+evidence_rule: '通用 *_quote 输出规则：quote 必须是 canonical text 连续逐字子串；优先最短且足以证明判定的片段；禁止跨位置拼接；禁止用 …… 或 ... 省略；禁止改写、概括、纠正标点或更换中文/英文引号；必须单行、禁止换行；需要两处证据时分放不同 quote 字段或数组项。若该引文可能在正文中出现多次（短句/常用词/无标点片段），必须同时提供 nearby_anchor（邻近唯一上下文片段的 span 编号），帮助 Python 唯一定位；未提供导致歧义拒绝时该证据作废。 event_quote / state_before / state_after 必须能在 canonical text 中逐字定位；
+  直白情绪/说理候选块必须可定位，Python 校验块内非空白码点 ≥51（<51 不计）。 primary_evidence 由 LLM 判定，Python 只校验引文可定位。
+
+  '
+abstain_rule: '无法确认事件边界/状态改变、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN； ABSTAIN 不自动转 0，单独统计
+  abstention_rate。
+
+  '

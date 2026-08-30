@@ -1,0 +1,58 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "我筷子没停：\"她没手？\"",
+        "nearby_anchor": "新婚第二天早上，陆家饭桌摆得很满。红烧肉，蒸鱼，排骨汤，还有一盆白米饭。马玉琴坐在主位旁边，手里拿着汤勺，眼皮都没抬。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      },
+      {
+        "event_quote": "陆成泽那一巴掌落下来前，我没有躲。不是反应不过来。是我想看清楚，他到底能做到哪一步。啪的一声。很脆。我的脸偏到一边。",
+        "nearby_anchor": "陆成泽的手越攥越紧。我手腕发疼。我看着他，一字一句说。\"我再说一次。\"\"松开。\"陆成泽盯了我几秒。然后，他另一只手抬了起来。",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "然后，我把整碗汤扣了下去。热汤从他头顶浇下。",
+        "qualifies": true
+      },
+      {
+        "event_quote": "陆成泽忽然软了声音。\"瓷瓷，别这样。\"他叫我小名的时候，屋里所有人都看向他。他伸手想碰我。",
+        "nearby_anchor": null,
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      },
+      {
+        "event_quote": "厨房外，门铃突然响了。一下。两下。三下。陆家所有人都僵住了。",
+        "nearby_anchor": null,
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      },
+      {
+        "event_quote": "一个穿白裙的女人从小区门口冲进来。她扶着肚子，脸色发白。\"成泽！\"她喊得又急又委屈。\"你怎么能让警察找我？\"\"那套房子的贷款材料，明明是你妈让我准备的！\"",
+        "nearby_anchor": null,
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      },
+      {
+        "event_quote": "陆成泽站在白色灯光下，满身狼狈。……他手里举着一只碎掉的玻璃瓶。瓶口尖锐，正抵着自己的脖子。",
+        "nearby_anchor": null,
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      }
+    ]
+  },
+  "reason": "列出全部候选异常事件。'她没手'是主角拒绝低头的主观反击，不算打破日常的外部事件。陆成泽巴掌是符合定义的外部突发事件（家暴/身体伤害），且主角在同一场景内端起滚烫肉汤扣在陆成泽头上，属于直接行动。其余候选（陆成泽假意道歉、门铃响、陈冉出现、陆成泽自残威胁）虽也是外部事件，但发生位置均晚于第二章耳光事件。最终满足定义的最早候选为陆成泽巴掌事件。"
+}
+```

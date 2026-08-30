@@ -1,0 +1,41 @@
+{
+  "version": "v5.1-provenance-1",
+  "records": [
+    {
+      "run_id": "dev10_v5_r2",
+      "book_id": "073",
+      "metric_id": "B33",
+      "rep": 1,
+      "model": "MiniMax-M3",
+      "provider": "minimax-cn",
+      "model_params": {
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "seed": 0,
+        "max_tokens": 8192
+      },
+      "prompt_hash": "3e52b784c8d4f46e25549f1be9bf930b3861c054472f2076de2bb8bbcaf3c6d8",
+      "spec_hash": "9befbf7f93247e0c6b2c0bd8c9163bef8f34cfed859ac9d8361135a8e33dff84",
+      "text_hash": "880dc57fb3646f517efbbbb5a25ba4736463ca75443d18493ecf53a886b0ad3e",
+      "sidecar_hash": "aff2e7faf530e2bd32be737f2af72abc43d454ecdb859168ddff8962dc6ae078",
+      "raw_stdout_hash": "ecff6af2c7c48260021f31b94b35fac21487b8125696a0e43483d2cd800467ba",
+      "parsed_output": {
+        "status": "ABSTAIN",
+        "reason": "文本为第一人称重生叙事的长篇连载片段，时间跨度极长（从大婚到萧承玦病逝、恪儿登基），全局主线最终归属的终局场景不明确（恪儿登基为新帝线，萧承玦病逝为旧主线终局，存在解读冲突）。需在终局框架确定后才能逐事件统计小爽点密度，当前条件下无法可靠判定边界。"
+      },
+      "validator_result": {
+        "parse_status": "OK",
+        "v1_schema_ok": true,
+        "v2_evidence_ok": true,
+        "v3_logic_ok": true,
+        "outcome": "ABSTAIN",
+        "accepted_semantic_facts": true,
+        "is_abstain": true,
+        "issues": [],
+        "evidence_locations": {}
+      },
+      "final_score": null,
+      "timestamp": "2026-08-29T17:26:38.647719+00:00"
+    }
+  ]
+}

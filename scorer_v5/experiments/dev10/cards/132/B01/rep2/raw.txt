@@ -1,0 +1,18 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "三天后，亲儿子终于回来了。\n提着一个破得掉渣的行李箱，人瘦得脱了形。\n我心里咯噔一下，颤抖着问他:“学位证呢”\n他没说话，蹲下身，把那口破箱子打开。",
+        "nearby_anchor": "八年前，我把两张银行卡放在桌上。",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "我跑过去，伸手接箱子。\n他避开了。",
+        "qualifies": true
+      }
+    ]
+  },
+  "reason": "The first qualifying abnormal event is the bio-son Han Jiacheng's return after eight years in a deteriorated state with a broken suitcase. This is an external event that breaks the protagonist's expectation (she had assumed both sons would return with doctoral degrees). It directly changes her action in the same scene: she rushes to take his suitcase and asks about the degree certificate, leading to the revelation of the prison uniform and exoneration document."
+}
+```

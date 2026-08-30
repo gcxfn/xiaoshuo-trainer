@@ -1,0 +1,42 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "林念初正侧躺着，一只手垫在腰后面，另一只手搭在肚子上。\n  那个肚子高高隆起，撑得她身上那件碎花睡裙紧绷绷的。\n  月份很大了。",
+        "nearby_anchor": "第1章。主角墨寒三年外派归来，进入家中玄关，看到妻子林念初侧躺于沙发，腹部高高隆起，月份已大。",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "「我回来了。明天去民政局，把离婚手续办了。」",
+        "qualifies": true
+      },
+      {
+        "event_quote": "「老婆……」\n  她的声音细得几乎听不见，像是从嗓子眼里挤出来的。\n  「你听我说……不是你想的那样……」",
+        "nearby_anchor": "第1章。主角质问林念初，暗示孩子非己出。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      },
+      {
+        "event_quote": "赵远洲。\n  我最好的兄弟，大学同宿舍上下铺，毕业进了同一家公司。我被外派那三年，是他主动揽下的活，说会帮我照看着念初。\n  讽刺。",
+        "nearby_anchor": "第3章。主角下楼抽烟时接到好兄弟赵远洲电话。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      },
+      {
+        "event_quote": "一个男人的声音突然响起来，压得很低，像是刻意变过。\n  「沈墨寒？」\n  「我是。你是谁？」\n  「我是谁不重要。」\n  他顿了一拍。\n  「我提醒你一句。」\n  「什么？」\n  「不要相信任何人。」\n  我握着手机的手紧了。",
+        "nearby_anchor": "第6章。一个陌生男子来电，警告主角不要相信任何人。",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      }
+    ]
+  },
+  "reason": "首位满足定义的候选：主角归来看到林念初高高隆起的孕肚（死亡/背叛揭露/身份暴露级别的外部事件），同一场景内直接行动：宣布'我回来了。明天去民政局，把离婚手续办了。'。该候选位于第1章P=1，且为首个外部异常事件。"
+}
+```

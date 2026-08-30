@@ -1,0 +1,58 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "客厅沙发旁边，一个中年女人正弯腰擦茶几，听到响动猛地回头。",
+        "nearby_anchor": "门开了。/ 我拖着行李箱站在玄关，三年没回的家，空气里飘着一股陌生的味道。",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      },
+      {
+        "event_quote": "林念初正侧躺着，一只手垫在腰后面，另一只手搭在肚子上。\n  那个肚子高高隆起，撑得她身上那件碎花睡裙紧绷绷的。",
+        "nearby_anchor": "她看到我的一瞬间，整个人僵在那里，像被人按了暂停键。",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "我把行李箱靠在鞋柜边上，声音很平。\n  「我回来了。明天去民政局，把离婚手续办了。」",
+        "qualifies": true
+      },
+      {
+        "event_quote": "一个男人的声音突然响起来，压得很低，像是刻意变过。\n  「沈墨寒？」",
+        "nearby_anchor": "第三天夜里，我在书房处理一堆工作邮件，手机响了。/ 陌生号码。/ 「不要相信任何人。」",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "「赵远洲？」/ 「你自己判断。」/ 「嘟嘟嘟——」/ 挂了。",
+        "qualifies": false
+      },
+      {
+        "event_quote": "拨开所有衣服——\n  一个深灰色的金属盒子，手掌大小，躺在衣柜最深处的角落里。",
+        "nearby_anchor": "手碰到一个冰冷的硬东西。/ 心跳漏了一拍。/ 上面带了一把三位数的密码锁。",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "我拿出手机拍了张照片，然后把盒子放回原位，衣服重新遮好。",
+        "qualifies": false
+      },
+      {
+        "event_quote": "一个男人的声音突然响起来，压得很低，像是刻意变过。",
+        "nearby_anchor": "重复候选",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      },
+      {
+        "event_quote": "他伸手扶住了林念初的肩膀。",
+        "nearby_anchor": "画面里林念初的头已经抬不起来了，整个人往旁边歪，像是失去了意识。",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": "",
+        "qualifies": false
+      }
+    ]
+  },
+  "reason": "首个满足全部三条判定项的候选是主角回家撞见林念初大肚子的场景（P=1，q 极低且远小于 10.00%）。该事件为外部客观可见的超常显形（妻子怀有并非主角所知的孕肚），属打破主角原有日常与预期的外部事件。同场景内主角在异常之后直接作出了与异常有明确因果连接的行动决定——当场宣布「我回来了。明天去民政局，把离婚手续办了」，这是紧贴异常之后的可观察行动/决策，并非仅「感到震惊」。其位置远在首段，前置段落极少。因此 qualifies=true。后续候选（匿名电话、金属盒、视频真相、幼儿园现身、赵远洲公园现身、临终名单等）虽然多属异常事件，但其 P 或不在首章，或同场景无直接因果行动，或虽触及超常设定但缺少首段 P≤3 与 q≤10.00% 的双重门槛，故不取为首个 qualifying 事件。"
+}
+```

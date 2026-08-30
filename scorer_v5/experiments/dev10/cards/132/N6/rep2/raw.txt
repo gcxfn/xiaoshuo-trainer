@@ -1,0 +1,154 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "events": [
+      {
+        "round_quotes": [
+          "“妈，我不求您回报我。”",
+          "“可我希望他争气。”"
+        ],
+        "nearby_anchor": "I secretly pulled him aside at the airport, saying money was the same for both, but still stuffed two thousand yuan into his pocket — he returned it; meanwhile Lu Xiangwen was buying new suits, and I told myself blood is thicker than water and one is different from the other.",
+        "literal_meaning": "I don't ask my biological son to repay me / but I do hope he proves himself worthy (with no reply from the listener since this is interior monologue).",
+        "real_meaning": "The mother's claim of equal treatment is false: she openly admits favoring the biological son and only truly cares whether he 'lives up to expectations' to save her face against the stepson's success.",
+        "decoding_evidence": "“您送我们去机场时，偷偷给他塞钱” (Lu Xiangwen to mother) and “嘴上说一视同仁，可您什么时候真把我当亲儿子？” — the spoken 'no repayment expected' and 'equal treatment' is directly contradicted by the mother's narrated prejudice.",
+        "game_goal": "Establishing and defending the mother's unequal preference disguised as fair treatment between her biological son Han Jiacheng and stepson Lu Xiangwen.",
+        "qualifies": false
+      },
+      {
+        "round_quotes": [
+          "“这些事不用你管。” “你只管好好读书，别让人看笑话。”",
+          "“您不是我亲妈，却从没亏待过我。” “以后我有出息了，一定把您当亲妈孝顺。”"
+        ],
+        "nearby_anchor": "Both cards on the table at departure: 520,000 each. Han Jiacheng asks about the factory's finances; Lu Xiangwen thanks her for raising him.",
+        "literal_meaning": "Mother tells Han Jiacheng not to worry about money, just study hard and don't embarrass the family; Lu Xiangwen pledges lifelong filial gratitude.",
+        "real_meaning": "Mother's dismissal actually reveals she sees Han Jiacheng as the only real child she has to protect, while Lu Xiangwen's extra thanks are a calculated performance to secure his position in the family.",
+        "decoding_evidence": "母亲独白：到底是亲生的，知道心疼我；后文陆向文承认电话里体贴周全的话，很多都是韩家成告诉他的 (the gratitude and concern were largely coached by Han Jiacheng).",
+        "game_goal": "The two sons positioning themselves for the mother's affection and inheritance at the moment of departure.",
+        "qualifies": false
+      },
+      {
+        "round_quotes": [
+          "“既然一视同仁，就别坏了规矩。” “我能照顾好自己。”",
+          "我偷偷把他拉到一边。“钱不够就跟妈说。”"
+        ],
+        "nearby_anchor": "At the airport security entrance, the mother pulls Han Jiacheng aside to slip him 2,000 extra yuan.",
+        "literal_meaning": "Han Jiacheng insists on fairness and refuses the extra cash; mother says to tell her if money runs short.",
+        "real_meaning": "Mother's earlier 'equal treatment' is a sham — she is actively trying to circumvent her own rule; Han Jiacheng's refusal exposes this and forces the lie into the open.",
+        "decoding_evidence": "韩家成看了一眼不远处的陆向文。“哥也一样吗？” 我愣了愣。“当然一样。” 话是这么说，可我还是往他衣兜里塞了两千块现金。 — the words contradict the action, and Han Jiacheng's later 'fairness' response makes the ruse explicit.",
+        "game_goal": "Testing and exposing whether the mother's promised equality is real at the moment of parting.",
+        "qualifies": false
+      },
+      {
+        "round_quotes": [
+          "“妈，您累了这么多年，也该歇歇了。”",
+          "“可想到韩家成，我又高兴不起来。” “你弟弟到底遇到了什么麻烦？”"
+        ],
+        "nearby_anchor": "Lu Xiangwen's homecoming dinner: presents degree and gold bracelet, volunteers to run the factory.",
+        "literal_meaning": "Lu Xiangwen expresses filial concern for his stepmother's fatigue; the mother worries about Han Jiacheng.",
+        "real_meaning": "Lu Xiangwen's filial words are an act of consolidation — he is securing his place as the 'good son' and heir to the factory before any word about Han Jiacheng reaches the mother.",
+        "decoding_evidence": "后文揭示：陆向文在电话里体贴周全的话很多都是韩家成告诉他的; 陆向文照片里角落清洁工侧脸就是韩家成，他在掩盖弟弟的处境.",
+        "game_goal": "Lu Xiangwen monopolizing the 'filial son' position before Han Jiacheng's fate becomes known.",
+        "qualifies": false
+      },
+      {
+        "round_quotes": [
+          "“他在第四年就没继续上学了。” “后来跟人做生意，好像欠了不少钱。”",
+          "“他跟我说过钱够用。” “那五十二万，他很早就花完了。” “怎么可能？”"
+        ],
+        "nearby_anchor": "After the celebratory dinner with the gold bracelet, the mother presses Lu Xiangwen about Han Jiacheng.",
+        "literal_meaning": "Lu Xiangwen reports his brother dropped out and ran into debt; mother protests that Han Jiacheng always said money was sufficient.",
+        "real_meaning": "Lu Xiangwen is feeding the mother a fabricated story of Han Jiacheng's moral failure to pre-empt his return; mother cannot yet see through it but senses something is off.",
+        "decoding_evidence": "陆向文照片里角落清洁工侧脸就是韩家成 (visual contradiction); 陆向文邮件标题出现韩家成名字他立刻合上电脑 (行为证据); 后文律师证明韩家成在读博并被冤判.",
+        "game_goal": "Establishing the false narrative that Han Jiacheng failed, so his later return can be dismissed.",
+        "qualifies": false
+      },
+      {
+        "round_quotes": [
+          "“家成也是你儿子。” “他姓韩，我把他养大已经够仁义了。”",
+          "我扬手给了他一巴掌。"
+        ],
+        "nearby_anchor": "After mother presses Lu Xiangwen for truth, Lu Zhenhai blurts out that Han Jiacheng is not of his blood.",
+        "literal_meaning": "Lu Zhenhai claims he has already done enough by raising another man's son; mother slaps him in anger.",
+        "real_meaning": "Lu Zhenhai's words reveal a long-standing hostility — he has never treated Han Jiacheng as a son; mother's slap signals that this hidden hostility is now breaking the surface after years of concealment.",
+        "decoding_evidence": "结婚十八年，这是他第一次把这句话摆到明面上；后文陆向文说出：她只是把我当临时照顾孩子的人.",
+        "game_goal": "Revealing whether Lu Zhenhai ever truly accepted Han Jiacheng as a son.",
+        "qualifies": false
+      },
+      {
+        "round_quotes": [
+          "“弟弟，你的东西我帮你拿。”",
+          "“不用。” 韩家成把箱子换到左手。 陆向文还想碰，他直接把箱子拉到身后。"
+        ],
+        "nearby_anchor": "Han Jiacheng's arrival at the door with the broken suitcase.",
+        "literal_meaning": "Lu Xiangwen offers to help carry his brother's luggage; Han Jiacheng refuses and shields the suitcase.",
+        "real_meaning": "Lu Xiangwen's 'help' is an attempt to gain access to the suitcase that contains evidence against him; Han Jiacheng's physical blocking reveals he already knows Lu Xiangwen is the enemy.",
+        "decoding_evidence": "母亲心理：陆向文盯着那只破箱子，手指微微收紧；以及陆向文后来拼命冲过来阻止打开箱子（“家成，今天是团聚的日子，有什么事以后再说！”）.",
+        "game_goal": "Accessing or concealing the evidence inside Han Jiacheng's broken suitcase.",
+        "qualifies": false
+      },
+      {
+        "round_quotes": [
+          "陆振海：“还能在哪儿？” “向文早说了，他半路就没读了。” “那些钱恐怕也让他败光了。”",
+          "“哥是这么跟你们的说的？”"
+        ],
+        "nearby_anchor": "When mother asks Han Jiacheng for his degree, the father mocks him based on Lu Xiangwen's report.",
+        "literal_meaning": "Father ridicules Han Jiacheng as a dropout who squandered the money, citing Lu Xiangwen; Han Jiacheng asks if that is really what 'brother' told them.",
+        "real_meaning": "Father's contempt, built on Lu Xiangwen's lies, exposes a conspiracy of two against Han Jiacheng; Han Jiacheng's cold question signals the moment confrontation begins.",
+        "decoding_evidence": "后文真相揭示：韩家成因商业机密盗窃罪服刑三年零七个月，陆向文是陷害者.",
+        "game_goal": "Maintaining the false cover story that Han Jiacheng failed on his own.",
+        "qualifies": false
+      },
+      {
+        "round_quotes": [
+          "陆向文：“弟弟，国外寄信经常出问题。” “你不能凭几张回执，就认定家里有人害你。”",
+          "“我说有人害你了吗？”"
+        ],
+        "nearby_anchor": "Han Jiacheng presents the returned-mail receipts proving letters were signed for and then refused.",
+        "literal_meaning": "Lu Xiangwen defends the family, accusing Han Jiacheng of jumping to conclusions about tampering with his mail.",
+        "real_meaning": "Lu Xiangwen is defensively denying wrongdoing before any accusation has been made — a classic tell that he is the one responsible.",
+        "decoding_evidence": "陆向文的嘴唇动了动；以及后文陈律师出示签收人是陆振海的证据.",
+        "game_goal": "Concealing the interception of Han Jiacheng's letters from prison.",
+        "qualifies": false
+      },
+      {
+        "round_quotes": [
+          "“一个能拿博士学位的人，看不懂自己签过的证词？”",
+          "陆向文彻底没了声音。"
+        ],
+        "nearby_anchor": "After Han Jiacheng reveals that Lu Xiangwen's sworn statement caused his imprisonment.",
+        "literal_meaning": "Han Jiacheng sarcastically questions whether someone who earned a doctorate could really fail to read the testimony he signed.",
+        "real_meaning": "The remark strips away Lu Xiangwen's 'I didn't understand' excuse and exposes that his doctoral claim itself rests on stolen work — silence is admission of both.",
+        "decoding_evidence": "陆向文彻底没了声音；以及后文学校暂停其学位效力并要求回去接受问询的通知.",
+        "game_goal": "Forcing Lu Xiangwen to stop evading responsibility for his false testimony.",
+        "qualifies": false
+      },
+      {
+        "round_quotes": [
+          "“你怎么知道我要杀他？” “如果我真想杀他，为什么故意按响火警？”",
+          "“你果然比那个博士聪明。”"
+        ],
+        "nearby_anchor": "Police interrogation room: Ma Rong admits he was just bait, not the real assassin.",
+        "literal_meaning": "Ma Rong rhetorically denies intending to kill Han Jiacheng and mocks the police assumption.",
+        "real_meaning": "Ma Rong's words are a taunt that reveals the real plot — they want to abduct Han Jiacheng to extract the second-generation formula, not kill him in the hospital.",
+        "decoding_evidence": "警方马上检查医院其他出口，一辆没有牌照的救护车正停在后门，车厢里装着绳索、镇静药和一副轮椅.",
+        "game_goal": "Misdirecting the police while the real kidnap plan unfolds at the ambulance exit.",
+        "qualifies": false
+      },
+      {
+        "round_quotes": [
+          "陆振海：“不是我一个人的主意。” “九年前，是你先找到科尔。” “你说只要拿到技术，就能把厂子变成海外公司的生产基地。” “你还让我藏起家成的信。”",
+          "“你闭嘴。”"
+        ],
+        "nearby_anchor": "In the sanatorium, with Luo Meijuan holding a knife to Han Jiacheng's neck, Lu Zhenhai finally confesses the eight-year conspiracy.",
+        "literal_meaning": "Lu Zhenhai publicly exposes that Luo Meijuan initiated contact with Cole, planned to convert the factory into the foreign company's production base, and ordered him to hide Han Jiacheng's letters.",
+        "real_meaning": "Eighteen years of 'happy family' are revealed as a calculated takeover of the factory; Luo Meijuan's panic-stricken 'shut up' confirms she is the mastermind he is betraying.",
+        "decoding_evidence": "罗美娟眼里第一次露出慌乱；以及此前保管柜中九年前陆振海与科尔合影、海外公司股权文件.",
+        "game_goal": "Lu Zhenhai's final attempt to shift blame to Luo Meijuan and save himself.",
+        "qualifies": false
+      }
+    ]
+  },
+  "reason": "All candidate exchanges were reviewed against the N6 strict criteria (two identifiable turns, surface meaning opposite to real intent, decoding evidence from action/other parties/aftermath, single unified game goal). Each round has a plausible hidden dynamic, but in every case either (a) one of the two sides is interior monologue or self-narration rather than a discrete dialogue turn directed at the other, (b) the 'decode' rests on the reader's inference across long stretches of later text rather than a specific action/third-party reaction/aftermath quote tied tightly to the exchange, or (c) the exchange is part of a larger sustained confrontation that the strict spec would not isolate as a single 'round'. Consequently no exchange fully meets the 言此意彼 + 解码证据 bar in a way that excludes the reader-inference loophole. Output is preserved with `qualifies: false` per the schema requirement to list reviewed events rather than coercing a false positive."
+}
+```

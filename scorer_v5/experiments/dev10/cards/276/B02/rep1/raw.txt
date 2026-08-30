@@ -1,0 +1,49 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "conflicts": [
+      {
+        "entity_a": "方梅",
+        "entity_b": "阮晴",
+        "issue": "方梅是否故意将茶水转给岑秀兰（奶奶）让阮晴代为承受交换后果，以及方梅是否从一开始就在利用阮晴",
+        "round1_quote": "那条短信清清楚楚。",
+        "round2_quote": "你害我！你骗我！",
+        "round3_quote": "你小声点！你想让别人都知道吗？",
+        "round4_quote": "她张嘴咬住方梅的胳膊。",
+        "round_count": 4,
+        "nearby_anchor": "阮晴疯了一样抓方梅……嘴里含含糊糊地骂",
+        "same_lineage": true,
+        "qualifies": true
+      },
+      {
+        "entity_a": "岑宁",
+        "entity_b": "方梅",
+        "issue": "岑宁是否喝了阮晴送来的茶",
+        "round1_quote": "人家小晴大老远送来，你连喝一口都不愿意？",
+        "round2_quote": "但是我现在胃有点不舒服，不想喝茶。",
+        "round3_quote": "你又作什么？",
+        "round4_quote": "她不是不知道茶有问题。至少，她知道这杯茶必须进我的嘴。",
+        "round_count": 4,
+        "nearby_anchor": "我把杯子送到嘴边，又停下",
+        "same_lineage": true,
+        "qualifies": true
+      },
+      {
+        "entity_a": "岑宁",
+        "entity_b": "阮晴",
+        "issue": "阮晴的茶是否安全、是否被喂给了奶奶",
+        "round1_quote": "姐姐，你没给别人喝吧？",
+        "round2_quote": "茶闻着香，我给奶奶也沾过一点。",
+        "round3_quote": "你急什么？",
+        "round4_quote": "你的茶，我一滴都没浪费。",
+        "round_count": 4,
+        "nearby_anchor": "阮晴又看向奶奶房间",
+        "same_lineage": true,
+        "qualifies": true
+      }
+    ]
+  },
+  "reason": "多项合格对抗性冲突均已在正文中可逐字定位。最早的首回合出现在岑宁拒绝当面喝茶的场景，属于岑宁与方梅围绕'是否喝了茶'的立场对撞，且包含两个完整的'行动/陈述→针对性回应'交换。"
+}
+```

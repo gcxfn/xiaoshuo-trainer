@@ -1,0 +1,58 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "推开门，对面坐着个姑娘。",
+        "nearby_anchor": "全京城排队想见她一面的那种。我寻思赶紧吃完走人。结果她看了我三秒，放下茶杯——\"这次的，我要了。\"",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "包厢的门突然被推开。一个二十来岁的年轻男人走进来，西装笔挺，头发梳得一丝不苟，手腕上一块表反射出刺眼的光。",
+        "nearby_anchor": "\"清宁，听说你今天在这儿，我特意过来打个招呼——\"他话说到一半，看见了池珩。",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "\"另：裴小姐没有着装要求，但建议不要穿拖鞋。\"",
+        "nearby_anchor": "池珩看了看自己脚上的人字拖。他回了两个字：\"收到。\"",
+        "is_external_event": false,
+        "same_scene_action": false,
+        "action_quote": null,
+        "qualifies": false
+      },
+      {
+        "event_quote": "你在中东待了三年。在那之前，你在非洲待了两年。",
+        "nearby_anchor": "\"池家三少，十八岁被逐出家门。表面上是因为跟家里闹翻，实际上——\"\"行了。\"池珩把茶杯放下，发出一声轻响，\"你查到什么程度？\"",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "\"所以你选我，是为了挡他？\"裴清宁抬起眼看他。灯光下，那双眼睛清澈而直接。\"一部分是。\"",
+        "qualifies": true
+      },
+      {
+        "event_quote": "我今天拿到了钱立成儿子海外公司的部分资金流向记录。",
+        "nearby_anchor": "\"明天会有人把材料递到钱立成面前。不明说，只暗示。\"",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "\"行。那就等周日家宴了。\"",
+        "qualifies": false
+      },
+      {
+        "event_quote": "我跟我爸摊牌了。",
+        "nearby_anchor": "裴清宁在办公室里坐了一个小时才出来。出来的时候，面色如常。但周叔说，她出来后去了一趟洗手间，待了十五分钟。出来的时候眼眶是红的。",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "池珩伸出手。越过茶几——轻轻碰了碰她捧着杯子的手背。指尖覆上去。凉的。\"那就不要。\"他说。",
+        "qualifies": false
+      }
+    ]
+  },
+  "reason": "按正文顺序列出候选异常事件。首条候选（相亲见面）属于被逼赴约的日常延续，裴清宁当场表白属于角色主动行为，不打破主角原有预期（他本就想被吓跑后结束）。第二条（陆明轩闯入）属于社交摩擦，池珩的应对是即兴回击但未直接改变后续行动方向。第三条（管家短信）非外部突发事件。第四条（裴清宁揭露池珩过去身份）符合超常设定显形+身份暴露的定义，且异常后同一场景内池珩直接追问"你选我是否为了挡他"，属于直接连接的行动/决定，满足P≤3且为最早符合定义者。后两条候选因位置偏后不取最早。q值与L/K/F等确定性字段由程序计算。"
+}
+```

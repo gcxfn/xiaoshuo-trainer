@@ -1,0 +1,113 @@
+metric_id: N7
+construct: 角色间认知操控
+version: spec-v5.1-draft-9
+semantic_definition: '先枚举每个候选做局：操控者刻意使受骗者形成错误认知，受骗者据此作出决定，决定造成可观察 实质损失。主角反操控、配角受骗、第三方受损均可计；直接暴力/伤害而无错误信息环节不计。
+  一次性蓄意性由伪造/编造准备、明知真相仍投放、投放后获益或明确有目的安排任一项证明；巧合、 误会或读者知道不算。长期人设须有至少两个场景维持证据。 每局填四格：①意图/知情；②受骗者实际接收的假信息/伪装；③错误认知下的具体行动，或有机会、
+  知悉选择却因错误认知不行动；④行动后地位、财产、人身、关键关系或计划败亡的实质损失。 缺任一格，决策闭环不成立。 三要件：①载体至少两类，从 C1 当面言语、C2
+  第三方之口、C3 道具文书、C4 行为模式伪装、 C5 信息屏蔽中计不同类；②同一假信息/人设在至少两个不同场景投放或维持；③四格闭环完整。 多局按字典序选择：成立要件数（3>2>1>0）→③闭环完整→跨场景投放/维持场景数→可观察损失数量。
+  完全同序全部留档。0 要件=0 分，1–2 要件=5 分，3 要件=10 分。
+
+  '
+semantic_outputs:
+  plots:
+  - plot_quote: 做局关键句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - a_intent_quote: ①意图/知情对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - false_info_quote: ②受骗者实际接收的假信息/伪装对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - wrong_decision_quote: ③错误认知下的具体行动/不行动对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - loss_quote: ④实质损失对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）
+  - carriers: 载体类代码（C1 当面言语/C2 第三方之口/C3 道具文书/C4 行为模式伪装/C5 信息屏蔽）
+  - scenes: 同一假信息/人设投放或维持的场景引文清单（Python 判 ≥2 场景）
+  - completes: 四格是否闭环（bool）
+  selection_note:
+  - LLM 列局并填要件；Python 按字典序选局（要件数→闭环→跨场景数→损失数，完全同序全部留档）
+derived_features:
+- plot_offsets: Python 定位各局 offset
+- best_plot: Python 按字典序取最佳局（并列全部留档）
+- closure_count: 四格闭环数（Python 校验引文可定位后计数）
+- carrier_count: 载体类数（Python 去重，判定 ≥2）
+- scene_count: 跨场景数（Python 用要件引文 offset 判定 ≥2）
+- requirement_count: 成立要件数（载体 ≥2 / 跨场景 ≥2 / 闭环完整）
+- plot_count: 留档做局数（Python 按字典序选局后计数，判定档位强度）
+score_scale:
+  allowed:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+  - 10
+ordinal_mapping:
+- score: 0
+  when:
+    field: criterion_count
+    op: eq
+    value: 0
+- score: 1
+  when:
+    field: criterion_count
+    op: eq
+    value: 1
+- score: 3
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 2
+    - field: plot_count
+      op: lt
+      value: 3
+- score: 5
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 2
+    - field: plot_count
+      op: gte
+      value: 3
+- score: 7
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 3
+    - field: plot_count
+      op: lt
+      value: 3
+- score: 9
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 3
+    - field: plot_count
+      op: gte
+      value: 3
+    - field: plot_count
+      op: lt
+      value: 5
+- score: 10
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 3
+    - field: plot_count
+      op: gte
+      value: 5
+mapping_note: 'v5.1-draft-4（Step 12.5 二次修订：用户裁定全七档）。0=count0 冻结置顶；1=count1；
+  3=count2 且 plots<3；5=count2 且 plots≥3；7=count3 且 plots<3；9=count3 且 plots≥3 但<5（未达极值）；
+  10=count3 且 plots≥5（极值）。7/9 细分依据：criterion_count 定档位，plot_count（留档做局数）定强弱
+  （count2/3 各拆弱/强）；极值阈值 5 登记于此。单调：档位越高越接近 10。语义：0 分支保留冻结（count0），
+  10 分支由 count3 扩展为 count3+plots 极值。
+
+
+  （draft-4 Step 12.5 Step 4：ordinal_mapping 为声明式条件，阈值/断点全部在 YAML 中，ordinal.py 为通用解释器，不再硬编码阈值。）'
+evidence_rule: '通用 *_quote 输出规则：quote 必须是 canonical text 连续逐字子串；优先最短且足以证明判定的片段；禁止跨位置拼接；禁止用 …… 或 ... 省略；禁止改写、概括、纠正标点或更换中文/英文引号；必须单行、禁止换行；需要两处证据时分放不同 quote 字段或数组项。若该引文可能在正文中出现多次（短句/常用词/无标点片段），必须同时提供 nearby_anchor（邻近唯一上下文片段的 span 编号），帮助 Python 唯一定位；未提供导致歧义拒绝时该证据作废。 所有引文必须能在 canonical text 中逐字定位；定位失败 → 对应要件不计。 载体类必须是 C1-C5 之一（Python
+  校验枚举）。
+
+  '
+abstain_rule: '无法确认做局/要件边界、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN； ABSTAIN 不自动转 0，单独统计 abstention_rate。
+
+  '

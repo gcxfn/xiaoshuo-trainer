@@ -1,0 +1,25 @@
+```json
+{
+  "status": "OK",
+  "semantic": {
+    "candidates": [
+      {
+        "event_quote": "她打开提前写好的纸条。",
+        "nearby_anchor": "\"那就抱歉了，我没想到自己随口就能猜中。\" \"你们的婚礼，推迟三年。\"",
+        "is_external_event": true,
+        "same_scene_action": true,
+        "action_quote": "我回复： \"愿赌服输。\"",
+        "qualifies": true
+      },
+      {
+        "event_quote": "手机震动。 \"生日快乐。\" \"２７岁没结婚，你就嫁给我。还作数？\"",
+        "nearby_anchor": "我抬头看向已过１２点的时钟。",
+        "is_external_event": true,
+        "same_scene_action": false,
+        "qualifies": false
+      }
+    ]
+  },
+  "reason": "最早候选为江灵宣布'婚礼推迟三年'，属于外部赌约事件打破原有婚礼预期，且主角在同场景回复'愿赌服输'构成直接行动/决定。"
+}
+```

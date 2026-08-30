@@ -1,0 +1,6 @@
+validate_specs.py PASS
+test_quote_contract.py PASS
+test_contract.py PASS
+test_json_fence.py PASS
+smoke_pipeline.py PASS
+smoke_preflight.py PASS

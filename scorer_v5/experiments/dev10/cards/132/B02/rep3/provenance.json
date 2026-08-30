@@ -1,0 +1,41 @@
+{
+  "version": "v5.1-provenance-1",
+  "records": [
+    {
+      "run_id": "dev10_v5_r2",
+      "book_id": "132",
+      "metric_id": "B02",
+      "rep": 3,
+      "model": "MiniMax-M3",
+      "provider": "minimax-cn",
+      "model_params": {
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "seed": 0,
+        "max_tokens": 8192
+      },
+      "prompt_hash": "163de6559f0564adb2fc77b5d96d8b6fad641235b8ffd7f4b6fef9eeb3537f7f",
+      "spec_hash": "9befbf7f93247e0c6b2c0bd8c9163bef8f34cfed859ac9d8361135a8e33dff84",
+      "text_hash": "53944a060a31c434b7f128261dd34ccc0b267e1995a90f367335f689d474333e",
+      "sidecar_hash": "e2570472e02dcc5b43e1630e37849195ae8356b6f8a636e01e6df504498747c0",
+      "raw_stdout_hash": "54ee6340c024310710a0c8b58687ecc896d5a16e109a424217a180f8ac2f934a",
+      "parsed_output": {
+        "status": "ABSTAIN",
+        "reason": "无法可靠识别满足'两实体+同一事项+立场相左+至少两个行动/陈述→针对性回应交换'的早期合格对抗性冲突。文中大量对话多为单方质问/解释/情绪宣泄，虽有持续争论，但首回合难以定位在≤500码点内且属于立场相左的针对性回应交换的明确起点；不同实体间的对峙多在叙事后半段才出现且缺乏可稳定计数的完整两回合。证据不足以可靠判定首合格冲突及其码点位置。"
+      },
+      "validator_result": {
+        "parse_status": "OK",
+        "v1_schema_ok": true,
+        "v2_evidence_ok": true,
+        "v3_logic_ok": true,
+        "outcome": "ABSTAIN",
+        "accepted_semantic_facts": true,
+        "is_abstain": true,
+        "issues": [],
+        "evidence_locations": {}
+      },
+      "final_score": null,
+      "timestamp": "2026-08-29T17:27:22.501004+00:00"
+    }
+  ]
+}

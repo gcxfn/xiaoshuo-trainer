@@ -1,0 +1,59 @@
+metric_id: B36
+construct: 共鸣触发器
+version: spec-v5.1-draft-3
+semantic_definition: >
+  删除"现实关系原型才计"的题材门槛。B36 扫描的是可观察的关系冲突轴，任何现实、幻想、悬疑、
+  职场、行动或制度环境均可通过等价状态证据计入；纯背景设定、抽象主题或一句评价不计。每类
+  至少一处有人物/实体、事件动作和直接后果的场景。
+  六个互斥优先归类轴：P1 偏置/区别对待（同等资格被不平等分配）；P2 背叛/边界越界（承诺、
+  关系或授权被破坏）；P3 不公/污蔑/替代（责任、身份、成果或资格被错误归属）；P4 强制义务/
+  情感或信念绑架（以关系、道德、制度或信仰压迫选择）；P5 权力不对等伤害/排斥（利用权力施压、
+  剥削、封锁或集体排除）；P6 付出/贡献被抹除（可观察劳动或牺牲被隐匿、挪用或不承认）。
+  同一事件命中多个轴时，按"直接后果最具体"的一个主轴归类；并列时依 P1→P6 固定顺序，
+  不能重复计类。
+  ①命中至少 2 个不同轴；②核心驱动：至少一个命中轴与全局主线候选的状态变化同源，且至少
+  两个主线场景由该轴冲突直接改变目标、关系、资源或计划；③跨轴广度：命中轴中至少包含一个
+  P1/P3/P4，或在不使用这些名称时由同等的偏置、不公替代或强制义务状态逐字证明。③不是受众
+  "广谱"判断，而是文本内第二个关系冲突轴的固定映射。
+
+semantic_outputs:
+  # LLM 只提供语义判断与逐字证据；严禁输出 offset/比例/score。
+  axes:
+    - axis: "P1-P6 轴编号（互斥优先归类，直接后果最具体者为主）"
+    - axis_quote: "该轴支撑逐字引文（场景含人物/实体+事件动作+直接后果）"
+    - is_core: "②该轴是否与主线冲突同源（核心驱动）"
+    - core_scene_quotes: "②该轴直接改变主线目标/关系/资源/计划的主线场景引文（至少两个）"
+    - breadth_note: "③是否覆盖 P1/P3/P4 之一（或同等偏置/不公替代/强制义务状态）"
+  criteria:
+    - count_ge_2: ①≥2 轴
+    - core_drive: ②核心驱动（任一轴与主线同源且 ≥2 个主线场景由该轴改变）
+    - breadth: ③跨轴广度（含 P1/P3/P4）
+
+derived_features:
+  # 全部 Python 产生。
+  - axis_count: 轴计数（Python 按 LLM 的 axes 清单去重后计数，判定 ①≥2）
+  - core_drive_flag: ②（LLM 判 is_core + core_scene_quotes；Python 校验引文可定位且 ≥2 个场景）
+  - breadth_flag: ③（Python 检查 axes 编号是否含 P1/P3/P4）
+  - criterion_count: ①②③成立计数
+
+score_scale:
+  allowed: [0, 1, 3, 5, 7, 9, 10]
+
+ordinal_mapping:
+  - three: 10
+  - two: 5
+  - zero_or_one: 0
+
+mapping_note: >
+  spec-v5.1-draft-3 restores the v4.0.0 frozen 0/5/10 branch semantics after
+  independent threshold review: 六轴恢复为题材中立关系冲突轴（P1 偏置/P2 背叛/P3 不公替代/
+  P4 强制义务/P5 权力伤害/P6 贡献抹除）；②核心驱动恢复为同源且至少两个主线场景被该轴改变。
+  此为 v5.1 冻结映射，后续修改必须升版本并登记。
+
+evidence_rule: >
+  axis_quote 必须能在 canonical text 中逐字定位；定位失败 → 该轴不计入①。
+  轴编号必须是 P1-P6 之一（Python 校验枚举）；core_scene_quotes 必须可定位且位于不同主线场景。
+
+abstain_rule: >
+  无法确认轴归类/支撑证据、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN；
+  ABSTAIN 不自动转 0，单独统计 abstention_rate。

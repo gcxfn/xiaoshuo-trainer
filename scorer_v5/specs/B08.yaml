@@ -1,0 +1,106 @@
+metric_id: B08
+construct: 主角目标明确度
+version: spec-v5.1-draft-9
+semantic_definition: '先列前 1/3 内所有目标句：台词或明确心理决定，表达主角要达成、守住或查明的具体事项。 按"贯穿主线且决定终局"的固定规则选择核心目标；没有可选目标则①不成立。
+  行动一环是主角方主动选择/发起的事件并产生可观察结果；同一目标、同一时空的连续动作合并， 独立结果或新选择才另计。主角委托他人只有在正文有可观察委托、结果回到主角决策链时计入。
+
+  '
+semantic_outputs:
+  goals:
+  - goal_quote: 目标句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（前 1/3 内）
+  - is_core: 是否核心目标（贯穿主线且决定终局）
+  - chain_actions: 行动环清单：每环 { action_quote, serves_goal, state_before, state_after
+      }
+  - delegated_actions: 代理行动：{ delegate_quote, result_back_quote }
+  - causal_turn_quote: 转折因果句对应 evidence span 的整数编号（程序用 span 原文回填的逐字片段）（主角行动直接促成）
+  criteria:
+  - goal_extractable: ①目标句可摘
+  - chain_ge_3: ②行动链 ≥3 环
+  - causal_autonomous: ③因果自主（至少一处转折由主角行动促成）
+derived_features:
+- goal_in_first_third: Python 校验 goal_quote 落在前 1/3（用 offset 映射）
+- action_chain_count: 行动环计数（Python 校验 action_quote 可定位后计数，判定 ②≥3）
+- causal_quote_located: Python 校验 causal_turn_quote 可定位
+- criterion_count: ①②③成立计数
+score_scale:
+  allowed:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+  - 10
+ordinal_mapping:
+- score: 0
+  when:
+    field: criterion_count
+    op: eq
+    value: 0
+- score: 1
+  when:
+    field: criterion_count
+    op: eq
+    value: 1
+- score: 3
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 2
+    - field: action_chain_count
+      op: lt
+      value: 5
+- score: 5
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 2
+    - field: action_chain_count
+      op: gte
+      value: 5
+- score: 7
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 3
+    - field: action_chain_count
+      op: lt
+      value: 5
+- score: 9
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 3
+    - field: action_chain_count
+      op: gte
+      value: 5
+    - field: action_chain_count
+      op: lt
+      value: 8
+- score: 10
+  when:
+    and:
+    - field: criterion_count
+      op: eq
+      value: 3
+    - field: action_chain_count
+      op: gte
+      value: 8
+mapping_note: 'v5.1-draft-4（Step 12.5 二次修订：用户裁定全七档）。0=count0 冻结置顶；1=count1；
+  3=count2 且行动链<5；5=count2 且行动链≥5；7=count3 且行动链<5；9=count3 且行动链≥5 但<8（未达极值）；
+  10=count3 且行动链≥8（极值）。7/9 细分依据：criterion_count 定档位，action_chain_count 定强弱
+  （count2/3 各拆弱/强）；极值阈值 8 登记于此。单调：档位越高越接近 10。
+
+
+  （draft-4 Step 12.5 Step 4：ordinal_mapping 为声明式条件，阈值/断点全部在 YAML 中，ordinal.py 为通用解释器，不再硬编码阈值。）'
+evidence_rule: '通用 *_quote 输出规则：quote 必须是 canonical text 连续逐字子串；优先最短且足以证明判定的片段；禁止跨位置拼接；禁止用 …… 或 ... 省略；禁止改写、概括、纠正标点或更换中文/英文引号；必须单行、禁止换行；需要两处证据时分放不同 quote 字段或数组项。若该引文可能在正文中出现多次（短句/常用词/无标点片段），必须同时提供 nearby_anchor（邻近唯一上下文片段的 span 编号），帮助 Python 唯一定位；未提供导致歧义拒绝时该证据作废。 所有引文必须能在 canonical text 中逐字定位；目标句必须在前 1/3（Python 用 offset 判定）。 定位失败
+  → 对应行动环不计入链计数。
+
+  '
+abstain_rule: '无法确认目标/行动链边界、缺少必要证据、两种解释均合理或证据冲突时，允许 ABSTAIN； ABSTAIN 不自动转 0，单独统计 abstention_rate。
+
+  '
